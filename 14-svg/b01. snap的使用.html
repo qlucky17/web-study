@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snap.svg使用</title>
+  <script src="./js/jquery-1.11.3.min.js"></script>
+  <script src="./js/snap.svg-min.js"></script>
+  <style>
+    #box {
+      width: 600px;
+      height: 600px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="changeSvgSize()">改变svg大小</button>
+  <button onclick="cloneSvg()">复制svg</button>
+  <div id="box"></div>
+  <script>
+    window.onload = function () {
+      // 创建一个svg
+      var svg = Snap(400, 400);
+      svg.attr({
+        id: 'svg',
+        viewBox: [0, 0, 500, 500]    //viewBox的作用
+      });
+      svg.node.style.border = '1px solid red';
+
+      // 绘制圆并编组
+      var c1 = svg.paper.circle(40, 40, 40).attr({
+        fill: '#f00'
+      }).click(function () {
+        console.log('click circle 1');
+      });
+      var c2 = svg.paper.circle(100, 100, 60).attr({
+        fill: '#00f'
+      }).click(function () {
+        console.log('click circle 2');
+      });
+      var g = svg.paper.g(c1, c2);
+      // 或者
+      // var g = svg.paper.g();
+      // g.add(c1, c2);
+      g.drag();
+
+      // 绘制图片
+      var img1 = svg.paper.image('./images/main.png', 0, 0, 500, 500);
+
+      // 绘制文本
+      var txt1 = svg.paper.text(0, 120, '文字测试');
+
+      document.querySelector('#box').appendChild(svg.node)
+
+      // 获取svg元素, select/selectAll获取set集合
+      var s = Snap('#svg');
+      let c = s.selectAll('circle');
+    }
+    function changeSvgSize() {
+      let s = Snap('#svg');
+      s.attr({ width: 200, height: 200 });
+    }
+    function cloneSvg() {
+      let s = Snap('#svg');
+      s.clone().attr({ width: 100, height: 100 }).appendTo(document.documentElement)
+    }
+  </script>
+</body>
+
+</html>

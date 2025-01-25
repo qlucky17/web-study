@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>进度条加载</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    #canvas {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -200px;
+      margin-top: -200px;
+      border: 2px solid #000;
+    }
+
+    #content {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 300px;
+      display: none
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <div id="content">内容显示内容显示内容显示内容显示</div>
+
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var centerX = canvas.width / 2,
+      centerY = canvas.height / 2,
+      rad = Math.PI * 2 / 100,
+      percent = 0;
+    requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    function whiteCircle() {
+      ctx.save();
+      ctx.beginPath();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 15;
+      ctx.arc(centerX, centerY, 100, 0, Math.PI * 2, false);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.restore();
+    }
+    function blueCircle(percent) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.strokeStyle = '#00f';
+      ctx.lineWidth = 15;
+      ctx.arc(centerX, centerY, 100, -Math.PI / 2, -Math.PI / 2 + percent * rad, false);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.restore();
+    }
+    function textPercent(percent) {
+      ctx.save();
+      ctx.font = '20px Verdana';
+      ctx.fillStyle = '#E81010';
+      ctx.fillText(percent.toFixed(0) + '%', centerX - 20, centerY + 10);
+      ctx.restore();
+    }
+
+    (function loading() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      whiteCircle();
+      blueCircle(percent);
+      textPercent(percent);
+      if (percent > 100) {
+        percent = 0;
+        $('#canvas').fadeOut();
+        $('#content').fadeIn();
+      }
+      percent += 0.1;
+      // setTimeout(loading,20);
+      requestAnimationFrame(loading);
+    })();
+  </script>
+</body>
+
+</html>

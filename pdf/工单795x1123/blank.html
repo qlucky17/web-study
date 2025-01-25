@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生产工单A4(5*2)</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font: 400 10px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+        }
+        
+        .page {
+            width: 794px;
+            height: 1123px;
+            margin: 0 auto;
+        }
+        
+        .wrapper,
+        table,
+        tr,
+        td,
+        th,
+        tbody,
+        thead,
+        tfoot {
+            page-break-inside: avoid !important;
+        }
+        
+        .wrapper {
+            width: 794px;
+            height: 1023px;
+            margin: 0 auto;
+        }
+        
+        .extra-table {
+            width: 794px;
+            height: 47px;
+            line-height: 47px;
+            margin: 0 auto;
+            border-spacing: 0;
+            font-size: 15px;
+        }
+        
+        .extra-1 {
+            width: 40%;
+            text-align: left;
+        }
+        
+        .extra-2 {
+            width: 20%;
+            text-align: center;
+        }
+        
+        .extra-3 {
+            width: 40%;
+            text-align: right;
+        }
+        
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+        }
+        
+        .content-table td {
+            width: 50%;
+            height: 201.4px;
+            border: 1px solid #979797;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+        
+        .content-item {
+            margin: 0 46px;
+        }
+        
+        .left {
+            float: left;
+            position: relative;
+        }
+        
+        .left img {
+            width: 139px;
+            height: 139px;
+        }
+        
+        .left .tag {
+            display: inline-block;
+            line-height: 15px;
+            padding: 0 3px;
+            background-color: rgb(245, 63, 63);
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .right {
+            float: left;
+            width: 149px;
+            padding-left: 5px;
+        }
+        
+        .line-1 {
+            position: relative;
+            font-size: 14px;
+        }
+        
+        .line-1 .type {
+            display: inline-block;
+            background: #000;
+            border-radius: 50%;
+            vertical-align: 2px;
+            width: 8px;
+            height: 8px;
+        }
+        
+        .line-1 .platform {
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        
+        .line-2 {
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 16px;
+        }
+        
+        .line-3 {
+            clear: both;
+        }
+        
+        .qr-code {
+            float: left;
+        }
+        
+        .qr-code img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .cz-info {
+            float: left;
+            width: 94px;
+            margin-left: 5px;
+            font-size: 11px;
+            line-height: 12px;
+        }
+        
+        .cz-info>div {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .line-4 {
+            width: 100%;
+            display: table;
+            white-space: nowrap;
+            line-height: 12px;
+        }
+        
+        .line-4-left {
+            display: table-cell;
+        }
+        
+        .line-4-right {
+            display: table-cell;
+            text-align: right;
+        }
+        
+        .time {
+            display: inline-block;
+            font-size: 11px;
+            padding: 0 2px;
+            background-color: rgb(102, 102, 102);
+            color: #fff;
+        }
+        
+        .total {
+            font-size: 12px;
+        }
+        
+        .line-interval {
+            margin-top: 2px;
+        }
+        
+        .red {
+            color: rgb(245, 63, 63);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <table class="extra-table">
+            <tbody>
+                <tr>
+                    <td class="extra-1">批次号：xxxxxx</td>
+                    <td class="extra-2">第1页/共3页</td>
+                    <td class="extra-3">件数：25(共96)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="wrapper">
+            <table class="content-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <!-- <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <table class="extra-table">
+            <tbody>
+                <tr>
+                    <td class="extra-1">导出人：xxxxxx</td>
+                    <td class="extra-2">第1页/共3页</td>
+                    <td class="extra-3">2022-11-10 15:21:14</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

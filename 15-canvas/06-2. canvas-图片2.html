@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>绘制图像</title>
+</head>
+
+<body>
+  <canvas id="container" width="400" height="400" style="border:2px solid #000"></canvas>
+
+  <script>
+    window.onload = function () {
+      var container = document.getElementById('container');
+      var ctx = container.getContext('2d');
+      var originImg = new Image();
+      originImg.src = './images/002.png';
+      originImg.onload = function(){
+        var canvasTemp = document.createElement('canvas');
+        var ctxTemp = canvasTemp.getContext('2d');
+        canvasTemp.width = originImg.width * 0.5;
+        canvasTemp.height = originImg.height * 0.5;
+        ctxTemp.drawImage(originImg, 0, 0, originImg.width*0.4, originImg.height*0.4);
+        var pattern = ctx.createPattern(canvasTemp, 'repeat');
+        // 借助svg矩阵
+        let svg = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg"
+        );
+        let matrix = svg.createSVGMatrix();
+        pattern.setTransform(matrix.translate(100, 100).rotate(30));
+        ctx.fillStyle = pattern;
+        ctx.fillRect(0, 0, container.width, container.height);
+      }
+
+    }
+  </script>
+</body>
+
+</html>

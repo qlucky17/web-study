@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Worker 队列打印11</title>
+</head>
+
+<body>
+  <button id="addTaskButton">添加打印任务</button>
+  <script>
+    // 创建一个 Web Worker 实例
+    const worker = new Worker('worker.js');
+    console.log(worker)
+
+    // 用于存储打印任务队列的数组
+    const taskQueue = [];
+
+    // 标记当前是否有任务正在执行
+    let isWorking = false;
+
+    // 按钮点击事件，添加打印任务到队列
+    document.getElementById('addTaskButton').onclick = function () {
+      const taskContent = '这是第' + (taskQueue.length + 1) + '个要打印的内容';
+      taskQueue.push({ content: taskContent });
+      console.log('已添加任务到队列：', taskContent);
+      processQueue();
+    };
+
+    // 处理任务队列的函数
+    function processQueue() {
+      if (isWorking || taskQueue.length === 0) {
+        return;
+      }
+      isWorking = true;
+      // 取出队列头部的任务发送给 Web Worker 去执行
+      const task = taskQueue.shift();
+      worker.postMessage(task);
+      console.log('ppp')
+    }
+
+    // 监听 Web Worker 完成任务后的消息
+    worker.onmessage = function (event) {
+      const result = event.data;
+      console.log('任务已完成：', result.content);
+      isWorking = false;
+      processQueue();
+    };
+  </script>
+</body>
+
+</html>

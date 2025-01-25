@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temu面单</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 13px/19px 'PingFang SC','Microsoft Yahei',sans-serif;
+      color: #1D2129;
+    }
+    .page{
+      page-break-after:always;
+      width: 378px;
+      height: 378px;
+      margin: 0 auto;
+    }
+    .wrapper {
+      page-break-inside: avoid !important;
+      width: 353px;
+      margin: 0 auto;
+      padding-top: 27px;
+    }
+    .fl{
+      float: left;
+    }
+    .fr{
+      float: right;
+    }
+    .tc{
+      text-align: center;
+    }
+    .gray{
+      color: #86909C;
+    }
+    .content{
+      border: 1px solid #464545;
+    }
+    .shipping-method{
+      padding: 16px 13px;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000;
+    }
+    .bar-code{
+      border-top: 1px solid #464545;
+      padding: 19px 0;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000;
+    }
+    .bar-code .text{
+      margin-top: 6px;
+    }
+    .address{
+      border-top: 1px solid #464545;
+      width: 100%;
+      display: table;
+    }
+    .address>div{
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+    }
+    .address .receive{
+      vertical-align: top;
+      padding: 13px;
+    }
+    .receive .icon{
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      font-size: 15px;
+      border: 1px solid #86909C;
+      border-radius: 50%;
+    }
+    .receive .text{
+      padding-left: 6px;
+      color: #000000FF;
+      max-height: 95px;
+      overflow: hidden;
+    }
+    .qr-code{
+      padding: 19px 0;
+      border-left: 1px solid #464545;
+      color: #000;
+    }
+    .footer{
+      font-size: 10px;
+      color: #86909C; 
+      line-height: 19px;
+      margin-top: 6px;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="content">
+        <div class="shipping-method">
+          <span id="sm">顺丰XXXXXX</span>
+          <span class="fr gray">TEMU</span>
+        </div>
+        <div class="bar-code tc">
+          <img src="" width="305" height="63" />
+          <div class="text">SF16168222222222</div>
+        </div>
+        <div class="address">
+          <div class="receive">
+            <span class="icon fl">收</span>
+            <div class="text">中山丰泰2号子仓，中山丰泰2号子仓，中山丰泰2号子仓，中山丰泰2号子仓，中山丰泰2号子仓，</div>
+          </div>
+          <div class="qr-code tc">
+            <img src="" width="63" height="63" />
+            <div>SF16168222222222</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>包裹编码：BG-Df5er35e8D</span>
+        <span class="fr">打印时间：2024年2月7日 09:28</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

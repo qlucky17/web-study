@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <script src="./js/transform.js"></script>
+</head>
+
+<body>
+  <canvas id="container" width="1200" height="1200" style="border:2px solid #000"></canvas>
+
+  <script>
+    window.onload = function () {
+      var container = document.getElementById('container');
+      var ctx = container.getContext('2d');
+      let image = new Image();
+      // image.src = './images/消费者上传原图一.png';
+      image.src = 'https://obs-lpt103.zhiwendiy.com/lpt103/protect/39b208d487cd4bc4bf7128d88de84932.png';
+      image.setAttribute("crossOrigin", "anonymous");
+      image.onload = () => {
+        ctx.save();
+        ctx.rect(37, 0, 1167, 1107);
+        ctx.stroke();
+        ctx.clip();
+        ctx.transform(1,0,0,1,-21,110);
+        ctx.transform(0.36711133362248954,0,0,0.36711133362248954,0,0);
+        // ctx.transform(Math.cos(30*Math.PI/180), Math.sin(30*Math.PI/180),-Math.sin(30*Math.PI/180), Math.cos(30*Math.PI/180), 0, 0);
+        // ctx.setTransform(1,0,0,1,50,50); //setTransform会重置并创建新的变换矩阵
+        ctx.drawImage(image, 0, 0, 3000, 2000);
+        ctx.restore();
+      
+        ctx.setTransform(1,0,0,1,0,0);
+        let maskImg = new Image();
+        maskImg.src = './images/7e6307c3-5afd-4c42-8750-a5adfe403f1c_1200x1200.png';
+        maskImg.onload =  () => {
+          ctx.drawImage(maskImg, 0,0,1200,1200);
+          ctx.restore();
+        }
+      }
+      // // maskImg.src = 'https://img.kwcdn.com/product/1fee581640/7e6307c3-5afd-4c42-8750-a5adfe403f1c_1200x1200.png';
+      // // maskImg.setAttribute("crossOrigin", "anonymous");
+      // maskImg.onload = () => {
+      //   ctx.save();
+      //   ctx.rect(37, 0, 1167, 1107);
+      //   ctx.stroke();
+      //   ctx.clip();
+      //   ctx.drawImage(0,0,1200,1200);
+      //   ctx.restore();
+      // };
+    }
+  </script>
+</body>
+
+</html>

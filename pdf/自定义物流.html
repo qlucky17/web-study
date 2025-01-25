@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义物流</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 14px/22px 'PingFang SC','Microsoft Yahei',sans-serif;
+      color: #1D2129;
+    }
+    .page{
+      page-break-after:always;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+    }
+    .wrapper {
+      page-break-inside: avoid !important;
+      width: 370px;
+      margin: 0 auto;
+      padding-top: 15px;
+    }
+    .fl{
+      float: left;
+    }
+    .fr{
+      float: right;
+    }
+    .section-1{
+      border: 1px solid #1D2129;
+    }
+    .title{
+      height: 39px;
+      line-height: 39px;
+      padding: 0 12px;
+      border-bottom: 1px solid #1D2129;
+    }
+    .order-id{
+      line-height: 22px;
+      padding: 10px 0;
+      border-bottom: 1px solid #1D2129;
+      text-align: center;
+    }
+    .receive-info{
+      display: table;
+    }
+    .receive-info .address{
+      display: table-cell;
+      width: 185px;
+      vertical-align: middle;
+      border-right: 1px solid #1D2129;
+      padding: 10px 0 10px 15px;
+    }
+    .receive-info .receive-icon{
+      display: inline-block;
+      text-align: center;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border: 1px solid #1D2129;
+      border-radius: 50%;
+      margin-right: 14px;
+    }
+    .receive-info .name{
+      margin-right: 10px;
+    }
+    .receive-info .addr-detail{
+      margin-top: 12px;
+      padding-right: 15px;
+    }
+    .receive-info .qr-code{
+      display: table-cell;
+      width: 170px;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .receive-info .qr-code .text{
+      word-break: break-all;
+    }
+    .shipping-id{
+      margin-top: 10px;
+      padding: 12px 0;
+      border: 1px solid #1D2129;
+      text-align: center;
+    }
+    .footer{
+      font-size: 11px;
+      color: #86909C;
+      line-height: 18px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="section-1">
+        <div class="title">
+          <span class="fl">自定义物流</span>
+          <span class="fr">2ZTJRP1 (共5件)</span>
+        </div>
+        <div class="order-id">
+          <img src="" width="320" height="48" />
+          <div>订单号 112-223-115467</div>
+        </div>
+        <div class="receive-info">
+          <div class="address">
+            <div>
+              <span class="receive-icon">收</span>
+              <span class="name">张*非</span>
+              <span>180****0000</span>
+            </div>
+            <div class="addr-detail">
+              福建省 厦门市 思明区<br/>
+              ******
+            </div>
+          </div>
+          <div class="qr-code">
+            <img src="" width="64" height="64" />
+            <div class="text">C013-9123835-6091233</div>
+          </div>
+        </div>
+      </div>
+      <div class="shipping-id">
+        <img src="" width="320" height="48" />
+        <div>运单号 12345678</div>
+      </div>
+      <div class="footer">
+        <span>蜂鸟工厂</span>
+        <span class="fr">打印时间：2024年2月7日 09:28</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+方法1： 手动编译
+npm install typescript -g
+tsc xxx.ts
+
+
+方法2： vscode自动编译
+1). 生成配置文件tsconfig.json
+    tsc --init
+2). 修改tsconfig.json配置
+    "outDir": "./js",
+    "strict": false,    
+3). 启动监视任务: 
+    终端 -> 运行任务 -> 监视tsconfig.json

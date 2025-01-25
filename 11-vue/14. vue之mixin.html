@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>vue mixin使用</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+<div id="app">
+    {{user}}
+    {{msg2}}
+</div>
+<script src="js/vue.js"></script>
+<script type="text/javascript">
+const mixin = {
+    data(){
+        return {
+            user: {
+                name: 'sandy2',
+                age: 20,
+                info: ['apple', 'banana'],    
+                pos: {
+                    x: 10,
+                    y: 20
+                }            
+            },
+            msg2: '222'
+        }
+    },
+    created(){
+        console.log('mixin...')
+    }
+}
+const app = new Vue({
+    mixins: [mixin],
+    el: '#app',
+    data:{
+        user: {
+            name: 'sandy',
+            age: 18,
+            info: ['apple', 'orange'],
+            pos: {
+                x: 1
+           }
+        }
+    },
+    created(){
+        console.log('app...');
+    }
+})
+</script>
+</body>
+</html>

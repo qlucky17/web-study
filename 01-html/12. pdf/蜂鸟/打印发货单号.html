@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打印发货单号</title>
+  <style>
+    html, body{
+      margin:0; padding:0;
+    }
+    .page{
+      page-break-after:always;
+    }
+    .avoid-break {
+      page-break-inside: avoid !important;
+    }
+  </style>
+</head>
+<body style="font:400 14px/1 思源黑体;color:#000;">
+  <div class="page">
+    <div style="width:400px;height:200px;" class="avoid-break">
+      <table style="width:100%;border-collapse:collapse;border-spacing:0;">
+        <tbody>
+          <tr>
+            <td>
+              <div class="width:100%;display:table;">
+                <div style="display:table-cell;vertical-align: middle;padding:15px 0;">
+                  <img src="./images/code.png" style="width:170px;height:170px;" />
+                </div>
+                <div style="display:table-cell;vertical-align: middle;line-height:1.3;padding-left:10px;">
+                  <div style="font-weight:bold;font-size:18px;">FHD-2308249EY3HS</div>
+                  <div>打印时间：2023-10-24 14:57:22</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

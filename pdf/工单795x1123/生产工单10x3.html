@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单10*3</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 15px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+    }
+    .page{
+      page-break-after:always;
+      width: 500px;
+      height: 150px;
+      margin: 0 auto;
+    }
+    .wrapper, table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+    }
+    .content-item{
+      width: 500px;
+      height: 150px;
+    }
+    .left{
+      float: left;
+      position: relative;
+    }
+    .left img{
+      width: 150px;
+      height: 150px;
+    }
+    .left .tag{
+      display:inline-block;
+      font-size: 12px;
+      line-height:16px;
+      padding:0 3px;
+      background-color:rgb(245,63,63);
+      color:#fff;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .left .tag.tag2{
+      top: 21px;
+    }
+    .left .tag.urgent{
+      top:auto;
+      bottom:2px;
+      left:0;
+    }
+    .left .tag.biao{
+      top:0;
+      left:auto;
+      right: 0;
+      background-color:#fff;
+      border: 1px solid #0453F3;
+      color: #0453F3;
+      border-radius: 50%;
+      font-size: 12px;
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
+      padding: 0;
+      text-align: center;
+    }
+    .middle{
+      float: left;
+      width: 200px;
+      padding-left: 5px;
+    }
+    .line-1{
+      position: relative;
+      font-size: 17px;
+      padding-bottom: 2px;
+    }
+    .line-1 .type{
+      display:inline-block;
+      min-width: 16px;
+      height: 16px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .line-1 .type-1{
+      padding-top: 3px;
+    }
+    .line-1 svg{
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+    .line-1 .platform{
+      font-weight:bold;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .cz-info{
+      border-top: 1px solid #1D2129;
+      padding: 2px 0;
+    }
+    .cz-info>div{
+      width:100%;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: 600;
+    }
+    .cz-info .code{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 12px;
+    }
+    .cz-info .total{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 17px;
+    }
+    .line-3{
+      font-weight: 600;
+      border-top: 1px solid #1D2129;
+      padding-top: 1px;
+    }
+    .relative{
+      position: relative;
+    }
+    .time{
+      display:inline-block;
+      font-size:10px;
+      line-height:12px;
+      padding:0 2px;
+      background-color:rgb(102,102,102);
+      color:#fff;
+    }
+    .time.time1{
+      background-color:#F53F3F;
+    }
+    .time.time2{
+      background: #FF6D00;
+    }
+    .red{
+      color:rgb(245,63,63);
+    }
+    .right{
+      float: right;
+    }
+    .qrcode{
+      width: 120px;
+      height: 120px;
+      padding-top: 5px;
+      padding-right: 5px;
+    }
+    .code-text{
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .arrow{
+      float: left;
+      min-width: 10px;
+      position: relative;
+    }
+    .arrow .line{
+      width: 5px;
+      height: 123px;
+      background-color: #F53F3F;
+    }
+    .arrow.gray .line{
+      background-color: #666666;
+    }
+    .arrow svg{
+      position: absolute;
+      left: -10px;
+    }
+    .arrow polygon{
+      fill:#F53F3F;
+    }
+    .arrow.gray polygon{
+      fill: #666666;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="content-item">
+        <div class="left">
+          <img src="商品图.jpg" />
+          <div class="tag">1/3P</div>
+          <span class="tag tag2">xxx</span>
+          <span class="tag urgent">急</span>
+          <span class="tag biao">标</span>
+        </div>
+        <div class="middle">
+          <div class="line-1">
+            <span>12H</span>
+            <span class="type">
+              <svg width="16" height="16" class="type-0">
+                <circle cx="8" cy="8" r="8" fill="#000"></circle>
+              </svg>
+              <!-- <svg width="16" height="16" class="type-1">
+                <polygon points="8,0 16,10 0,10" style="fill:#F53F3F;" />
+              </svg> -->
+              <!-- <svg width="16" height="16" class="type-2">
+                <rect x="0" y="0" rx="0" ry="0" width="16" height="16" style="fill:#000;" />
+              </svg> -->
+            </span>
+            <span>10101</span>
+            <span class="platform">FBA</span>
+          </div>
+          <div class="cz-info">
+            <div class="relative">
+              1000M-AA
+              <div class="code">A01</div>
+            </div>
+            <div>红色</div>
+            <div>单码</div>
+            <div>第1项-<span class="red">项<b>2</b>件</span></div>
+            <div class="relative">
+              *05543
+              <div class="total">总: 2000件</div>
+            </div>
+          </div>
+          <div class="line-3">
+            <div>
+              <span class="time time1">28-08</span>
+              <span>*MMMMM</span>
+            </div>
+            <div>
+              <span class="time time2">28-08</span>
+              <span>778173642530</span>
+            </div>
+            <div>
+              <span class="time">28-08</span>
+              <span>ZxIshop_#NVZRA5Y</span>
+            </div>
+          </div>
+        </div>
+        <div class="arrow">
+          <div class="line"></div>
+          <svg width="24" height="26">
+            <polygon points="0 0,24 0,12 26,0 0" />
+          </svg>
+        </div>
+        <div class="right">
+          <img sr="二维码" class="qrcode"/>
+          <div class="code-text">3223BL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

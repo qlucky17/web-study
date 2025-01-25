@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>异步函数async, await</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+</head>
+<body>
+	<script type="text/javascript">
+		function doPromise(time){
+			return new Promise((resolve, reject)=>{
+				setTimeout(()=>{
+					time<=5000 ? resolve(time) : reject(time);					
+				}, time);
+			});
+		}
+
+		// 1、使用then
+		function showResult(){
+			var res1 = doPromise(3000).then((res)=>{
+				console.log(res);
+			}, (res)=>{
+				console.log(res);
+			});
+			var res2 = doPromise(1000).then((res)=>{
+				console.log(res);
+			});
+		}
+		// showResult();
+
+		// 2、使用异步函数
+		async function showResult2(){
+			var res1 = await doPromise(3000);
+			console.log(res1);
+			var res2 = await doPromise(1000);
+			console.log(res2);
+			return {
+				id: 100,
+				name: 'xxx'
+			}
+		}
+		// showResult2();
+		showResult2().then(data=>{
+			console.log(data);  //{id: 100, name: 'xxx'}
+		});
+
+
+		//async函数返回的是一个promise对象
+		//await只能在async函数里使用，可以放任何表达式，但更多的是放一个promise对象，返回的值是promise resolve的值
+	</script>
+</body>
+</html>

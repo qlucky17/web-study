@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打印箱唛</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 16px/19px 'PingFang SC','Microsoft Yahei',sans-serif;
+      color: #000;
+    }
+    .page{
+      page-break-after:always;
+      width: 378px;
+      height: 378px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .wrapper {
+      page-break-inside: avoid !important;
+      width: 340px;
+      padding-top: 11px;
+      margin: 0 auto;
+    }
+    .relative{
+      position: relative;
+    }
+    .fl{
+      float: left;
+    }
+    .fr{
+      float: right;
+    }
+    .clear{
+      clear: both;
+    }
+    .tc{
+      text-align: center;
+    }
+    .date{
+      margin-bottom: 6px;
+    }
+    .code-text{
+      text-align: right;
+      padding-right: 26px;
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .total-qty{
+      margin-top: -12px;
+      font-size: 20px;
+      line-height: 23px;
+      font-weight: bold;
+    }
+    .detail-wrap{
+      border: 1px solid #464545FF;
+      margin-top: 6px;
+    }
+    .warehouses{
+      display: table;
+      width: 100%;
+    }
+    .warehouses>div{
+      display: table-cell;
+      text-align: center;
+      font-weight: bold;
+      border-right: 1px solid #464545FF;
+      height: 38px;
+      line-height: 38px;
+    }
+    .warehouses>div:last-child{
+      border-right: 0;
+    }
+    .warehouses .ugent{
+      background-color: #000000FF;
+      color: #fff;
+    }
+    .seller-name{
+      height: 38px;
+      line-height: 38px;
+      border-top: 1px solid #464545FF;
+      padding: 0 5px;
+    }
+    .product-name{
+      border-top: 1px solid #464545FF;
+      padding: 5px;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 16px;
+    }
+    .product-name .name{
+      font-size: 20px;
+      line-height: 23px;
+      height: 71px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .product-name .qty{
+      font-size: 24px;
+      position: absolute;
+      right: 8px;
+      top: 0;
+    }
+    .footer{
+      margin-top: 8px;
+      font-size: 11px;
+      line-height: 11px;
+    }
+    .delivery-type{
+      width: 170px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="date">发货日期：${deliverTime}</div>
+      <div class="">
+        <img src="${packageSn}" width="340" height="39" />
+        <div class="code-text">${packageSn}</div>
+      </div>
+      <div class="total-qty">第${packageIndex}包（共${totalPackageNum}包）</div>
+      <div class="detail-wrap">
+        <div class="warehouses">
+          <!-- <div>VMI</div>
+          <div class="ugent">加急</div>
+          <div>广东2号子仓</div> -->
+        </div>
+        <div class="clear seller-name">${supplierName}</div>
+        <div class="product-name">
+          <div class="name">商品名称</div>
+          <div class="relative">
+            <div>${productSkcId}</div>
+            <div class="sku-no">SKU货号</div>
+            <span class="qty">X${packageSkcNum}件</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="delivery-type fl tl">
+          <!-- <div>自行配送</div>
+          <div>司机: xxx</div>
+          <div>手机号: xxx</div> -->
+        </div>
+        <div class="fr tc">     
+          <img src="${packageSn}" width="170" height="39" />
+          <div>${packageSn}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const isCustomProduct = "${isCustomProduct}";
+    const purchaseStockType = "${purchaseStockType}";
+    const settlementType = "${settlementType}";
+    const urgencyType = "${urgencyType}";
+    const subWarehouseName = "${subWarehouseName}";
+
+    const isClothCat = "${isClothCat}";
+    const productName = "${productName}";
+    const nonClothMainSpecVOList = "${nonClothMainSpecVOList}";
+    const nonClothSecondarySpecVOList = "${nonClothSecondarySpecVOList}";
+
+    const skcExtCode = "${skcExtCode}";
+    const nonClothSkuExtCode = "${nonClothSkuExtCode}";
+
+    const deliveryMethod = "${deliveryMethod}";
+    const driverName = "${driverName}";
+    const driverPhone = "${driverPhone}";
+    const expressCompany = "${expressCompany}";
+    const expressDeliverySn =  "${expressDeliverySn}";
+  </script>
+  <script>
+    window.onload = function(){
+      // 仓库字段
+      let warehourseHtml = '';
+      if(String(isCustomProduct) === 'true'){
+        warehourseHtml += '<div>定制</div>';
+      } else {
+        if(purchaseStockType == 1){
+          warehourseHtml += '<div>JIT</div>'
+        } else {
+          if(settlementType != 1){
+            warehourseHtml += '<div>非VMI</div>';
+          }
+        }
+      }
+      if(urgencyType == 1){
+        warehourseHtml += '<div class="ugent">加急</div>';
+      }
+      warehourseHtml += '<div>'+subWarehouseName+'</div>';
+      document.querySelector('.warehouses').innerHTML = warehourseHtml;
+      // 商品名称
+      let productNameHtml = productName;
+      if(String(isClothCat) === 'true'){
+        if(nonClothMainSpecVOList) productNameHtml += '【'+nonClothMainSpecVOList+'】';
+        if(nonClothSecondarySpecVOList) productNameHtml += '【'+nonClothSecondarySpecVOList+'】';
+      }
+      document.querySelector('.product-name .name').innerHTML = productNameHtml;
+      // SKC 货号/SKU 货号
+      const skuCodeHtml = String(isClothCat) === 'true' ? skcExtCode : nonClothSkuExtCode;
+      document.querySelector('.sku-no').innerHTML = skuCodeHtml;
+      // 发货方式
+      let deliveryTypeHtml = '';
+      if(deliveryMethod == 1){
+        deliveryTypeHtml += '<div>自行配送</div>';
+        deliveryTypeHtml += '<div>司机:'+driverName+'</div>'
+        deliveryTypeHtml += '<div>手机号:'+driverPhone+'</div>'
+      } else {
+        if(deliveryMethod == 3){
+          deliveryTypeHtml += '<div>第三方物流</div>';
+        }
+        deliveryTypeHtml += '<div>'+expressCompany+'</div>'
+        deliveryTypeHtml += '<div>'+expressDeliverySn+'</div>'
+      }
+      document.querySelector('.delivery-type').innerHTML = deliveryTypeHtml;
+    }
+  </script>
+</body>
+</html>

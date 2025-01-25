@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: absolute;
+            transform: scale(1.5);
+            left: 225px;
+            top: 225px;
+        }
+        img {
+            width: 500px;
+            height: 500px;
+        }
+        canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="container">
+        <img src="https://img7sandbox2.zhiwendiy.com/static/gallery/ZI9AGX-150-1d60cde68dca7ad13652ca985d2e5.jpg" alt="">
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+    <button id="preBtn">
+        上一步
+    </button>
+    <button id="nextBtn">下一步</button>
+    <button id="circle">圈选</button>
+    <button id="generateImg">生成图</button>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d')
+        ctx.fillStyle = 'rgba(0,255,0,.4)'
+        ctx.strokeStyle = 'rgba(0,255,0,1)'
+        ctx.globalCompositeOperation = "xor"; //copy
+        let prePosition = {
+            x: 0,
+            y: 0
+        }
+        let arr = []
+        let historyPreArr = [], historyNextArr = []
+        let step = 0
+        let drawType = ''
+        let clearType = 'daub'
+        const scale = 1.5
+        // const canvasClientRect = canvas.getBoundingClientRect()
+        const containerClientRect = document.getElementById('container').getBoundingClientRect()
+        // ctx.scale(1.5, 1.5)
+        canvas.onmousedown = (e) => {
+            console.log('asdf', e, containerClientRect)
+            drawType = 'start'
+            arr = []
+            prePosition = {
+                x: e.x,
+                y: e.y
+            }
+            arr = [{
+                x: (e.x - containerClientRect.x) / scale,
+                y: (e.y - containerClientRect.y) / scale
+            }]
+            step += 1
+            _draw('start')
+        }
+        canvas.onmousemove = (e) => {
+            if ( drawType != 'start') return
+            arr = []
+            const absX = Math.abs(e.x - prePosition.x)
+            const absY = Math.abs(e.y - prePosition.y)
+            if ( absX > 1 ||  absY > 1) {
+                const max = Math.max(absX, absY)
+                for(let i = 0; i < max; i++) {
+                    arr.push({
+                        x: ((prePosition.x + (e.x - prePosition.x) / max * i) - containerClientRect.x) / scale,
+                        y: ((prePosition.y + (e.y - prePosition.y) / max * i) - containerClientRect.y) / scale
+                    })
+                }
+            } else {
+                arr.push({
+                    x: (e.x - containerClientRect.x) / scale,
+                    y: (e.y - containerClientRect.y) / scale
+                })
+            }
+            _draw()
+            prePosition = {
+                x: e.x,
+                y: e.y
+            }
+        }
+        canvas.onmouseup = canvas.onmouseleave = () => {
+            drawType = 'end'
+            if (clearType === 'circle') {
+                //圈选
+                ctx.closePath()
+                ctx.save()
+                ctx.clip()
+                ctx.fill()
+                ctx.restore()
+            }
+        }
+        
+        
+        function _draw(type) {
+            if (type === 'start') {
+                historyPreArr.push({
+                    step,
+                    clearType,
+                    data: arr
+                })
+                if (clearType === 'circle') {
+                    //圈选
+                    ctx.beginPath()
+                    ctx.moveTo(arr[0].x, arr[0].y)
+                }
+            } else {
+                historyPreArr.find(item => item.step === step).data.push(...arr)
+                if (clearType === 'circle') {
+                    for(item of arr) {
+                        ctx.lineTo(item.x, item.y)
+                        ctx.stroke()
+                    }
+                }
+            }
+            if (clearType === 'daub') {
+                //涂抹式
+                for(let item of arr) {
+                    draw(item.x, item.y)
+                }
+            }
+        }
+        function draw(x, y) {
+            const radius = 20
+            ctx.beginPath()
+            ctx.arc(x, y, radius, 0, 2 * Math.PI)
+            ctx.fill()
+            ctx.closePath()
+
+        }
+
+        function circleDraw(drawData) {
+            for (let i = 0; i < drawData.data.length; i++) {
+                const item = drawData.data[i]
+                if (i === 0) {
+                    ctx.beginPath()
+                    ctx.moveTo(item.x, item.y)
+                } else {
+                    ctx.lineTo(item.x, item.y)
+                    ctx.stroke()
+                }
+            }
+            ctx.closePath()
+            ctx.save()
+            ctx.clip()
+            ctx.fill()
+            ctx.restore()
+        }
+
+
+        document.getElementById('preBtn').onclick = () => {
+            const data = historyPreArr.pop()
+            historyNextArr.push(data)
+            // ctx.globalCompositeOperation = "destination-out"
+            // ctx.fillStyle = 'rgba(0,0,0,1)'
+            // switch (data.clearType) {
+            //     case 'daub':
+            //         for (item of data.data) {
+            //             draw(item.x, item.y)
+            //         }
+            //         break;
+            //     case 'circle':
+            //         // for (let i = 0; i < data.data.length; i++) {
+            //         //     const item = data.data[i]
+            //         //     if (i === 0) {
+            //         //         ctx.beginPath()
+            //         //         ctx.moveTo(item.x, item.y)
+            //         //     } else {
+            //         //         ctx.lineTo(item.x, item.y)
+            //         //         ctx.stroke()
+            //         //     }
+            //         // }
+            //         // ctx.closePath()
+            //         circleDraw(data)
+            //         break;
+            // }
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+
+            ctx.globalCompositeOperation = "xor"
+            ctx.fillStyle = 'rgba(0,255,0,.4)'
+            for (his of historyPreArr) {
+                for (let i = 0; i < his.data.length; i++) {
+                    const item = his.data[i]
+                    if (his.clearType === 'daub') {
+                        draw(item.x, item.y)
+                    } else {
+
+                        // if (i === 0) {
+                        //     ctx.beginPath()
+                        //     ctx.moveTo(item.x, item.y)
+                        // } else {
+                        //     ctx.lineTo(item.x, item.y)
+                        //     ctx.stroke()
+                        // }
+                    }
+                }
+                if (his.clearType === 'circle') {
+                    // ctx.closePath()
+                    circleDraw(his)
+                }
+            }
+        } 
+        document.getElementById('nextBtn').onclick = () => {
+            const data = historyNextArr.pop()
+            historyPreArr.push(data)
+            // ctx.globalCompositeOperation = "destination-out"
+            // ctx.fillStyle = 'rgba(0,0,0,1)'
+            ctx.globalCompositeOperation = "xor"
+            ctx.fillStyle = 'rgba(0,255,0,.4)'
+            switch (data.clearType) {
+                case 'daub':
+                    for (item of data.data) {
+                        draw(item.x, item.y)
+                    }
+                    break;
+                case 'circle':
+                    // for (let i = 0; i < data.data.length; i++) {
+                    //     const item = data.data[i]
+                    //     if (i === 0) {
+                    //         ctx.beginPath()
+                    //         ctx.moveTo(item.x, item.y)
+                    //     } else {
+                    //         ctx.lineTo(item.x, item.y)
+                    //         ctx.stroke()
+                    //     }
+                    // }
+                    // ctx.closePath()
+                    circleDraw(data)
+                    break;
+
+            }
+        } 
+        document.getElementById('circle').onclick = () => {
+            clearType = 'circle'
+        }
+        document.getElementById('generateImg').onclick = () => {
+            let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+            for(let i = 0; i < imageData.data.length; i+=4) {
+                if (imageData.data[i+3] === 0) {
+                    imageData.data[i] = 0
+                    imageData.data[i+1] = 0
+                    imageData.data[i+2] = 0
+                    imageData.data[i+3] = 255
+                } else {
+                    imageData.data[i] = 255
+                    imageData.data[i+1] = 255
+                    imageData.data[i+2] = 255
+                    imageData.data[i+3] = 255
+                }
+            }
+            ctx.putImageData(
+                imageData,
+                0,
+                0
+            )
+            console.log(canvas.toDataURL())
+        }
+    </script>
+</body>
+</html>

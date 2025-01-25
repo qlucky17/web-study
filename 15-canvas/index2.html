@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <script src="./js/konva7.2.1.js"></script> -->
+  <script src="./js/konva.js"></script>
+  <!-- <script src="./js/touch-emulator.js"></script> -->
+  <script src="./js/hammer-konva.js"></script>
+  <!-- <link rel="stylesheet" href="./css/vant.css" />
+  <script src="./js/vue@3.js"></script>
+  <script src="./js/vant.min.js"></script> -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta charset="utf-8" />
+  <title>konva移动端事件</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    function writeMessage(message) {
+      return;
+      const txt = text.text();
+      text.text(txt + '\n' + message);
+      layer.draw();
+    }
+
+    const canvasSize = Math.min(window.innerWidth, window.innerHeight);
+    var stage = new Konva.Stage({
+      container: 'container',
+      width: window.innerWidth,
+      height: window.innerHeight,
+      x: 0,
+      y: 40
+    });
+    var layer = new Konva.Layer({
+      x: 0,
+      y: 0,
+    });
+    var layerGroup = new Konva.Group({
+      x: 30,
+      y: 60,
+      width: canvasSize * 0.8,
+      height: canvasSize * 0.8,
+      clip: {
+        x: 0,
+        y: 0,
+        width: canvasSize * 0.8,
+        height: canvasSize * 0.8,
+      }
+    })
+    var layerRect = new Konva.Rect({
+      x: 0,
+      y: 0,
+      width: canvasSize * 0.8,
+      height: canvasSize * 0.8,
+      stroke: '#14C9C9',
+      strokeWidth: 1,
+      listening: false
+    })
+
+    var text = new Konva.Text({
+      x: 10,
+      y: 10,
+      fontFamily: 'Calibri',
+      fontSize: 24,
+      text: '',
+      fill: 'black'
+    });
+
+    var triangle = new Konva.RegularPolygon({
+      name: 'design',
+      x: 80,
+      y: 120,
+      sides: 3,
+      radius: 80,
+      fill: '#00D2FF',
+      stroke: 'black',
+      strokeWidth: 4,
+      draggable: false
+    });
+
+    var circle = new Konva.Circle({
+      name: 'design',
+      x: 230,
+      y: 100,
+      radius: 60,
+      fill: 'red',
+      stroke: 'black',
+      strokeWidth: 4,
+      draggable: false
+    });
+    layerGroup.add(layerRect);
+    layerGroup.add(triangle);
+    layerGroup.add(circle);
+    layerGroup.add(text);
+    layer.add(layerGroup);
+    stage.add(layer);
+
+    let curNode = null, transfomerFlag = false;
+    const selectNode = (node) => {
+      // writeMessage('sss, ' + pinchFlag + ',' + pinchEndFlag)
+      if (pinchFlag) return;
+      if (pinchEndFlag) return;
+      console.log('selectNode~~~')
+      curNode = node;
+      pinchEndFlag = false;
+      layer.find('Transformer')?.destroy();
+      const tr = new Konva.Transformer({centeredScaling: true});
+      layer.find('.design').setAttrs({draggable: false});
+      node.setAttrs({draggable: true});
+      tr.attachTo(node)
+      layer.add(tr)
+      layer.batchDraw()
+
+      tr.on('dragstart', function (e) {
+        console.log('tr dragstart', e)
+      })
+      tr.on('dragmove', function (e) {
+        console.log('tr dragmove')
+      })
+      tr.on('dragend', function (e) {
+        console.log('tr dragend')
+      })
+      tr.on('transformstart', function (e) {
+        console.log('tr transformstart')
+      })
+      tr.on('transform', function (e) {
+        console.log('tr transform')
+      })
+      tr.on('transformend', function (e) {
+        console.log('tr transformend')
+      })
+    }
+
+    stage.on('tap', e => {
+      if (pinchEndFlag) return;
+      if (e.target == stage) {
+        writeMessage('stage tap 2' + e.evt?.gesture?.scale)
+        console.log('stage click');
+        curNode = null;
+        pinchEndFlag = false;
+        stage.find('Transformer')?.destroy();
+        layer.find('.design').setAttrs({draggable: false});
+        layer.batchDraw();
+      }
+    })
+
+    triangle.on('touchstart', function (e) {
+      e.cancelBubble = true;
+    })
+    triangle.on('tap', function () {
+      selectNode(triangle)
+    })
+    circle.on('touchstart', function (e) {
+      e.cancelBubble = true;
+    })
+    circle.on('tap', function () {
+      selectNode(circle)
+    })
+
+    // TouchEmulator();
+    Konva.hitOnDragEnabled = true;
+    Konva.captureTouchEventsEnabled = true;
+
+    var mc = new Hammer(stage, {domEvents: true});
+    mc.get('pinch').set({enable: true});
+    // mc.get('rotate').set({ enable: true });
+
+    let startScaleX, startScaleY, pinchFlag = false, pinchEndFlag = false, pinchTimer = null;
+    mc.on("pinchstart", function (ev) {
+      if (!curNode) return;
+      writeMessage('pinchstart' + ev.evt?.gesture)
+      pinchFlag = true;
+      pinchEndFlag = false;
+      layer.find('.design').setAttrs({draggable: false});
+      startScaleX = curNode.scaleX() || 1;
+      startScaleY = curNode.scaleY() || 1;
+    });
+    mc.on("pinch", function (ev) {
+      if (!curNode) return;
+      curNode.scaleX(startScaleX * ev.scale)
+      curNode.scaleY(startScaleY * ev.scale)
+      layer.batchDraw();
+    });
+    mc.on("pinchend", function (ev) {
+      // writeMessage('pinchend' + ev.evt?.gesture)
+      pinchFlag = false;
+      pinchEndFlag = true;
+      curNode?.setAttrs({draggable: true});
+      if (pinchTimer) clearTimeout(pinchTimer)
+      pinchTimer = setTimeout(() => {
+        pinchEndFlag = false;
+      }, 50)
+    });
+
+
+    // let startX, startY, panFlag = false;
+    // mc.on('panstart', function(ev){
+    //   if(!curNode) return;
+    //   if(transfomerFlag) return;
+    //   // console.log('panstart', ev)
+    //   startX = curNode.x();
+    //   startY = curNode.y();
+    // })
+    // mc.on('panmove', function(ev){
+    //   if(!curNode) return;
+    //   if(transfomerFlag) return;
+    //   panFlag = true;
+    //   // console.log('panmove', ev)
+    //   curNode.x(startX + ev.deltaX);
+    //   curNode.y(startY + ev.deltaY);
+    // })
+    // mc.on('panend', function(ev){
+    //   if(!panFlag){
+    //     stage.find('Transformer')?.destroy();
+    //     curNode = null
+    //     layer.batchDraw()
+    //   }
+    //   panFlag = false;
+    //   console.log('panend', ev)
+    // })
+  </script>
+</body>
+
+</html>

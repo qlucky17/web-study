@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片上传(formData)</title>
+    <script src="plugins/jquery-1.11.3.min.js"></script> 
+    <style>
+        .button{border:1px solid #ccc;padding:3px 5px;cursor:pointer}
+        .file-image img{width: 200px; height: 200px;}
+    </style>
+</head>
+<body>
+<form>
+    <input type="file" multiple onchange="addImage()" id="file">
+    <a class="button" id="upload">开始上传</a>
+    <div class="file-image">
+        <!-- <img src="" alt="" id='image'> -->
+    </div> 
+</form>
+<script >
+    var files;
+    $(function(){
+        $('#upload').on('click', function(){
+            [].forEach.call(files, file => {
+                var imgData = new FormData();
+                imgData.append('file', file);
+                imgData.append('name', file.name);
+                imgData.append('a', 100);
+                $.ajax({
+                    type: 'post',
+                    url: 'http://webuploader.duapp.com/server/fileupload.php',
+                    data: imgData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        alert('上传成功！');
+                    },
+                    error: function (xhr,status,error) {
+                        alert('上传失败！');
+                    }
+                });
+            })
+        });
+    });
+    function addImage(){
+        files = $('#file')[0].files;
+        console.log(fiels);
+        [].forEach.call(files, file => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                // console.log('fileReader = ', fileReader.result);
+                const image = new Image();
+                image.src = fileReader.result;
+                image.onload = () => {
+                    console.log('图片大小 = ', image.width, image.height);
+                }
+                
+            };
+        })
+    }
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+</script>
+</body>
+</html>

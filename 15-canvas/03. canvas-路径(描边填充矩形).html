@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>绘制路径的方法实现描边填充矩形</title>
+</head>
+
+<body>
+  <canvas id="container" width="400" height="400" style="border: 2px solid #000"></canvas>
+
+  <script>
+    var canvas = document.getElementById('container');
+    var ctx = canvas.getContext('2d');
+    ctx.beginPath();           //开始路径
+    ctx.rect(10, 10, 100, 100);
+    ctx.strokeStyle = 'yellow';
+    ctx.lineWidth = 20;
+    ctx.stroke();              //对路径进行描边
+    ctx.fillStyle = 'blue';
+    ctx.fill();                //对路径进行填充
+  </script>
+</body>
+
+</html>

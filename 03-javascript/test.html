@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class的使用</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+</head>
+<body>
+<script type="text/javascript">
+	const Sequence = (function () {
+		let instance = null;
+		let _num = 0;
+
+		class _Singleton {
+			constructor() {
+				if (!instance) {
+					instance = this;
+				}
+				return instance;
+			}
+			next() {
+				_num += 1;
+				return _num;
+			}
+		}
+		return _Singleton;
+	})();
+
+	let s1 = new Sequence();
+	console.log(s1.next());
+	console.log(s1.next());
+
+	let s2 = new Sequence();
+	console.log(s2.next());
+	console.log(s2.next());
+</script>
+</body>
+</html>

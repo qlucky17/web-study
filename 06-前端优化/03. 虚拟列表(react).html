@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>虚拟列表(React)</title>
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .list-item {
+            height: .8rem;
+            height: 60px;
+            border-bottom: 1px solid goldenrod;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    虚拟列表是一种根据滚动容器元素的可视区域来渲染长列表数据中某一个部分数据的技术。
+    虚拟列表是对长列表的一种优化方案。在前端开发中，会碰到一些不能使用分页方式来加载列表数据的业务形态，我们称这种列表叫做长列表。 
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        class Item extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            componentDidMount() {
+                this.props.savePosition(this.el, this.props.index)
+            }
+            render() {
+                return (
+                    <div className="list-item" ref={el => this.el = el}>{this.props.index + 1}</div>
+                )
+            }
+        }
+        class VirtualList extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    offsetTop: 0,
+                    offsetBottom: 0,
+                    virtualData: []
+                }
+                this.startIndex = 0;
+                this.endIndex = 0;
+                this.cache = [];
+                this.itemHeight = 60;
+                this.virtualCount = 0;
+
+                this.data = new Array(1000).fill(true);
+            }
+            savePosition = (elem, index) => {
+                let _top = elem.getBoundingClientRect().top + window.pageYOffset;
+                this.cache.push({
+                    index,
+                    top: _top,
+                    bottom: _top + elem.clientHeight
+                })
+            }
+            scrollHandler = (e)=>{
+                let scrollTop = window.pageYOffset;
+                let startNode = this.cache.find(item=>item.bottom>scrollTop);
+                if(!startNode){
+                    return;
+                }
+                this.startIndex = startNode.index;
+                this.endIndex = this.startIndex+this.virtualCount;
+                this.updateVisibleData();
+            }
+            updateVisibleData(){
+                const _data = this.data.slice(this.startIndex, this.endIndex);
+                this.setState({
+                    virtualData: _data,
+                    offsetTop: this.startIndex*this.itemHeight,
+                    offsetBottom: (this.data.length - this.endIndex)*this.itemHeight
+                })
+            }
+            componentDidMount(){
+                let winHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                this.virtualCount = Math.ceil(winHeight/this.itemHeight)*2;
+                this.endIndex = this.startIndex + this.virtualCount;
+                this.updateVisibleData();
+                window.addEventListener('scroll', this.scrollHandler, false);
+            }
+            render() {
+                let { offsetTop, offsetBottom, virtualData } = this.state;
+                return (
+                    <div className="wrap">
+                        <div className="list" style={{'paddingTop':offsetTop+'px', 'paddingBottom': offsetBottom+'px'}}>
+                            {
+                                virtualData.map((item, index) => (
+                                    <Item
+                                        key={this.startIndex + index}
+                                        index={this.startIndex + index}
+                                        savePosition={this.savePosition}
+                                    >
+                                    </Item>
+                                ))
+                            }
+                        </div>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<VirtualList />, document.querySelector('#root'))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent</title>
+</head>
+<body>
+  <button id="btn">发送消息</button>
+  <iframe src="./child.html?v=1" width="100%" height="100%"></iframe>
+  <script>
+    window.onload = function(){
+      let params = {x: 10, y: 20};
+      let $btn = document.querySelector('#btn');
+      let iframe = document.querySelector('iframe').contentWindow;
+      iframe.postMessage(params)
+      // $btn.addEventListener('click', function(){
+      //   iframe.postMessage(params)
+      // });
+    }
+  </script>
+</body>
+</html>

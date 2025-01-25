@@ -1,0 +1,461 @@
+<!-- option: '--page-height 515px --page-width 515px --margin-left 0 --margin-right 0 --margin-top 0 --margin-bottom 0 ' -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>食品接触类（九合一）</title>
+    <style>
+      /* External */
+      .__temp__page img {
+        display: initial;
+        margin: initial;
+        height: -webkit-fill-available;
+      }
+      .__temp__page .relative {
+        position: relative;
+      }
+      .__temp__page .fl {
+        float: left;
+      }
+      .__temp__page .fr {
+        float: right;
+      }
+      .__temp__page .tc {
+        text-align: center;
+      }
+      .__temp__page .tr {
+        text-align: right;
+      }
+      .__temp__page .txt-repaire {
+        position: relative;
+      }
+      .__temp__page .txt-repaire9 {
+        top: -9px;
+      }
+      .__temp__page .txt-repaire5 {
+        top: -5px;
+      }
+      /* External */
+      .__temp__page {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        font: bold 12px/1 Arial, 'Helvetica Neue';
+        color: #1d2129;
+        background-color: #fff;
+        word-break: break-word;
+      }
+      .__temp__page .wrapper {
+        margin: 0 auto;
+        padding: 8px;
+      }
+      .__temp__page .content {
+        border: 1px solid #464545;
+      }
+      .__temp__page .main-info {
+        font-size: 10px;
+        line-height: 13px;
+        border-bottom: 1px solid #464545;
+      }
+      .__temp__page .main-item {
+        display: table-cell;
+        width: 242px;
+        height: 103px;
+        padding: 0 3px;
+        margin: 0;
+        position: relative;
+      }
+      .__temp__page .main-item.left {
+        border-right: 1px solid #464545;
+      }
+      .__temp__page .main-item .country {
+        position: absolute;
+        bottom: 0;
+      }
+      .__temp__page .warning-info {
+        height: 189px;
+        padding-left: 8px;
+        border-bottom: 1px solid #464545;
+      }
+      .__temp__page .tips {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 13px;
+        margin-top: 8px;
+      }
+      .__temp__page .image-1 {
+        margin-top: 5px;
+        background: #fff;
+      }
+      .__temp__page .image-2 {
+        margin-top: 15px;
+        margin-left: 9px;
+        background: #fff;
+      }
+      .__temp__page .tbox {
+        width: 200px;
+        padding-top: 20px;
+      }
+      .__temp__page table {
+        width: 100%;
+        border: 1px solid #464545;
+        border-right: 0;
+        border-spacing: 0;
+        text-align: center;
+        font-size: 9px;
+        line-height: 12px;
+        font-weight: 500;
+      }
+      .__temp__page table td {
+        border-bottom: 1px solid #464545;
+        border-right: 1px solid #464545;
+        height: 18px;
+        font-size: 9px;
+      }
+      .__temp__page table td:last-child {
+        border-right: 0;
+      }
+      .__temp__page table tr:last-child td {
+        border-bottom: 0;
+      }
+      .__temp__page .tbox .txt {
+        margin-top: 3px;
+        font-size: 9px;
+        line-height: 12px;
+        font-weight: 500;
+      }
+      .__temp__page .footer {
+        padding: 8px;
+        display: table;
+      }
+      .__temp__page .footer > div {
+        display: table-cell;
+      }
+      .__temp__page .date-info {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        width: 178px;
+      }
+      .__temp__page .made {
+        margin-top: 14px;
+      }
+      .__temp__page .barcode {
+        border: 1px solid #464545;
+        padding: 2px 17px;
+      }
+      .__temp__page .barcode img {
+        background: #fff;
+      }
+      .__temp__page .bar-text {
+        width: 100%;
+        display: table;
+        font-size: 9px;
+        line-height: 14px;
+        color: #000000;
+      }
+      .__temp__page .bar-text > div {
+        display: table-cell;
+        padding: 0;
+      }
+      .__temp__page .service-info {
+        width: 100%;
+        height: 44px;
+        overflow: hidden;
+        border-bottom: 1px solid #464545;
+      }
+      .__temp__page .service-cont {
+        width: 100%;
+      }
+      .__temp__page .service-cont img {
+        margin-top: 12px;
+        margin-left: 8px;
+        background: #fff;
+        width: 63px;
+        float: left;
+      }
+      .__temp__page .service-cont > div {
+        padding-left: 76px;
+        padding-right: 8px;
+        text-align: left;
+        font-size: 9px;
+        line-height: 11px;
+        vertical-align: middle;
+      }
+      .__temp__page .service-cont > div [data-tt='false'] {
+        white-space: inherit;
+        text-overflow: inherit;
+        height: auto;
+      }
+      .__temp__page .service-cont > div [style*='display: none'] + .pp {
+        white-space: inherit;
+        text-overflow: inherit;
+        height: auto;
+      }
+      .text-over {
+        white-space: nowrap;
+        text-overflow: clip;
+        height: 10px;
+        width: 100%;
+        word-break: break-all;
+      }
+      .text-over-t {
+        text-overflow: clip;
+        width: 100%;
+        word-break: break-all;
+      }
+      .__temp__page [data-show='false'],
+      .__temp__page [data-show='falsefalse'],
+      .__temp__page [data-only='truefalse'],
+      .__temp__page [data-only='falsetrue'] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html2canavs合成的图文字会往下偏移,所以使用txt-repaire类,html预览时把txt-repaire去除 -->
+    <div class="__temp__page">
+      <div class="wrapper">
+        <div class="content">
+          <div class="main-info">
+            <div class="main-item left">
+              <div class="txt-repaire txt-repaire5">
+                <div
+                  data-show="${order.thirdProductName.show}"
+                  pvarkey="order.thirdProductName"
+                >
+                  Product name:
+                  <span varkey="order.thirdProductName"
+                    >${order.thirdProductName}</span
+                  >
+                </div>
+                <div data-show="${externalColor}${externalSize}" attr>
+                  Prod. specs:
+                  <span varkey="externalColor">${externalColor}</span
+                  ><span
+                    data-only="${externalColor}${externalSize}"
+                    attr-concat
+                  >
+                  </span
+                  ><span varkey="externalSize">${externalSize}</span>
+                </div>
+                <div
+                  data-show="${product.composition.show}"
+                  pvarkey="product.composition"
+                >
+                  Composition:
+                  <span varkey="product.composition"
+                    >${product.composition}</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="main-item right">
+              <div class="txt-repaire txt-repaire5">
+                <div
+                  data-show="${shop.label.manufacturer.show}"
+                  pvarkey="shop.label.manufacturer"
+                >
+                  Manufacturer:
+                  <span varkey="shop.label.manufacturer"
+                    >${shop.label.manufacturer}</span
+                  >
+                </div>
+                <div
+                  data-show="${shop.label.manufacturer_email.show}"
+                  pvarkey="shop.label.manufacturer_email"
+                >
+                  Manufacturer E-mail:
+                  <span varkey="shop.label.manufacturer_email"
+                    >${shop.label.manufacturer_email}</span
+                  >
+                </div>
+                <div>
+                  Date of production:
+                  <span varkey="order.payTime">${order.payTime}</span>
+                </div>
+                <div>
+                  Batch Number:
+                  <span varkey="product.code">${product.code}</span>
+                </div>
+                <div
+                  data-show="${shop.label.manufacturer_address.show}"
+                  pvarkey="shop.label.manufacturer_address"
+                >
+                  Address:
+                  <span varkey="shop.label.manufacturer_address"
+                    >${shop.label.manufacturer_address}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="service-info"
+            data-show="${shop.label.eu_rep.show}"
+            pvarkey="shop.label.eu_rep"
+          >
+            <div class="service-cont">
+              <img
+                src="https://obs-hm102.hihumbird.com/attach/temu_label/EC.svg"
+                style="width: 63px; height: 20px"
+              />
+              <div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over"
+                  pvarkey="shop.label.eu_rep_name"
+                  data-show="${shop.label.eu_erp.name.show}"
+                >
+                  Name:
+                  <span varkey="shop.label.eu_rep_name"
+                    >${shop.label.eu_rep_name}</span
+                  >
+                </div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over-t pp"
+                  pvarkey="shop.label.eu_rep"
+                  data-tt="${shop.label.uk_erp.name.show}"
+                >
+                  Address:
+                  <span varkey="shop.label.eu_rep">${shop.label.eu_rep}</span>
+                </div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over"
+                  pvarkey="shop.label.eu_rep_email"
+                  data-show="${shop.label.eu_erp.name.show}"
+                >
+                  Email:
+                  <span varkey="shop.label.eu_rep_email"
+                    >${shop.label.eu_rep_email}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="service-info"
+            data-show="${shop.label.uk_rep.show}"
+            pvarkey="shop.label.uk_rep"
+          >
+            <div class="service-cont">
+              <img
+                src="https://obs-hm102.hihumbird.com/attach/temu_label/UK.svg"
+                style="width: 63px; height: 20px"
+              />
+              <div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over"
+                  pvarkey="shop.label.uk_rep_name"
+                  data-show="${shop.label.uk_erp.name.show}"
+                >
+                  Name:
+                  <span varkey="shop.label.uk_rep_name"
+                    >${shop.label.uk_rep_name}</span
+                  >
+                </div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over-t pp"
+                  pvarkey="shop.label.uk_rep"
+                  data-tt="${shop.label.uk_erp.name.show}"
+                >
+                  Address:
+                  <span varkey="shop.label.uk_rep">${shop.label.uk_rep}</span>
+                </div>
+                <div
+                  class="txt-repaire txt-repaire5 text-over"
+                  pvarkey="shop.label.uk_rep_email"
+                  data-show="${shop.label.uk_erp.name.show}"
+                >
+                  Email:
+                  <span varkey="shop.label.uk_rep_email"
+                    >${shop.label.uk_rep_email}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="warning-info">
+            <div class="tips">
+              <span class="txt-repaire txt-repaire9"
+                >WARNING：To avoid danger of suffocation, keep this plastic bag
+                away from babies and children. Do not use this bag in cribs.
+                beds, carriages or play pens. This bag is not a toy.</span
+              >
+            </div>
+            <img
+              src="https://obs-hm102.hihumbird.com/attach/temu_label/flag1.png"
+              style="width: 238px; height: 63px"
+              class="image-1"
+            />
+            <div>
+              <img
+                src="https://obs-hm102.hihumbird.com/attach/temu_label/food.png"
+                style="width: 58px; height: 53px"
+                class="image-2"
+              />
+              <div class="tbox fr">
+                <table>
+                  <tr>
+                    <td>
+                      <span class="txt-repaire txt-repaire5">Sacchetto</span>
+                    </td>
+                    <td><span class="txt-repaire txt-repaire5">PP 5</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <span class="txt-repaire txt-repaire5"
+                        >Raccolta Plastica</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+                <div class="txt tc">
+                  <span class="txt-repaire txt-repaire5"
+                    >Verifica le disposizionidel tuo Comune</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="date-info txt-repaire txt-repaire9">
+              <div>
+                <span>Date：</span><br />
+                <span varkey="order.payTime">${order.payTime}</span>
+              </div>
+              <div class="made">
+                <span varkey="shop.label.producer">${shop.label.producer}</span>
+              </div>
+            </div>
+            <div class="barcode">
+              <div class="bar-text txt-repaire txt-repaire5">
+                <div><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                <div class="tc">
+                  <span varkey="externalColor">${externalColor}</span>
+                </div>
+                <div class="tr">
+                  <span varkey="externalSize">${externalSize}</span>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="${externalBarCodeImg}"
+                  varkey="externalBarCode"
+                  style="width: 253px; height: 37px"
+                />
+              </div>
+              <div class="bar-text bottom txt-repaire txt-repaire5">
+                <div varkey="externalSkuNo">${externalSkuNo}</div>
+                <div class="tr" varkey="shop.label.producer">
+                  ${shop.label.producer}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <title>表单元素垂直居中</title>
+    <style>
+    /*备注：网上普遍使用的display:table-cell;vertical-algin:middle无法居中。*/
+    /*方法1: 对radio,checkbox使用vertical-align:-2px;*/
+    /*方法2：使用inline-flex*/
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    ul,li{list-style: none}
+    li{
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid red;
+    }
+    input[type="radio"], input[type="checkbox"]{
+        vertical-align: -2px;
+    }
+
+    .box{ width: 400px; height: 200px; border:1px solid blue; display:inline-block }
+    .box img{ width:100px; }
+    
+    /* .box1{
+        display: table-cell; vertical-align: middle;
+    } */
+
+    .box1{ line-height: 200px;}
+    img{ vertical-align: middle;}
+
+    .box2{ line-height: 200px;}
+    img{ vertical-align: middle;}
+
+    .box3{
+        display: table-cell; vertical-align: middle;
+    }
+
+    .box4{ line-height: 200px;}
+    .box4 span{ vertical-align: middle;}
+</style>
+</head>
+<body>
+    <ul>
+        <li><input type="radio"/>测试</li>
+        <li><input type="checkbox"/>测试</li>
+        <li><input type="text"/>测试</li>
+        <li><select><option>请选择</option></select>测试</li>
+    </ul>
+    <hr/>
+    <!-- 内联元素居中 -->
+    <div class="box box1">
+        <img src="images/640-960.jpg">
+    </div>
+    <div class="box box2">
+        <img src="images/640-960.jpg">
+        <img src="images/1920-1200.jpg">
+    </div>
+    <div class="box box3">
+        aaa
+    </div>
+    <div class="box box4">
+        <span>aaa</span>
+        <span style="font-size:40px;">bbb</span>
+        <span style="font-size:20px">ccc</span>
+    </div>
+</body>
+</html>

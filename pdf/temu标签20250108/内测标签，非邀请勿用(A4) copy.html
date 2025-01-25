@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生产工单商标二合一A4(6*2)</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font: 400 11px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+        }
+        
+        .page {
+            width: 820px;
+            height: 1160px;
+            margin: 0 auto;
+        }
+        
+        .page-wrapper,
+        table,
+        tr,
+        td,
+        th,
+        tbody,
+        thead,
+        tfoot {
+            page-break-inside: avoid !important;
+        }
+        
+        .page-wrapper {
+            width: 820px;
+            height: 1056px;
+            margin: 0 auto;
+        }
+        
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0 auto;
+        }
+        
+        .content-table tr {
+            border-bottom: 1px dashed #000;
+        }
+        
+        .content-table tr:nth-child(6n) {
+            border-bottom: 0;
+        }
+        
+        .content-table tr td:first-child {
+            border-right: 1px dashed #000;
+        }
+        
+        .content-table td {
+            width: 50%;
+            height: 190px;
+            padding-left: 12px;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+        /* 商品标签 */
+        
+        .product-label-item img {
+            display: initial;
+            margin: initial;
+            height: -webkit-fill-available;
+        }
+        
+        .product-label-item .fl {
+            float: left;
+        }
+        
+        .product-label-item .fr {
+            float: right;
+        }
+        
+        .product-label-item .tl {
+            text-align: left;
+        }
+        
+        .product-label-item .tr {
+            text-align: right;
+        }
+        
+        .product-label-item .tc {
+            text-align: center;
+        }
+        
+        .product-label-item .border-t {
+            border-top: 1px solid #1d2129;
+        }
+        
+        .product-label-item .border-l {
+            border-left: 1px solid #1d2129;
+        }
+        
+        .product-label-item .border-b {
+            border-bottom: 1px solid #1d2129;
+        }
+        
+        .product-label-item .border-r {
+            border-right: 1px solid #1d2129;
+        }
+        /* External */
+        
+        .product-label-item {
+            width: 384px;
+            height: 182px;
+            margin: 0 auto;
+            font: bold 7px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+            color: #1d2129;
+            background-color: #fff;
+            word-break: break-word;
+            overflow: hidden;
+        }
+        
+        .product-label-item .wrapper {
+            margin: 0 auto;
+        }
+        
+        .product-label-item .content {
+            height: 180px;
+            border: 1px solid #1d2129;
+        }
+        
+        .product-label-item .info-1 {
+            width: 100%;
+            font-size: 10px;
+            height: 83px;
+        }
+        
+        .product-label-item .info-1>.left {
+            vertical-align: top;
+            width: 302px;
+            height: 100%;
+            float: left;
+        }
+        
+        .product-label-item .info-1>.right {
+            width: 83px;
+            height: 100%;
+            margin-left: 302px;
+            position: relative;
+        }
+        
+        .product-label-item .agency-info {
+            width: 100%;
+            height: 43px;
+            overflow: hidden;
+        }
+        
+        .product-label-item .agency-info .symbol {
+            width: 34px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            float: left;
+        }
+        
+        .product-label-item .agency-info .symbol>div {
+            height: 21px;
+            line-height: 21px;
+        }
+        
+        .product-label-item .agency-info .text {
+            width: calc(100% - 34px);
+            height: 100%;
+            padding: 0 2px;
+            margin-left: 34px;
+            line-height: 10px;
+        }
+        
+        .text-over-st {
+            position: relative;
+            line-height: 10px;
+            max-height: 20px;
+            overflow: hidden;
+            font-size: 10px;
+            padding-bottom: 1px;
+        }
+        
+        .text-over {
+            white-space: nowrap;
+            text-overflow: clip;
+            width: 100%;
+            word-break: break-word;
+        }
+        
+        .product-label-item .manufac-info {
+            height: 39px;
+            line-height: 12px;
+            overflow: hidden;
+        }
+        
+        .product-label-item .manufac-info .manufacturer {
+            height: 13px;
+            padding: 0 2px;
+            width: 100%;
+            line-height: 13px;
+        }
+        
+        .product-label-item .manufac-info .manufacturer_address {
+            width: 100%;
+            line-height: 12px;
+            padding: 0 2px;
+        }
+        
+        .product-label-item .qr-code-alt {
+            position: absolute;
+            top: 31px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .product-label-item .qr-code {
+            width: 58px;
+            height: 58px;
+            margin-top: 9px;
+            margin-left: 11px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        
+        .product-label-item .qr-code-txt {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            text-align: center;
+            font-size: 9px;
+        }
+        
+        .product-label-item .info-2 {
+            width: 100%;
+            height: 98px;
+            display: table;
+        }
+        
+        .product-label-item .info-2>.left {
+            display: table-cell;
+            vertical-align: top;
+        }
+        
+        .product-label-item .info-2>.right {
+            display: table-cell;
+            width: 103px;
+            position: relative;
+        }
+        
+        .product-label-item .product-name {
+            font-size: 10px;
+            height: 13px !important;
+            line-height: 13px !important;
+        }
+        
+        .product-label-item .product-name,
+        .product-label-item .produce-info>div {
+            line-height: 12px;
+            height: 12px;
+            padding: 0 2px;
+            overflow: hidden;
+        }
+        
+        .product-label-item .produce-info {
+            display: block;
+            width: 100%;
+            height: 12px;
+        }
+        
+        .product-label-item .produce-info>div {
+            width: 50%;
+            display: table-cell;
+        }
+        
+        .product-label-item .produce-info .cont-div {
+            height: 12px;
+            overflow: hidden;
+            float: left;
+        }
+        
+        .product-label-item .product-img-alt {
+            position: absolute;
+            top: 46px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .product-label-item .product-img {
+            width: 92px;
+            height: 92px;
+            margin-top: 2px;
+            margin-left: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        
+        .product-label-item .footer {
+            padding-top: 3px;
+            text-align: center;
+        }
+        
+        .product-label-item .barcode {
+            display: inline-block;
+            width: 228px;
+            border: 1px solid #1d2129;
+        }
+        
+        .product-label-item .barcode>div {
+            padding: 0 13px;
+        }
+        
+        .product-label-item .barcode-img {
+            width: 215px;
+            height: 28px;
+        }
+        
+        .product-label-item .barcode img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .product-label-item .bar-text {
+            width: 100%;
+            display: table;
+            font-weight: bold;
+            color: #000000;
+            font-size: 8px;
+            line-height: 9px;
+            height: 12px;
+            white-space: nowrap;
+        }
+        
+        .product-label-item .bar-text>div {
+            display: table-cell;
+        }
+        
+        .product-label-item .batch-info {
+            width: 95%;
+            display: inline-table;
+            margin-top: 2px;
+        }
+        
+        .product-label-item .batch-info>div {
+            display: table-cell;
+            width: 20%;
+        }
+        
+        .product-label-item .batch-info>div.b4 {
+            width: 40%;
+        }
+        
+        .product-label-item [data-show='false'] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+      <div class="page-wrapper">
+        <table class="content-table">
+          <tbody>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="false">Batch Number: <span varkey="production.batch.number">
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="__temp__page product-label-item">
+                  <div class="wrapper">
+                    <div class="content">
+                      <div class="info-1">
+                        <div class="left">
+                          <div class="agency-info">
+                            <span class="symbol">
+                              <div class="ec">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">EC</span>
+                              </div>
+                              <div class="rep border-t">
+                                <span class="txt-repaire txt-repaire6" data-show="${shop.label.eu_rep.show}">REP</span>
+                              </div>
+                            </span>
+                            <div class="text border-l">
+                              <span class="txt-repaire txt-repaire5" data-show="${shop.label.eu_rep.show}" varkey="shop.label.eu_rep" transkey="shop.label.eu_rep_trans">${shop.label.eu_rep}
+                                <!-- ${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep}${shop.label.eu_rep} -->
+                              </span>
+                            </div>
+                          </div>
+                          <div class="manufac-info border-t">
+                            <div class="txt-repaire txt-repaire5">
+                              <div data-show="${shop.label.manufacturer.show}" pvarkey="shop.label.manufacturer">Manufactrurer: <span varkey="shop.label.manufacturer">${shop.label.manufacturer}</span></div>
+                              <div data-show="${shop.label.manufacturer_email.show}" pvarkey="shop.label.manufacturer_email">Manufacturer E-mail: <span varkey="shop.label.manufacturer_email">${shop.label.manufacturer_email}</span></div>
+                              <div data-show="${shop.label.manufacturer_address.show}" pvarkey="shop.label.manufacturer_address">Address: <span varkey="shop.label.manufacturer_address">${shop.label.manufacturer_address}
+                                <!-- ${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address}${shop.label.manufacturer_address} -->
+                              </span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="qr-code-alt" data-show="${WORK_ORDER_QR_CODE.show}" varkey="WORK_ORDER_QR_CODE_ALT"></span>
+                          <img class="qr-code" data-show="${WORK_ORDER_QR_CODE.show}" src="${WORK_ORDER_QR_CODE}" varkey="WORK_ORDER_QR_CODE" />
+                          <div class="qr-code-txt" data-show="${production.item.code.show}"><span varkey="production.item.code" class="txt-repaire txt-repaire5">${production.item.code}</span></div>
+                        </div>
+                      </div>
+                      <div class="info-2 border-t">
+                        <div class="left">
+                          <div class="product-name">
+                            <span class="txt-repaire txt-repaire5" data-show="${order.thirdProductName.show}">Product Name: <span varkey="order.thirdProductName">${order.thirdProductName}
+                              <!-- ${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName}${order.thirdProductName} -->
+                            </span></span>
+                          </div>
+                          <div class="produce-info border-t">
+                            <div>
+                              <div class="cont-div">
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.created.show}">Date of production: <span varkey="production.batch.created">${production.batch.created}
+                                  <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                                </span></span>
+                              </div>
+                            </div>
+                            <div class="border-l">
+                              <div class="cont-div">    
+                                <span class="txt-repaire txt-repaire5" data-show="${production.batch.number.show}">Batch Number: <span varkey="production.batch.number">${production.batch.number}
+                                  <!-- ${production.batch.number}${production.batch.number}${production.batch.number} -->
+                                </span></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="footer border-t">
+                            <div class="barcode">
+                              <div>    
+                                <div class="bar-text txt-repaire txt-repaire6">
+                                  <div class="tl"><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+                                  <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+                                  <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+                                </div>
+                                <div class="barcode-img"><img src="${externalBarCodeImg}" varkey="externalBarCode" /></div>
+                                <div class="bar-text bottom txt-repaire txt-repaire6">
+                                  <div class="tl" varkey="externalSkuNo">${externalSkuNo}</div>
+                                  <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tc txt-repaire txt-repaire3" varkey="production.batch.info">
+                              ${production.batch.info}
+                              <!-- <div class="batch-info">   
+                                <div class="tl">1/10</div>
+                                <div class="tc">1/1</div>
+                                <div class="tc">1/1/1</div>
+                                <div class="tr b4">1000M-black-s</div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right border-l">
+                          <span class="product-img-alt" data-show="${WORK_ORDER_PICTURE_PATH.show}" varkey="WORK_ORDER_PICTURE_PATH_ALT"></span>
+                          <img data-show="${WORK_ORDER_PICTURE_PATH.show}" src="${WORK_ORDER_PICTURE_PATH}" varkey="WORK_ORDER_PICTURE_PATH" class="product-img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  
+
+</html>

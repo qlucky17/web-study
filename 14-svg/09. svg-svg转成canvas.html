@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>svg转成canvas图片</title>
+</head>
+<body>
+  <img src="" id="img1" />
+  <canvas id="canvas1"></canvas>
+  <script>
+    const svgHtml = "<svg version=\"1.1\" id=\"图层_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 2000 2000\" style=\"enable-background:new 0 0 2000 2000;\" xml:space=\"preserve\">\n<style type=\"text/css\">\n\t.st0{opacity:0.5;fill:#231815;}\n\t.st1{fill:none;stroke:#FF0000;stroke-width:5;stroke-miterlimit:22.9256;}\n\t.st2{fill:none;stroke:#0000FF;stroke-width:5;stroke-miterlimit:22.9256;}\n\t.st3{fill:none;stroke:#0000FF;stroke-width:5;stroke-miterlimit:22.9256;stroke-dasharray:29.193,9.731;}\n\t.st4{fill:none;stroke:#0000FF;stroke-width:5;stroke-miterlimit:22.9256;stroke-dasharray:29.626,9.8753;}\n\t.st5{fill:none;stroke:#03FF03;stroke-width:3;stroke-miterlimit:10;}\n\t.st6{fill:none;stroke:#03FF03;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:20.1866,10.0933;}\n\t.st7{fill:none;stroke:#03FF03;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:20.2892,10.1446;}\n</style>\n<g>\n\t<path class=\"st0\" d=\"M 479.2 2000 V 0 h 1041.6 v 2000 H 479.2 Z M 1479.1 1958.3 V 41.7 H 520.9 v 1916.7 H 1479.1 Z\"/>\n\t<path class=\"st1\" d=\"M 520.9 41.7 H 1479.2 V 1958.4 H 520.9 V 41.7 Z\"/>\n\t<g>\n\t\t<g>\n\t\t\t<path class=\"st2\" d=\"M 541.7 104.4 L 541.7 83.3 L 563.7 83.3\"/>\n\t\t\t<path class=\"st3\" d=\"M 578 83.3 L 1429.1 83.3\"/>\n\t\t\t<path class=\"st2\" d=\"M 1436.3 83.3 L 1458.3 83.3 L 1458.3 104.4\"/>\n\t\t\t<path class=\"st4\" d=\"M 1458.3 118.3 L 1458.3 1888.6\"/>\n\t\t\t<path class=\"st2\" d=\"M 1458.3 1895.6 L 1458.3 1916.7 L 1436.3 1916.7\"/>\n\t\t\t<path class=\"st3\" d=\"M 1422 1916.7 L 570.9 1916.7\"/>\n\t\t\t<path class=\"st2\" d=\"M 563.7 1916.7 L 541.7 1916.7 L 541.7 1895.6\"/>\n\t\t\t<path class=\"st4\" d=\"M 541.7 1881.7 L 541.7 111.4\"/>\n\t\t</g>\n\t</g>\n\t<g>\n\t\t<g>\n\t\t\t<g>\n\t\t\t\t<path class=\"st5\" d=\"M 1000 399.3 L 1000 414\"/>\n\t\t\t\t<path class=\"st6\" d=\"M 1000 428.8 L 1000 1578.6\"/>\n\t\t\t\t<path class=\"st5\" d=\"M 1000 1586 L 1000 1600.7\"/>\n\t\t\t</g>\n\t\t</g>\n\t\t<g>\n\t\t\t<g>\n\t\t\t\t<g>\n\t\t\t\t\t<path class=\"st5\" d=\"M 642.3 1000 L 657 1000\"/>\n\t\t\t\t\t<path class=\"st7\" d=\"M 671.9 1000 L 1335.5 1000\"/>\n\t\t\t\t\t<path class=\"st5\" d=\"M 1343 1000 L 1357.7 1000\"/>\n\t\t\t\t</g>\n\t\t\t</g>\n\t\t</g>\n\t</g>\n</g>\n</svg>";
+    
+    // 方法一
+    // const blob = new Blob([svgHtml], {type: 'image/svg+xml;charset="utf-8"'});
+    // const url = URL.createObjectURL(blob);
+    // document.querySelector('#img1').setAttribute('src', url);
+
+    // 方法二
+    const url = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(svgHtml))); //svg内容中可以有中文字符;
+    // const url = 'data:image/svg+xml;base64,' + window.btoa(svgHtml); //svg内容中不能有中文字符
+    document.querySelector('#img1').setAttribute('src', url);
+  </script>
+</body>
+</html>

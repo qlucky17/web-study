@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <script src="https://unpkg.com/konva@4.0.18/konva.min.js"></script> -->
+  <script src="./js/konva.min.js"></script>
+  <script src="./js/transform.js"></script>
+  <script src="./js/utils.js"></script>
+  <meta charset="utf-8" />
+  <title>Konva Path Demo</title>
+  <style>
+    #container{
+      width: 600px;
+      height: 600px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container" style="border:2px solid red"></div>
+  <script>
+    window.onload = function () {
+      var stageWidth = 600, stageHeight = 600;
+      var stage = new Konva.Stage({
+        container: 'container',
+        width: stageWidth,
+        height: stageHeight,
+        x: 0,
+        y: 0,
+      });
+      var layer = new Konva.Layer({
+        name: 'layer',
+      })
+      stage.add(layer);
+
+      var designGroup = new Konva.Group({
+        name: 'designGroup'
+      })
+      layer.add(designGroup)
+
+      let rect = new Konva.Rect({
+        x: 200,
+        y: 200,
+        width: 200,
+        height: 200,
+        offsetX: 100,
+        offsetY: 100,
+        rotation: -45,
+        fill: 'red',
+      })
+      let rect2 = new Konva.Rect({
+        x: 150,
+        y: 150,
+        width: 200,
+        height: 100,
+        offsetX: 100,
+        offsetY: 50,
+        rotation: 30,
+        fill: 'green',
+      })
+      designGroup.add(rect)
+      designGroup.add(rect2)
+
+      const groupSize = getGroupRectSize([rect,rect2], layer.findOne('.designGroup'))
+      let group = new Konva.Rect({
+        name: 'nodeGroup',
+        draggable: true,
+        width: groupSize.width,
+        height: groupSize.height,
+        x: groupSize.x,
+        y: groupSize.y
+      });
+      designGroup.add(group)
+      // console.log('ggg', group.getTransform().m)
+      // console.log('aa', rect.getTransform().m)
+
+      layer.batchDraw();
+
+      const tr = new Konva.Transformer();
+      tr.attachTo(group)
+      layer.add(tr)
+
+      group.on('dragstart', e => {
+        rect.setAttrs({
+          init: {
+            transform: rect.getTransform().copy(),
+            scaleX: rect.scaleX(),
+            scaleY: rect.scaleY(),
+            rotation: rect.rotation()
+          }
+        })
+        group.setAttrs({
+          init: {
+            transform: group.getTransform().copy(),
+            scaleX: group.scaleX(),
+            scaleY: group.scaleY(),
+            rotation: group.rotation()
+          }
+        })
+      })
+      group.on('transforstart', e => {
+        rect.setAttrs({
+          init: {
+            transform: rect.getTransform().copy(),
+            scaleX: rect.scaleX(),
+            scaleY: rect.scaleY(),
+            rotation: rect.rotation()
+          }
+        })
+        group.setAttrs({
+          init: {
+            transform: group.getTransform().copy(),
+            scaleX: group.scaleX(),
+            scaleY: group.scaleY(),
+            rotation: group.rotation()
+          }
+        })
+      })
+      group.on('dragend', e => {
+        change()
+      })
+      group.on('transformend', e => {
+        change()
+      })
+
+      const change = function(){
+        let rectClone = rect.clone();
+        // let nodeAttrs = rectClone.getAttrs();
+        // let groupAttrs = group.getAttrs();
+        // const gTransform = group.getTransform().copy();
+        // const nodeTransform = rect2.getTransform().copy();
+        // const endTransform = gTransform.multiply(nodeTransform);
+
+        // let scaleX = (nodeAttrs.scaleX || 1) * (groupAttrs.scaleX || 1);
+        // let scaleY = (nodeAttrs.scaleY || 1) * (groupAttrs.scaleY || 1);
+        // let rotation = rotateConvert(nodeAttrs.rotation + (groupAttrs.rotation || 0));
+        // let width = rect2.width() * scaleX;
+        // let height = rect2.height() * scaleY;
+        // let cPoint = getCenterPoint({x: endTransform.m[4], y: endTransform.m[5]}, width, height, rotation);
+
+        const initGroup = group.getAttrs().init;
+        const initRect = rect.getAttrs().init;
+        let scaleX = initRect.scaleX * (group.scaleX() / initGroup.scaleX);
+        let scaleY = initRect.scaleY * (group.scaleY() / initGroup.scaleY);
+        let rotation = rotateConvert(initRect.rotation  + group.rotation() - initGroup.rotation);
+        let changeTransform = group.getTransform().copy().multiply(initGroup.transform.invert());
+        console.log('changeTransform', changeTransform.m)
+        const nodeTransform = initRect.transform.copy().multiply(changeTransform);
+        let width = rect.width() * scaleX;
+        let height = rect.height() * scaleY;
+        let cPoint = getCenterPoint({x: nodeTransform.m[4], y: nodeTransform.m[5]}, width, height, rotation);
+        rectClone.setAttrs({
+          fill: 'blue',
+          x: cPoint.x,
+          y: cPoint.y,
+          scaleX,
+          scaleY,
+          rotation
+        })
+        designGroup.add(rectClone);
+        setTimeout(() => {
+          rectClone.destroy();
+          layer.batchDraw()
+        }, 500)
+        layer.batchDraw()
+      }
+    }
+  </script>
+</body>
+
+</html>

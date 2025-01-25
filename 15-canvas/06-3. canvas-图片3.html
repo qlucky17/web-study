@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>绘制图像</title>
+  <script src="./js/transform.js"></script>
+</head>
+
+<body>
+  <canvas id="container" width="400" height="400" style="border:2px solid #000"></canvas>
+
+  <script>
+    window.onload = function () {
+      var container = document.getElementById('container');
+      var ctx = container.getContext('2d');
+      let image = new Image();
+      image.src = './images/001.jpg';
+      // image.src = "https://pics3.baidu.com/feed/810a19d8bc3eb1354bc3178b33cda4dcfc1f44d8.jpeg@f_auto?token=020cf08b7b2a0ff804a949726b7fb258"
+      // image.setAttribute("crossOrigin", "anonymous");
+      image.onload = () => {
+        // 1. clip裁剪范围
+        // ctx.save();
+        // ctx.rect(50,50,200,200);
+        // ctx.stroke();
+        // ctx.clip();
+        // ctx.fillStyle="green";
+        // ctx.fillRect(0,0,200,100);
+        // ctx.restore();
+
+
+        // 2. 矩阵：canvas的transform
+        // ctx.save();
+        // ctx.rect(50, 50, 200, 200);
+        // ctx.stroke();
+        // ctx.clip();
+        // ctx.transform(1,0,0,1,50,50);
+        // ctx.transform(0.8,0,0,0.8,0,0);
+        // ctx.transform(Math.cos(30*Math.PI/180), Math.sin(30*Math.PI/180),-Math.sin(30*Math.PI/180), Math.cos(30*Math.PI/180), 0, 0);
+        // // ctx.setTransform(1,0,0,1,50,50); //setTransform会重置并创建新的变换矩阵
+        // ctx.drawImage(image, 0, 0, 200, 200);
+        // ctx.restore();
+
+        // 3. 矩阵：使用svg的createSVGMatrix
+        // ctx.save();
+        // ctx.rect(50, 50, 200, 200);
+        // ctx.stroke();
+        // ctx.clip();
+        // let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        // let svgMatrix = svg.createSVGMatrix();
+        // svgMatrix = svgMatrix.translate(50, 50).scale(0.8, 0.8).rotate(30);
+        // console.log('svgMatrix => ', svgMatrix)
+        // const {a, b, c, d, e, f} = svgMatrix
+        // ctx.transform(a, b, c, d, e, f);
+        // // ctx.setTransform(svgMatrix);
+        // ctx.drawImage(image, 0, 0, 200, 200);
+        // ctx.restore();
+
+        // 4. 矩阵：使用transform工具方法
+        ctx.save();
+        ctx.rect(50, 50, 200, 200);
+        ctx.stroke();
+        ctx.clip();
+        let transform = new Transform();
+        transform.translate(50, 50).scale(0.8, 0.8).rotate(30*Math.PI/180);
+        ctx.transform(...transform.m)
+        ctx.drawImage(image, 0, 0, 200, 200);
+        ctx.restore();
+      }
+    }
+  </script>
+</body>
+
+</html>

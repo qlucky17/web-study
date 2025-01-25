@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单A4(7*2)无页边</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 11px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+    }
+    .page{
+      margin: 0 auto;
+      width: 820px;
+      height: 1160px;
+    }
+    .wrapper, table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+    }
+    .content-table{
+      width:820px;
+      border-collapse:collapse;
+      border-spacing:0;
+      margin: 0 auto;
+    }
+    .content-table td{
+      width: 50%;
+      height: 162.5px;
+      border: 1px solid #000;
+      vertical-align:middle;
+      overflow: hidden;
+    }
+    .content-item{
+      margin: 0 43px;
+    }
+    .left{
+      float: left;
+      position: relative;
+    }
+    .left img{
+      width: 151px;
+      height: 151px;
+    }
+    .left .tag{
+      display:inline-block;
+      line-height:16px;
+      padding:0 3px;
+      background-color:rgb(245,63,63);
+      color:#fff;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .left .tag.tag2{
+      top: 21px;
+    }
+    .left .tag.urgent{
+      top:auto;
+      bottom:2px;
+      left:0;
+    }
+    .left .tag.biao{
+      top:0;
+      left:auto;
+      right: 0;
+      background-color:#fff;
+      border: 1px solid #0453F3;
+      color: #0453F3;
+      border-radius: 50%;
+      font-size: 11px;
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
+      padding: 0;
+      text-align: center;
+    }
+    .right{
+      float: left;
+      width: 163px;
+      padding-left:5px;
+    }
+    .line-1{
+      position: relative;
+      font-size: 15px;
+    }
+    .line-1 .type{
+      display:inline-block;
+      min-width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .line-1 svg{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .line-1 .platform{
+      font-weight:bold;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .line-2{
+      font-weight:bold;
+      font-size:16px;
+      line-height:17px;
+    }
+    .line-3{
+      clear:both;
+    }
+    .qr-code{
+      float: left;
+    }
+    .qr-code img{
+      width: 54px;
+      height: 54px;
+    }
+    .cz-info{
+      float:left;
+      width: 104px;
+      margin-left:5px;
+      font-size:12px;
+      line-height:13px;
+    }
+    .cz-info>div{
+      width:100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .line-4{
+      width:100%;
+      display:table;
+      white-space:nowrap;
+      line-height:13px;
+    }
+    .line-4-left{
+      display: table-cell;
+    }
+    .line-4-right{
+      display: table-cell;
+      text-align: right;
+    }
+    .time{
+      display:inline-block;
+      font-size:12px;
+      padding:0 2px;
+      background-color:rgb(102,102,102);
+      color:#fff;
+    }
+    .total{
+      font-size: 13px;
+    }
+    .line-interval{
+      margin-top: 2px;
+    }
+    .red{
+      color:rgb(245,63,63);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <table class="content-table">
+        <tbody>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                  <span class="tag tag2">xxx</span>
+                  <span class="tag urgent">急</span>
+                  <span class="tag biao">标</span>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type">
+                      <!-- <svg width="12" height="12" class="type-0">
+                        <circle cx="6" cy="6" r="6" fill="#000"></circle>
+                      </svg> -->
+                      <!-- <svg width="14" height="14" class="type-1">
+                        <polygon points="7,0 14,12 0,12" style="fill:#F53F3F;" />
+                      </svg> -->
+                      <!-- <svg width="12" height="12" class="type-2">
+                        <rect x="0" y="0" rx="0" ry="0" width="12" height="12" style="fill:#000;" />
+                      </svg> -->
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div>29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </divclass="line-interval">
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <img src="商品图.jpg" />
+                  <div class="tag">1/3P</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>12H</span>
+                    <span class="type"></span>
+                    <span>10101</span>
+                    <span class="platform">FBA</span>
+                  </div>
+                  <div class="line-2 line-interval">3223BL</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="二维码.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-AA</div>
+                      <div>红色</div>
+                      <div>单码</div>
+                      <div>第1项-<span class="red">项<b>1000</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>X002L4CP6B</div>
+                      <div class="line-interval">29477…40032</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                      <div class="line-interval">A01</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:2000件</div>
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </divclass="line-interval">
+                      <div class="line-interval">
+                        <span class="time">1028 08:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    window.onload = function(){
+      const bodyEle = document.querySelector('.wrapper tbody');
+      const trContent = bodyEle.innerHTML;
+      let content = '';
+      for(let i=0; i<7; i++){
+        content += trContent;
+      }
+      bodyEle.innerHTML = content;
+    }
+  </script>
+</body>
+</html>

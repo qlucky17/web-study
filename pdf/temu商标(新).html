@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品标签</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 18px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+      color: #000;
+    }
+    .page{
+      page-break-after:always;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .wrapper {
+      page-break-inside: avoid !important;
+      width: 450px;
+      padding-top: 20px;
+      margin: 0 auto;
+    }
+    .relative{
+      position: relative;
+    }
+    .fl{
+      float: left;
+    }
+    .fr{
+      float: right;
+    }
+    .clear{
+      clear: both;
+    }
+    .tc{
+      text-align: center;
+    }
+    .main{
+      border: 1px solid #464545;
+    }
+    .header .left{
+      width: 300px;
+      text-align: center;
+      border-right: 1px solid #464545;
+    }
+    .header .right{
+      padding: 11px 9px;
+    }
+    .header .line{
+      height: 37px;
+      line-height: 37px;
+    }
+    .header .name{
+      font-size: 4vw;
+    }
+    .header .label{
+      font-size: 25px;
+      border-top: 1px solid #464545;
+      display: table;
+      width: 100%;
+    }
+    .header .label-item{
+      display: table-cell;
+    }
+    .header .label-item.urgent{
+      background: #000000;
+      color: #fff;
+    }
+    .header .date{
+      height: 76px;
+      font-size: 18px;
+      border-top: 1px solid #464545;
+    }
+    .header .date .text{
+      font-size: 15px;
+      padding-top: 7px;
+      padding-bottom: 15px;
+    }
+    .header .qrcode-img{
+      width: 128px;
+      height: 128px;
+    }
+    .middle{
+      clear:both;
+      border-top: 1px solid #464545;
+      font-size: 16px;
+      line-height: 19px;
+      padding: 5px 5px 9px 5px;
+    }
+    .middle .name{
+      font-size: 23px;
+      line-height: 25px;
+      height: 103px;
+    }
+    .middle .tag-item{
+      display: inline-block;
+      padding: 3px;
+      background: #000000;
+      color: #fff;
+      border-radius: 4px;
+    }
+    .middle .skc{
+      margin-top: 8px;
+    }
+    .middle .qty{
+      font-size: 25px;
+      position: absolute;
+      bottom: 9px;
+      right: 5px;
+    }
+    .footer{
+      font-size: 18px;
+      padding-top: 13px;
+    }
+    .footer .total{
+      position: absolute;
+      top: 11px;
+      right: 0;
+      font-size: 25px;
+      line-height: 25px;
+    }
+    .footer .barcode-img{
+      width: 450px;
+      height: 45px;
+      margin-top: 13px;
+    }
+    .footer .ship{
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="main">
+        <div class="header">
+          <div class="fl left">   
+            <div class="line name">义乌宝湾3号子仓（前置收货）</div>
+            <div class="line label">
+              <span class="label-item">VMI</span>
+              <span class="label-item urgent">加急</span>
+            </div>
+            <div class="date">
+              <div class="text">Bigmoney</div>
+              <div class="time">2024-05-03 14:09:37</div>
+            </div>
+          </div>
+          <div class="fr right">
+            <img src="" class="qrcode-img" />
+          </div>
+        </div>
+        <div class="middle relative">
+          <div class="name">
+            新奇万圣节女巫哥特猫印花单肩包为男士户
+          </div>
+          <div class="tag">
+            <span class="tag-item">返</span>
+            <span class="tag-item">小</span>
+            <span class="tag-item">首饰</span>
+          </div>
+          <div class="skc">SKC8893345009</div>
+          <div class="sku">SKU货号586027787</div>
+          <div class="qty">10件</div>
+        </div>
+      </div>
+      <div class="footer relative">
+        <div>PC2405031627491</div>
+        <span class="total">第1包（共1包）</span>
+        <img src="" class="barcode-img" />
+        <div class="ship">极兔速递 • JT00117569264</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

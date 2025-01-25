@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>错误占位</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 15px/1 Arial, 'Helvetica Neue';
+    }
+    .page{
+      page-break-after:always;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+    .wrapper, table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+    }
+    .error-cont{
+      text-align: center;
+      color: #F53F3F;
+      font-size: 24px;
+      line-height: 44px;
+      padding-top: 206px;
+    }
+    .error-cont .code,  
+    .error-cont .reason {
+      font-weight: 600;
+      font-size: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="error-cont">
+        <div>生产项 <span class="code">(B7YRVVK-1)</span>:</div>
+        <div class="reason">生产图异常</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

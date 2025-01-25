@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/konva@4.0.18/konva.min.js"></script>
+  <meta charset="utf-8" />
+  <title>Konva Path Demo</title>
+</head>
+
+<body>
+  <div>
+    <button id="increase">放大到1.5</button>
+    <button id="reduce">缩小到0.5</button>
+    <button id="restore">恢复</button>
+  </div>
+  <div id="container"></div>
+  <script>
+    window.onload = function () {
+      var stageWidth = 600, stageHeight = 600;
+      var stage = new Konva.Stage({
+        container: 'container',
+        width: stageWidth,
+        height: stageHeight,
+        x: 0,
+        y: 0
+      });
+
+      // layerBg
+      var layerBg = new Konva.Layer({
+        name: 'layerBg'
+      });
+      stage.add(layerBg);
+
+      var bgRect = new Konva.Rect({
+        x: 0,
+        y: 0,
+        width: stageWidth,
+        height: stageHeight,
+      });
+      var bgImage = new Image();
+      bgImage.src = './images/Transparent_bg.png';
+      bgImage.onload = function () {
+        bgRect.fillPatternImage(bgImage);
+        bgRect.fillPatternRepeat('repeat');
+        layerBg.batchDraw();
+      }
+      layerBg.add(bgRect);
+
+      // layer
+      var layer = new Konva.Layer({
+        x: 100,
+        y: 100,
+      });
+      stage.add(layer);
+
+      var image = new Image();
+      image.src = './images/sm001.jpg';
+      image.onload = function () {
+        let imageNode = new Konva.Image({
+          image,
+          x: 100,
+          y: 100,
+          width: 200,
+          height: 200,
+          offsetX: 100,
+          offsetY: 100,
+          rotation: 0
+        })
+        layer.add(imageNode);
+        layer.batchDraw();
+
+        console.log('rect =>', imageNode.getClientRect());
+        imageNode.on('mousedown', function () {
+          let pos = stage.getPointerPosition();  //getPointerPosition方法只能用在stage
+          console.log('pos => ', pos);
+        });
+      }
+
+      let $container = document.querySelector('#container');
+      document.getElementById('increase').onclick = function () {
+        // stage.width(900);
+        // stage.height(900);
+        // layerBg.scale({ x: 1.5, y: 1.5 });
+        // layer.setAttrs({ x: 150, y: 150, scaleX: 1.5, scaleY: 1.5 });
+        // stage.batchDraw();
+
+        stage.width(900);
+        stage.height(900);
+        stage.scale({ x: 1.5, y: 1.5 });
+        $container.style.left = -(900 - 600) / 2 + 'px';
+        $container.style.top = -(900 - 600) / 2 + 'px';
+        stage.batchDraw();
+      }
+      document.getElementById('reduce').onclick = function () {
+        // stage.width(300);
+        // stage.height(300);
+        // layerBg.scale({ x: 0.5, y: 0.5 });
+        // layer.setAttrs({ x: 50, y: 50, scaleX: 0.5, scaleY: 0.5 });
+        // stage.batchDraw();
+
+        stage.width(300);
+        stage.height(300);
+        stage.scale({ x: 0.5, y: 0.5 });
+        $container.style.left = -(300 - 600) / 2 + 'px';
+        $container.style.top = -(300 - 600) / 2 + 'px';
+        stage.batchDraw();
+      }
+      document.getElementById('restore').onclick = function () {
+        // stage.width(600);
+        // stage.height(600);
+        // layerBg.scale({ x: 1, y: 1 });
+        // layer.setAttrs({ x: 100, y: 100, scaleX: 1, scaleY: 1 });
+        // stage.batchDraw();
+
+        stage.width(600);
+        stage.height(600);
+        stage.scale({ x: 1, y: 1 });
+        $container.style.left = 0;
+        $container.style.top = 0;
+        stage.batchDraw();
+      }
+    }
+  </script>
+</body>
+
+</html>

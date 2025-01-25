@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>绘制图像</title>
+</head>
+
+<body>
+  <canvas id="conatiner" width="400" height="400" style="border:2px solid #000"></canvas>
+
+  <script>
+    window.onload = function () {
+      var canvas = document.getElementById('conatiner');
+      var ctx = canvas.getContext('2d');
+      var image = new Image();
+      image.src = './images/002.png';
+      // image.crossOrigin = 'anonymous';
+      image.onload = function(){
+        ctx.drawImage(image, 0, 0, 400, 200);
+        // ctx.drawImage(image, 50, 50, 300, 200, 0, 0, 400, 200);
+        var imgData = ctx.getImageData(0, 0, image.width, image.height);  //取得画布上图像的数据
+        console.log(imgData.width);
+        console.log(imgData.height);
+        console.log(imgData.data);      //数组，存放每个像素的颜色信息
+        for (var i = 0, _data = imgData.data; i < _data.length; i += 4) {
+          var red = _data[i],
+            green = _data[i + 1],
+            blue = _data[i + 2],
+            trans = _data[i + 3],
+            avgColor = Math.floor((red + green + blue) / 3);
+
+          _data[i] = _data[i + 1] = _data[i + 2] = avgColor;
+        }
+        imgData.data = _data;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.putImageData(imgData, 0, 20);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!-- option: '--page-height 252px --page-width 515px --margin-left 0 --margin-right 0 --margin-top 0 --margin-bottom 0 ' -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内测商标</title>
+    <style>
+      /* External */
+      .__temp__page img {
+        display: initial;
+        margin: initial;
+        height: -webkit-fill-available;
+      }
+      .__temp__page .fl {
+        float: left;
+      }
+      .__temp__page .fr {
+        float: right;
+      }
+      .__temp__page .tl {
+        text-align: left;
+      }
+      .__temp__page .tr {
+        text-align: right;
+      }
+      .__temp__page .tc {
+        text-align: center;
+      }
+      .__temp__page .border-t {
+        border-top: 1px solid #1d2129;
+      }
+      .__temp__page .border-l {
+        border-left: 1px solid #1d2129;
+      }
+      .__temp__page .border-b {
+        border-bottom: 1px solid #1d2129;
+      }
+      .__temp__page .border-r {
+        border-right: 1px solid #1d2129;
+      }
+      .__temp__page .txt-repaire {
+        position: relative;
+      }
+      .__temp__page .txt-repaire3 {
+        top: -3px;
+      }
+      .__temp__page .txt-repaire5 {
+        top: -5px;
+      }
+      .__temp__page .txt-repaire6 {
+        top: -6px;
+      }
+      .__temp__page .txt-repaire7 {
+        top: -7px;
+      }
+      .__temp__page .txt-repaire9 {
+        top: -11px;
+      }
+      .__temp__page .txt-repaire12 {
+        top: -15px;
+      }
+      /* External */
+      .__temp__page {
+        width: 500px;
+        height: 237px;
+        margin: 0 auto;
+        font: bold 9px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+        color: #1d2129;
+        background-color: #fff;
+        word-break: break-word;
+        overflow: hidden;
+      }
+      .__temp__page .wrapper {
+        margin: 0 auto;
+      }
+      .__temp__page .content {
+        height: 235px;
+        border: 1px solid #1d2129;
+      }
+      .__temp__page .info-1 {
+        width: 100%;
+        font-size: 13px;
+        height: 107px;
+      }
+      .__temp__page .info-1 > .left {
+        vertical-align: top;
+        width: 393px;
+        height: 100%;
+        float: left;
+      }
+      .__temp__page .info-1 > .right {
+        width: 107px;
+        height: 100%;
+        margin-left: 393px;
+        position: relative;
+      }
+      .__temp__page .agency-info {
+        width: 100%;
+        height: 56px;
+        overflow: hidden;
+      }
+      .__temp__page .agency-info .symbol {
+        /* display: table-cell; */
+        width: 45px;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        float: left;
+      }
+      .__temp__page .agency-info .symbol > div {
+        height: 27px;
+        line-height: 27px;
+      }
+      .__temp__page .agency-info .text {
+        width: calc(100% - 45px);
+        height: 100%;
+        padding: 0 3px;
+        margin-left: 45px;
+        line-height: 13px;
+      }
+      .text-over-st {
+        width: 100%;
+        word-break: break-word;
+      }
+      .text-over-tt {
+        width: 100%;
+        height: 34px;
+        text-overflow: clip;
+        overflow: hidden;
+        word-break: break-word;
+      }
+      .text-over-tt + .st {
+        top: -13px;
+      }
+      .text-over {
+        white-space: nowrap;
+        text-overflow: clip;
+        width: 100%;
+        word-break: break-all;
+      }
+      .__temp__page .manufac-info {
+        height: 50px;
+        line-height: 16px;
+        overflow: hidden;
+      }
+      .__temp__page .manufac-info .manufacturer {
+        height: 25px;
+        padding: 0 3px;
+        width: 100%;
+      }
+      .__temp__page .manufac-info .manufacturer_address {
+        width: 100%;
+        line-height: 14px;
+        padding: 0 3px;
+      }
+      .__temp__page .qr-code-alt {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        text-align: center;
+      }
+      .__temp__page .qr-code {
+        width: 75px;
+        height: 75px;
+        margin-top: 12px;
+        margin-left: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      .__temp__page .qr-code-txt {
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        text-align: center;
+        font-size: 12px;
+      }
+      .__temp__page .info-2 {
+        width: 100%;
+        height: 128px;
+        display: table;
+      }
+      .__temp__page .info-2 > .left {
+        display: table-cell;
+        vertical-align: top;
+      }
+      .__temp__page .info-2 > .right {
+        display: table-cell;
+        width: 134px;
+        position: relative;
+      }
+      .__temp__page .product-name {
+        font-size: 13px;
+        height: 17px !important;
+      }
+      .__temp__page .product-name,
+      .__temp__page .produce-info > div {
+        line-height: 16px;
+        height: 16px;
+        padding: 0 3px;
+        overflow: hidden;
+      }
+      .__temp__page .produce-info {
+        display: block;
+        width: 100%;
+        height: 16px;
+      }
+      .__temp__page .produce-info > div {
+        width: 50%;
+        display: table-cell;
+      }
+      .__temp__page .produce-info .cont-div {
+        height: 16px;
+        overflow: hidden;
+        float: left;
+      }
+      .__temp__page .product-img-alt {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        text-align: center;
+      }
+      .__temp__page .product-img {
+        width: 120px;
+        height: 120px;
+        margin-top: 3px;
+        margin-left: 7px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      .__temp__page .footer {
+        padding-top: 4px;
+        text-align: center;
+      }
+      .__temp__page .barcode {
+        display: inline-block;
+        width: 300px;
+        border: 1px solid #1d2129;
+      }
+      .__temp__page .barcode > div {
+        padding: 0 17px;
+      }
+      .__temp__page .barcode-img {
+        width: 280px;
+        height: 37px;
+      }
+      .__temp__page .barcode img {
+        width: 100%;
+        height: 100%;
+      }
+      .__temp__page .bar-text {
+        width: 100%;
+        display: table;
+        font-weight: bold;
+        color: #000000;
+        font-size: 10px;
+        line-height: 12px;
+        height: 16px;
+        white-space: nowrap;
+      }
+      .__temp__page .bar-text > div {
+        display: table-cell;
+      }
+      .__temp__page .batch-info {
+        width: 95%;
+        display: inline-table;
+        margin-top: 3px;
+      }
+      .__temp__page .batch-info > div {
+        display: table-cell;
+        width: 20%;
+      }
+      .__temp__page .batch-info > div.b4 {
+        width: 40%;
+      }
+
+      .__temp__page [data-show='false'] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html2canavs合成的图文字会往下偏移,所以使用txt-repaire类,html预览时把txt-repaire去除 -->
+    <div class="__temp__page product-label-item">
+      <div class="wrapper">
+        <div class="content">
+          <div class="info-1">
+            <div class="left">
+              <div class="agency-info">
+                <div class="symbol border-r">
+                  <div class="ec">
+                    <span
+                      class="txt-repaire txt-repaire6"
+                      data-show="${shop.label.eu_rep.show}"
+                      >EC</span
+                    >
+                  </div>
+                  <div class="rep border-t">
+                    <span
+                      class="txt-repaire txt-repaire6"
+                      data-show="${shop.label.eu_rep.show}"
+                      >REP</span
+                    >
+                  </div>
+                </div>
+                <div class="text" data-show="${shop.label.eu_rep.show}">
+                  <!-- <span
+                    class="txt-repaire txt-repaire5"
+                    data-show="${shop.label.eu_rep.show}"
+                    varkey="shop.label.eu_rep"
+                    transkey="shop.label.eu_rep_trans"
+                    >${shop.label.eu_rep}
+                  </span> -->
+                  <div
+                    class="txt-repaire txt-repaire6 text-over"
+                    pvarkey="shop.label.eu_rep_name"
+                    data-show="${shop.label.eu_erp.name.show}"
+                  >
+                    Name:
+                    <span varkey="shop.label.eu_rep_name"
+                      >${shop.label.eu_rep_name}</span
+                    >
+                  </div>
+                  <div
+                    class="txt-repaire txt-repaire6 text-over-st pp"
+                    pvarkey="shop.label.eu_rep"
+                    data-tt="${shop.label.uk_erp.name.show}"
+                  >
+                    Address:
+                    <span varkey="shop.label.eu_rep">${shop.label.eu_rep}</span>
+                  </div>
+                  <div
+                    class="txt-repaire txt-repaire6 text-over st"
+                    pvarkey="shop.label.eu_rep_email"
+                    data-show="${shop.label.eu_erp.name.show}"
+                  >
+                    Email:
+                    <span varkey="shop.label.eu_rep_email"
+                      >${shop.label.eu_rep_email}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="manufac-info border-t">
+                <div
+                  data-show="${shop.label.manufacturer.show}"
+                  pvarkey="shop.label.manufacturer"
+                  class="txt-repaire txt-repaire7 manufacturer border-b text-over"
+                >
+                  Manufactrurer:
+                  <span varkey="shop.label.manufacturer"
+                    >${shop.label.manufacturer}</span
+                  >
+                </div>
+                <!-- <div
+                    data-show="${shop.label.manufacturer_email.show}"
+                    pvarkey="shop.label.manufacturer_email"
+                  >
+                    Manufacturer E-mail:
+                    <span varkey="shop.label.manufacturer_email"
+                      >${shop.label.manufacturer_email}</span
+                    >
+                  </div> -->
+                <div
+                  data-show="${shop.label.manufacturer_address.show}"
+                  pvarkey="shop.label.manufacturer_address"
+                  class="txt-repaire txt-repaire9 manufacturer_address"
+                >
+                  Address:
+                  <span varkey="shop.label.manufacturer_address"
+                    >${shop.label.manufacturer_address}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="right border-l">
+              <span
+                class="qr-code-alt"
+                data-show="${WORK_ORDER_QR_CODE.show}"
+                varkey="WORK_ORDER_QR_CODE_ALT"
+              ></span>
+              <img
+                class="qr-code"
+                data-show="${WORK_ORDER_QR_CODE.show}"
+                src="${WORK_ORDER_QR_CODE}"
+                varkey="WORK_ORDER_QR_CODE"
+              />
+              <div
+                class="qr-code-txt"
+                data-show="${production.item.code.show}"
+                pvarkey="production.item.code"
+              >
+                <span
+                  preview-hide="true"
+                  varkey="production.item.code"
+                  class="txt-repaire txt-repaire5"
+                  >${production.item.code}</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="info-2 border-t">
+            <div class="left">
+              <div class="product-name">
+                <div
+                  data-show="${shop.label.manufacturer_email.show}"
+                  pvarkey="shop.label.manufacturer_email"
+                  class="txt-repaire txt-repaire7"
+                >
+                  Manufacturer E-mail:
+                  <span varkey="shop.label.manufacturer_email"
+                    >${shop.label.manufacturer_email}</span
+                  >
+                </div>
+              </div>
+              <div class="produce-info border-t">
+                <div>
+                  <div class="cont-div">
+                    <span
+                      class="txt-repaire txt-repaire5"
+                      data-show="${production.batch.created.show}"
+                      >Batch Number:
+                      <span varkey="production.batch.created"
+                        >${production.batch.created}
+                        <!-- ${production.batch.created}${production.batch.created}${production.batch.created}${production.batch.created} -->
+                      </span></span
+                    >
+                  </div>
+                </div>
+                <div class="border-l">
+                  <div class="cont-div">
+                    <span
+                      class="txt-repaire txt-repaire5"
+                      data-show="${product.code.show}"
+                      >Serial Number:
+                      <span varkey="product.code"
+                        >${product.code}
+                        <!-- ${product.code}${product.code}${product.code} -->
+                      </span></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="footer border-t">
+                <div class="barcode">
+                  <div>
+                    <div class="bar-text txt-repaire txt-repaire6">
+                      <div class="tl">
+                        <span varkey="merchantSkuNo">${merchantSkuNo}</span>
+                      </div>
+                      <div class="tc">
+                        <span varkey="externalColor">${externalColor}</span>
+                      </div>
+                      <div class="tr">
+                        <span varkey="externalSize">${externalSize}</span>
+                      </div>
+                    </div>
+                    <div class="barcode-img">
+                      <img
+                        src="${externalBarCodeImg}"
+                        varkey="externalBarCode"
+                      />
+                    </div>
+                    <div class="bar-text bottom txt-repaire txt-repaire6">
+                      <div class="tl" varkey="externalSkuNo">
+                        ${externalSkuNo}
+                      </div>
+                      <div class="tr" varkey="shop.label.producer">
+                        ${shop.label.producer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tc txt-repaire txt-repaire3"
+                  varkey="production.batch.info"
+                >
+                  ${production.batch.info}
+                  <!-- <div class="batch-info">   
+                  <div class="tl">1/10</div>
+                  <div class="tc">1/1</div>
+                  <div class="tc">1/1/1</div>
+                  <div class="tr b4">1000M-black-s</div>
+                </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="right border-l">
+              <span
+                class="product-img-alt"
+                data-show="${WORK_ORDER_PICTURE_PATH.show}"
+                varkey="WORK_ORDER_PICTURE_PATH_ALT"
+              ></span>
+              <img
+                data-show="${WORK_ORDER_PICTURE_PATH.show}"
+                src="${WORK_ORDER_PICTURE_PATH}"
+                varkey="WORK_ORDER_PICTURE_PATH"
+                class="product-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

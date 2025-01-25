@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单A4(7*2)</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 10px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+    }
+    .page{
+      width: 820px;
+      height: 1160px;
+      margin: 0 auto;
+    }
+    .wrapper, table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+    }
+    .wrapper{
+      width: 780px;
+      height: 1076px;
+      margin: 0 auto;
+    }
+    .extra-table{
+      width: 780px;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 auto;
+      border-spacing:0;
+      font-size:15px;
+    }
+    .extra-1{
+      width: 40%;
+      text-align: left;
+    }
+    .extra-2{
+      width: 20%;
+      text-align: center;
+    }
+    .extra-3{
+      width: 40%;
+      text-align: right;
+    }
+    .content-table{
+      width:100%;
+      border-collapse:collapse;
+      border-spacing:0;
+      margin: 0 auto;
+    }
+    .content-table td{
+      width: 50%;
+      height: 150.5px;
+      border: 1px solid #000;
+      vertical-align:middle;
+      overflow: hidden;
+    }
+    .content-item{
+      margin: 0 46px;
+    }
+    .left{
+      float: left;
+      position: relative;
+    }
+    .left img{
+      width: 139px;
+      height: 139px;
+    }
+    .left .tag{
+      display:inline-block;
+      line-height:15px;
+      padding:0 3px;
+      background-color:rgb(245,63,63);
+      color:#fff;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .right{
+      float: left;
+      width: 149px;
+      padding-left:5px;
+    }
+    .line-1{
+      position: relative;
+      font-size: 14px;
+    }
+    .line-1 .type{
+      display:inline-block;
+      background:#000;
+      border-radius:50%;
+      vertical-align:2px;
+      width:8px;
+      height:8px;
+    }
+    .line-1 .platform{
+      font-weight:bold;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .line-2{
+      font-weight:bold;
+      font-size:15px;
+      line-height:16px;
+    }
+    .line-3{
+      clear:both;
+    }
+    .qr-code{
+      float: left;
+    }
+    .qr-code img{
+      width: 50px;
+      height: 50px;
+    }
+    .cz-info{
+      float:left;
+      width: 94px;
+      margin-left:5px;
+      font-size:11px;
+      line-height:12px;
+    }
+    .cz-info>div{
+      width:100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .line-4{
+      width:100%;
+      display:table;
+      white-space:nowrap;
+      line-height:12px;
+    }
+    .line-4-left{
+      display: table-cell;
+    }
+    .line-4-right{
+      display: table-cell;
+      text-align: right;
+    }
+    .time{
+      display:inline-block;
+      font-size:11px;
+      padding:0 2px;
+      background-color:rgb(102,102,102);
+      color:#fff;
+    }
+    .total{
+      font-size: 12px;
+    }
+    .line-interval{
+      margin-top: 2px;
+    }
+    .red{
+      color:rgb(245,63,63);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">%FACTORY_NAME%</td>
+          <td class="extra-2">第%CURRENT_PAGE%页/共%TOTAL_PAGE%页</td>
+          <td class="extra-3">件数：%PAGE_QTY%(共%TOTAL_QTY%)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="wrapper">
+      <table class="content-table">
+        <tbody>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <img src="%WORK_ORDER_PICTURE_PATH%" />
+                  <div class="tag">%VIEW_COUNT_STR%</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>%DELIVERY_PERIOD%</span>
+                    <span class="type"></span>
+                    <span>%WAYBILL_FORMAT%</span>
+                    <span class="platform">%CHANNEL_CODE%</span>
+                  </div>
+                  <div class="line-2 line-interval">%ITEM_CODE%</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="%WORK_ORDER_QR_CODE%" />
+                    </div>
+                    <div class="cz-info">
+                      <div>%STYLE_CODE%</div>
+                      <div>%COLOR%</div>
+                      <div>%SIZE%</div>
+                      <div>第%ITEM_ORDINAL%项-<span class="red">项<b>%ITEM_TOTAL%</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>%ITEM_SKU%</div>
+                      <div class="line-interval">%PRODUCTION_ORDER_ID%</div>
+                      <div class="line-interval">
+                        <span class="time">%BATCH_CREATED_STR%</span>
+                      </div>
+                      <div class="line-interval">%PROCESS_ROUTE_CODE%</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:%ORDER_QTY%件</div>
+                      <div class="line-interval">
+                        <span class="time">%EXPECT_DELIVERY_TIME_STR%</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">%EXPECT_DELIVERY_TIME_STR%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <img src="%WORK_ORDER_PICTURE_PATH%" />
+                  <div class="tag">%VIEW_COUNT_STR%</div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>%DELIVERY_PERIOD%</span>
+                    <span class="type"></span>
+                    <span>%WAYBILL_FORMAT%</span>
+                    <span class="platform">%CHANNEL_CODE%</span>
+                  </div>
+                  <div class="line-2 line-interval">%ITEM_CODE%</div>
+                  <div class="line-3 line-interval">
+                    <div class="qr-code">
+                      <img src="%WORK_ORDER_QR_CODE%" />
+                    </div>
+                    <div class="cz-info">
+                      <div>%STYLE_CODE%</div>
+                      <div>%COLOR%</div>
+                      <div>%SIZE%</div>
+                      <div>第%ITEM_ORDINAL%项-<span class="red">项<b>%ITEM_TOTAL%</b>件</span></div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                    <div class="line-4-left">
+                      <div>%ITEM_SKU%</div>
+                      <div class="line-interval">%PRODUCTION_ORDER_ID%</div>
+                      <div class="line-interval">
+                        <span class="time">%BATCH_CREATED_STR%</span>
+                      </div>
+                      <div class="line-interval">%PROCESS_ROUTE_CODE%</div>
+                    </div>
+                    <div class="line-4-right">
+                      <div class="total">总:%ORDER_QTY%件</div>
+                      <div class="line-interval">
+                        <span class="time">%EXPECT_DELIVERY_TIME_STR%</span>
+                      </div>
+                      <div class="line-interval">
+                        <span class="time">%EXPECT_DELIVERY_TIME_STR%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>   
+        </tbody>
+      </table>
+    </div>
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">%USER_NAME%</td>
+          <td class="extra-2">第%CURRENT_PAGE%页/共%TOTAL_PAGE%页</td>
+          <td class="extra-3">%CREATED%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    window.onload = function(){
+      const bodyEle = document.querySelector('.content-table tbody');
+      const trContent = bodyEle.innerHTML;
+      let content = '';
+      for(let i=0; i<7; i++){
+        content += trContent;
+      }
+      bodyEle.innerHTML = content;
+    }
+  </script>
+</body>
+</html>

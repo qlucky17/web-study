@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>绘制文本</title>
+</head>
+
+<body>
+  <canvas id="container" width="400" height="400" style="border: 2px solid #000"></canvas>
+  <script>
+    var canvas = document.getElementById('container');
+    var ctx = canvas.getContext('2d');
+    ctx.strokeStyle = 'rgba(0,0,255,0.8)';
+    ctx.lineWidth = 5;
+    ctx.fillStyle = 'rgba(255,0,0,0.6)';
+    var fontSize = 40;
+    ctx.font = fontSize + 'px Verdana';
+    while (ctx.measureText('Hello World! This is a Canvas font test.').width > 400) {
+      fontSize--;
+      ctx.font = fontSize + 'px Verdana';
+    }
+    ctx.strokeText('Hello World! This is a Canvas font test.', 0, 40);
+    ctx.fillText('Hello World! This is a Canvas font test.', 0, 40);
+
+
+    // 线性渐变文字
+    var line = ctx.createLinearGradient(0, 80, canvas.width, 80);
+    line.addColorStop(0, 'red');
+    line.addColorStop(0.3, 'green');
+    line.addColorStop(0.6, 'blue');
+    ctx.fillStyle = line;
+    ctx.font = '30px Verdana';
+    ctx.fillText('HELLO WORLD', 0, 80);
+
+
+    //放射性渐变文字
+    var rad = ctx.createRadialGradient(30, 120, 40, 30, 120, 10);
+    rad.addColorStop(0, 'red');
+    rad.addColorStop(0.5, 'green');
+    rad.addColorStop(1, 'blue');
+    ctx.fillStyle = rad;
+    ctx.fillText('HELLO WORLD', 0, 120);
+  </script>
+</body>
+
+</html>

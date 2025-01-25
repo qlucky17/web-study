@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slot编译作用域</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<script src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<custom v-slot:s1>
+			<div>
+				我的作用域在父组件上：{{ message }}
+			</div>
+		</custom>
+	</div>	
+	<script type="text/javascript">
+		// 父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译；
+		Vue.component('custom', {
+			template:
+				`<div>
+					{{ message }}
+					<slot name="s1"></slot>
+				</div>`,
+			data(){
+				return {
+					message: '我是子组件数据'
+				}
+			},
+		});
+		let app = new Vue({
+			el: '#app',
+			data:{
+				message: '我是父组件数据'
+			}
+		});
+	</script>
+</body>
+</html>

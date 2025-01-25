@@ -1,0 +1,87 @@
+<!-- option: '--page-height 115px --page-width 365px --margin-left 0 --margin-right 0 --margin-top 1.5 --margin-bottom 0 ' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条形码</title>
+  <style>
+    /* External */
+    .__temp__page img{
+      display: initial;
+      margin: initial;
+      height: -webkit-fill-available;
+    }
+    .__temp__page .fl{
+      float: left;
+    }
+    .__temp__page .fr{
+      float: right;
+    }
+    .__temp__page .tc{
+      text-align: center;
+    }
+    .__temp__page .tr{
+      text-align: right;
+    }
+    .__temp__page .txt-repaire{
+      position: relative;
+    }
+    .__temp__page .txt-repaire7{
+      top: -7px;
+    }
+    /* External */
+    .__temp__page{
+      width: 350px;
+      height: 100px;
+      margin:0 auto; 
+      font:400 10px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+      color: #1D2129;
+      background-color: #fff;
+      word-break: break-all;
+    }
+    .__temp__page .wrapper {
+      margin: 0 auto;
+      border: 1px solid #464545;
+    }
+    .__temp__page .barcode{
+      padding: 2px 17px;
+    }
+    .__temp__page .barcode img{
+      background: #fff;
+    }
+    .__temp__page .bar-text{
+      width: 100%;
+      display: table;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 13px;
+      color: #000000;
+    }
+    .__temp__page .bar-text>div{
+      display: table-cell;
+      padding: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- html2canavs合成的图文字会往下偏移,所以使用txt-repaire类,html预览时把txt-repaire去除 -->
+  <div class="__temp__page">
+    <div class="wrapper">
+      <div class="barcode">
+        <div class="bar-text txt-repaire txt-repaire7">
+          <div><span varkey="merchantSkuNo">${merchantSkuNo}</span></div>
+          <div class="tc"><span varkey="externalColor">${externalColor}</span></div>
+          <div class="tr"><span varkey="externalSize">${externalSize}</span></div>
+        </div>
+        <div><img src="${externalBarCodeImg}" varkey="externalBarCode" style="width:314px;height:51px;"/></div>
+        <div class="bar-text bottom txt-repaire txt-repaire7">
+          <div varkey="externalSkuNo">${externalSkuNo}</div>
+          <div class="tr" varkey="shop.label.producer">${shop.label.producer}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

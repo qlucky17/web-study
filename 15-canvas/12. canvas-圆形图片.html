@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas绘制圆形图片</title>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400" style="border: 2px solid #000"></canvas>
+  <script>
+    const round = ({ctx, cx, cy, r}) => {
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, 2*Math.PI);
+      ctx.closePath();
+    }
+    const drawImage = (ctx, url) => {
+      let image = new Image();
+      image.src = url;
+      image.setAttribute('crossOrigin', 'anonymous');
+      image.onload = () =>{
+        ctx.drawImage(image, 0, 0, 200, 200);
+      }
+    }
+    window.onload = function () {
+      let canvas = document.getElementById('canvas');
+      let ctx = canvas.getContext('2d');
+      // 绘制圆角矩形
+      ctx.save();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#f00';
+      round({ctx, cx: 150, cy: 150, r: 100})
+      ctx.stroke();
+      ctx.restore();
+      ctx.clip();
+      ctx.transform(1,0,0,1,50,50)
+      // ctx.transform(Math.cos(30*Math.PI/180), Math.sin(30*Math.PI/180),-Math.sin(30*Math.PI/180), Math.cos(30*Math.PI/180), 0, 0);
+      drawImage(ctx, 'https://img2.baidu.com/it/u=2784663868,2334020525&fm=26&fmt=auto&gp=0.jpg');
+    }
+  </script>
+</body>
+</html>

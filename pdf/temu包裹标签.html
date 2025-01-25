@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包裹标签</title>
+    <style>
+        @font-face {
+            font-family: OPPOSans;
+            src: url(/usr/share/fonts/OPPOSans-Regular/OPPOSans-Regular.ttf);
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font: 400 18px/1 'OPPOSans', 'PingFang SC', 'Microsoft Yahei', sans-serif;
+            color: #000;
+        }
+        
+        .page {
+            page-break-after: always;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .wrapper {
+            page-break-inside: avoid !important;
+            width: 450px;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+        
+        .relative {
+            position: relative;
+        }
+        
+        .fl {
+            float: left;
+        }
+        
+        .fr {
+            float: right;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .tc {
+            text-align: center;
+        }
+        
+        .main {
+            border: 1px solid #464545;
+        }
+        
+        .header .left {
+            width: 300px;
+            text-align: center;
+            border-right: 1px solid #464545;
+        }
+        
+        .header .right {
+            padding: 11px 9px;
+        }
+        
+        .header .line {
+            height: 37px;
+            line-height: 37px;
+        }
+        
+        .header .name {
+            font-size:30px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .header .label {
+            font-size: 25px;
+            border-top: 1px solid #464545;
+            display: table;
+            width: 100%;
+            font-weight: 600;
+        }
+        
+        .header .label-item {
+            display: table-cell;
+            font-weight: 600;
+        }
+        
+        .header .label-item.urgent {
+            background: #000000;
+            color: #fff;
+        }
+        
+        .header .date {
+            height: 76px;
+            font-size: 18px;
+            border-top: 1px solid #464545;
+        }
+        
+        .header .date .text {
+            font-size: 15px;
+            padding-top: 7px;
+            padding-bottom: 15px;
+        }
+        
+        .header .qrcode-img {
+            width: 128px;
+            height: 128px;
+        }
+        
+        .middle {
+            clear: both;
+            border-top: 1px solid #464545;
+            font-size: 20px;
+            line-height: 23px;
+            padding: 7px;
+            font-weight: 600;
+        }
+        
+        .middle .name {
+            font-size: 23px;
+            line-height: 25px;
+            height: 103px;
+        }
+        
+        .middle .tag-item {
+            display: inline-block;
+            line-height: 27px;
+            padding: 0 3px;
+            background: #000000;
+            color: #fff;
+            border-radius: 5px;
+        }
+        
+        .middle .skc {
+            margin-top: 8px;
+        }
+        
+        .middle .qty {
+            font-size: 25px;
+            position: absolute;
+            bottom: 9px;
+            right: 5px;
+        }
+        
+        .footer {
+            font-size: 18px;
+            padding-top: 13px;
+        }
+        
+        .footer .total {
+            position: absolute;
+            top: 11px;
+            right: 0;
+            font-size: 25px;
+            line-height: 25px;
+            font-weight: 600;
+        }
+        
+        .footer .barcode-img {
+            width: 450px;
+            height: 45px;
+            margin-top: 13px;
+        }
+
+        .footer .tag{
+           position: absolute;
+           top: 0;
+           right: 80px;
+           font-size: 18px;
+        }
+        
+        .footer .ship {
+            position: relative;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="wrapper">
+            <div class="main">
+                <div class="header">
+                    <div class="fl left">
+                        <div class="line name"><b>${subWarehouseName}</b></div>
+                        <div class="line label">
+                            <b class="label-item">${customProduct}</b> ${urgent}
+                        </div>
+                        <div class="date">
+                            <div class="text">${supplierName}</div>
+                            <div class="time">${printTime}</div>
+                        </div>
+                    </div>
+                    <div class="fr right">
+                        <img src="${packageSnQrCodeImg}" class="qrcode-img" />
+                    </div>
+                </div>
+                <div class="middle relative">
+                    <div class="name">
+                        <b>${productName}</b>
+                    </div>
+                    <div class="tag">
+                        <b class="tag-item">${storageAttrName}</b>
+                    </div>
+                    <div class="skc"><b>${productSkcId}</b></div>
+                    <div class="sku"><b>${merchantSkuNo}</b></div>
+                    <div class="qty"><b>${deliverSkcNum}件</b></div>
+                </div>
+            </div>
+            <div class="footer relative">
+                <div>${packageSn}</div>
+                <span class="total"><b>第${packageIndex}包（共${totalPackageNum}包）</b></span>
+                <img src="${packageSnBarCodeImg}" class="barcode-img" />
+                <div class="ship">
+                    ${expressCompanyDeliverySn}
+                    <div class="tag">
+                        <b>2P</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

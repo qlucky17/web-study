@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <script src="./js/konva7.2.1.js"></script> -->
+  <script src="./js/konva.js"></script>
+  <script src="./js/hammer-konva.js"></script>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta charset="utf-8" />
+  <title>konva移动端事件</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .msg {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: red;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div id="msg"></div>
+  <script>
+    const canvasSize = Math.min(window.innerWidth, window.innerHeight);
+    var stage = new Konva.Stage({
+      container: 'container',
+      width: window.innerWidth,
+      height: window.innerHeight,
+      x: 0,
+      y: 40
+    });
+    var layer = new Konva.Layer({
+      x: 0,
+      y: 0,
+    });
+    var layerGroup = new Konva.Group({
+      x: 30,
+      y: 60,
+      width: canvasSize * 0.8,
+      height: canvasSize * 0.8,
+      clip: {
+        x: 0,
+        y: 0,
+        width: canvasSize * 0.8,
+        height: canvasSize * 0.8,
+      }
+    })
+    var layerRect = new Konva.Rect({
+      x: 0,
+      y: 0,
+      width: canvasSize * 0.8,
+      height: canvasSize * 0.8,
+      stroke: '#14C9C9',
+      strokeWidth: 1,
+      listening: false
+    })
+    var triangle = new Konva.RegularPolygon({
+      name: 'design',
+      x: 80,
+      y: 120,
+      sides: 3,
+      radius: 80,
+      fill: '#00D2FF',
+      stroke: 'black',
+      strokeWidth: 4,
+      draggable: false
+    });
+
+    var circle = new Konva.Circle({
+      name: 'design',
+      x: 230,
+      y: 100,
+      radius: 60,
+      fill: 'red',
+      stroke: 'black',
+      strokeWidth: 4,
+      draggable: false
+    });
+    layerGroup.add(layerRect);
+    layerGroup.add(triangle);
+    layerGroup.add(circle);
+    layer.add(layerGroup);
+    stage.add(layer);
+
+    let transformer = new Konva.Transformer({ centeredScaling: true });
+    let transformFlag = false;
+    // transformer.on('dragstart', function (e) {
+    //   console.log('tr dragstart', e)
+    // })
+    // transformer.on('dragmove', function (e) {
+    //   console.log('tr dragmove')
+    // })
+    // transformer.on('dragend', function (e) {
+    //   console.log('tr dragend')
+    // })
+    transformer.on('transformstart', e => {
+      transformFlag = true;
+      console.log('tr transformstart')
+    })
+    transformer.on('transform', e => {
+      console.log('tr transform')
+    })
+    transformer.on('transformend', e => {
+      transformFlag = false;
+      console.log('tr transformend')
+    })
+    transformer.on('touchstart', e => {
+      e.cancelBubble = true;
+    })
+
+    let curNode = null, transform = false;
+    const selectNode = (node) => {
+      curNode = node;
+      transformer.nodes([node]);
+      transformer.show();
+      layer.add(transformer);
+      layer.batchDraw()
+    }
+
+    const unselect = () => {
+      curNode = null;
+      transformer.detach();
+      transformer.hide();
+      layer.batchDraw();
+    }
+
+    triangle.on('tap', (e) => {
+      selectNode(triangle)
+    })
+    circle.on('tap', (e) => {
+      selectNode(circle)
+    })
+
+    stage.on('tap', e => {
+      if (transformFlag || pinchFlag || panFlag) return;
+      if (e.target == stage) {
+        unselect();
+      }
+    })
+
+    Konva.hitOnDragEnabled = true;
+    Konva.captureTouchEventsEnabled = true;
+    var mc = new Hammer(stage, { domEvents: true });
+    mc.get('pinch').set({ enable: true });
+
+    let startScaleX, startScaleY, pinchFlag = false, pinchTimer = null;
+    mc.on("pinchstart", function (ev) {
+      if (!curNode || transformFlag) return;
+      pinchFlag = true;
+      startScaleX = curNode.scaleX() || 1;
+      startScaleY = curNode.scaleY() || 1;
+    });
+    mc.on("pinch", function (ev) {
+      if (!curNode || transformFlag) return;
+      curNode.scaleX(startScaleX * ev.scale);
+      curNode.scaleY(startScaleY * ev.scale);
+      layer.batchDraw();
+    });
+    mc.on("pinchend", function (ev) {
+      pinchTimer && clearTimeout(pinchTimer);
+      pinchTimer = setTimeout(() => {
+        pinchFlag = false;
+      }, 5)
+    });
+
+
+    let startX, startY, ePoint, panFlag = false, panTimer = null;
+    mc.on('panstart', function (ev) {
+      if (!curNode || transformFlag) return;
+      panFlag = true;
+      startX = curNode.x();
+      startY = curNode.y();
+      ePoint = ev.center;
+    })
+    mc.on('panmove', function (ev) {
+      if (!curNode || transformFlag) return;
+      curNode.x(startX + ev.center.x - ePoint.x);
+      curNode.y(startY + ev.center.y - ePoint.y);
+    })
+    mc.on('panend', function (ev) {
+      panTimer && clearTimeout(panTimer);
+      panTimer = setTimeout(() => {
+        panFlag = false;
+      }, 5)
+    })
+  </script>
+</body>
+
+</html>
