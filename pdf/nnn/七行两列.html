@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单A4(7*2)</title>
+  <style>
+    html, body{
+      margin:0; 
+      padding:0;
+      font:400 11px/1 'PingFang SC','Microsoft Yahei',sans-serif;
+    }
+    .page{
+      width: 820px;
+      height: 1160px;
+      margin: 0 auto;
+    }
+    .wrapper, table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+    }
+    .wrapper{
+      width: 760px;
+      height: 1056px;
+      margin: 0 auto;
+    }
+    .extra-table{
+      width: 760px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 auto;
+      border-spacing:0;
+      font-size:15px;
+    }
+    .extra-1{
+      width: 40%;
+      text-align: left;
+    }
+    .extra-2{
+      width: 20%;
+      text-align: center;
+    }
+    .extra-3{
+      width: 40%;
+      text-align: right;
+    }
+    .content-table{
+      width:100%;
+      border-collapse:collapse;
+      border-spacing:0;
+      margin: 0 auto;
+    }
+    .content-table td{
+      width: 50%;
+      height: 147.7px;
+      border: 1px solid #000;
+      vertical-align:middle;
+      overflow: hidden;
+    }
+    .content-item{
+      margin: 0 42px;
+    }
+    .left{
+      float: left;
+      position: relative;
+      width: 138px;
+      height: 138px;
+    }
+    .left img{
+      width: 100%;
+      height: 100%;
+    }
+    .left .tag{
+      display:inline-block;
+      line-height:15px;
+      padding:0 4px;
+      background-color:rgb(245,63,63);
+      color:#fff;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .left .tag.urgent{
+      top: initial;
+      bottom: 0;
+      left: 0;
+      padding: 0 4px;
+    }
+    .left .tag.biao{
+      top:0;
+      left:auto;
+      right: 0;
+      background-color:#fff;
+      border: 1px solid #0453F3;
+      color: #0453F3;
+      border-radius: 50%;
+      font-size: 11px;
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
+      padding: 0;
+      text-align: center;
+    }    .left .tag.gray{
+      top: 20px;
+      bottom: initial;
+      left: 0;
+      padding: 0 4px;
+    }
+    .right{
+      float: left;
+      width: 149px;
+      padding-left:5px;
+    }
+    .line-1{
+      position: relative;
+      font-size: 14px;
+    }
+    .line-1 .type{
+      display:inline-block;
+      min-width: 12px;
+      height: 12px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .line-1 svg{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }    .line-1 .platform{
+      font-weight:bold;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    .line-2{
+      font-weight:bold;
+      font-size:15px;
+      position: relative;
+    }
+    .line-2 .code{
+      position:absolute;
+      right:0;
+      top: 3px;
+      font-weight: normal;
+      font-size: 10px;
+    }
+    .line-3{
+      clear:both;
+    }
+    .qr-code{
+      float: left;
+      width: 61px;
+      height: 61px;
+    }
+    .qr-code.color1{
+      background: rgb(71,45,86);
+    }
+    .qr-code.color2{
+      background: rgb(135,72,31);
+    }
+    .qr-code.color3{
+      background: rgb(16,43,106);
+    }
+    .qr-code.color4{
+      background: rgb(35,24,21);
+    }
+    .qr-code img{
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: color-dodge;
+    }
+    .cz-info{
+      float:left;
+      width: 82px;
+      margin-left:5px;
+      font-size:11px;
+      line-height:12px;
+    }
+    .cz-info>div{
+      width:100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .cz-info>div:first-child{
+      margin-top: 0;
+    }
+    .total{
+      font-size: 12px;
+      text-align: right;
+    }
+    .line-4{
+      width:100%;
+      white-space:nowrap;
+      line-height:12px;
+      clear: both;
+    }
+    .line-4-left{
+      width: 50%;
+      float: left;
+    }
+    .line-4-right{
+      width: 50%;
+      float: right;
+      text-align: right;
+    }
+    .line-4-right>div{
+      display: inline-table;
+    }
+    .line-4 .order-id, 
+    .line-4 .ship-id{
+      font-size: 12px;
+    }
+    .line-5{
+      clear: both;
+      font-size:11px;
+      overflow: hidden;
+      white-space: nowrap;
+    }    .time{
+      display:inline-block;
+      font-size:11px;
+      padding:0 2px;
+      background-color:rgb(102,102,102);
+      color:#fff;
+    }
+    .time.week1{
+      background-color: rgb(170,33,22);
+    }
+    .time.week2{
+      background-color: rgb(245,130,32);
+    }
+    .time.week3{
+      background-color: rgb(119,120,123);
+    }
+    .time.week4{
+      background-color: rgb(0,88,49);
+    }
+    .time.week5{
+      background-color: rgb(34,75,143);
+    }
+    .time.week6{
+      background-color: rgb(139,0,139);
+    }
+    .time.week7{
+      background-color: rgb(35,24,21);
+    }
+    .time.week1.even{
+      background-color: rgb(132,57,0);
+    }
+    .time.week2.even{
+      background-color: rgb(252,175,23);
+    }
+    .time.week3.even{
+      background-color: rgb(161,163,166);
+    }
+    .time.week4.even{
+      background-color: rgb(29,149,63);
+    }
+    .time.week5.even{
+      background-color: rgb(16,43,106);
+    }
+    .time.week6.even{
+      background-color: rgb(65,20,69);
+    }
+    .time.week7.even{
+      background-color: rgb(62,65,69);
+    }
+    .line-interval{
+      margin-top: 1px;
+    }
+    .red{
+      color:rgb(245,63,63);
+    }
+    .left-text{
+      text-align: left;
+    }
+    .right-text{
+      text-align: right;
+    }
+  </style></head>
+<body><div class="page">
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">批次号：505271645004</td>
+          <td class="extra-2">第1页/共1页</td>
+          <td class="extra-3">件数：1(共1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="wrapper">
+      <table class="content-table">
+        <tbody><tr><td>
+              <div class="content-item">
+                <div class="left">
+                  <img src="/data/docker/production-scheduler/2025/05/29/p_work_order/669314029885383936/work/664312385263133952_1.jpeg" />
+                  <div class="tag"></div>
+
+
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>24H</span>
+                     <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>                     <span></span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                    <div class="line-2">
+                       <span>BD999VJ-1</span>
+                       <span class="code">A00</span>
+                    </div>                  <div class="line-3">
+                    <div class="qr-code">
+                      <img src="/data/docker/production-scheduler/2025/05/29/p_work_order/669314029885383936/work/664312385263133952_1_qrCode.jpg" />
+                    </div>
+                    <div class="cz-info">
+                      <div>1000M-_915</div>
+                      <div>Color 03</div>
+                      <div>S</div>
+                       <div>第1项-项1件</div>
+                      <div class="total">总:1件</div>
+                    </div>
+                  </div>
+                  <div class="line-4">
+                  <div class="line-4-left">
+                    <div class="order-id">***07872</div>
+                    <div class="line-interval">
+                      <span class="time week2 ">05-27 16:45</span>
+                    </div>
+                    <div class="line-interval">
+                      <span class="time week5 even">05-23 13:50</span>
+                    </div>
+                  </div>
+                  <div class="line-4-right">
+                  <div>
+                    <div class="ship-id right-text">&nbsp;</div>
+                    <div class="line-interval">
+                      <span class="time week5 even">05-23 13:50</span>
+                    </div>
+                    <div class="line-interval"></div>
+                  </div>
+                </div>
+              </div>
+                    <div class="line-5"></div>
+            </div>
+            </div>
+           </td>
+<td></td></tr></tbody>
+      </table>
+    </div>
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">导出人:接单工厂1(XY工厂)</td>
+          <td class="extra-2">第1页/共1页</td>
+          <td class="extra-3">2025-05-29 11:27:30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div></body></html>
