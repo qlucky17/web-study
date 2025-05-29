@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拿货单(新)</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font: 400 14px/1.5 'PingFang SC', 'Microsoft Yahei', sans-serif;
+    }
+    .page {
+      width: 794px;
+      margin: 0 auto;
+    }
+    .wrapper {
+      width: 774px;
+      margin: 0 auto;
+    }
+    .header{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+      position: relative;
+    }
+    .header .qr-code{
+      width: 228px;
+      height: 46px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .header .icon-img{
+      position: absolute;
+      top: 30px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+    }
+    .content-table {
+      width: 100%;
+      border-collapse:collapse;
+      text-align: center;
+      margin-top: 15px;
+    }
+    .content-table th, .content-table td{
+      border: 1px solid #000;
+      padding: 5px;
+    }
+    .content-table .tr-detail td{
+      text-align: left;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <div class="header">
+        <span>批次号：<b>xxxxxxx </b>(补)</span>
+        <img src="" class="qr-code" />
+        <img src="./images/bu.png" class="icon-img" />
+      </div>
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>底款编号</th>
+            <th>底款名称</th>
+            <th>工艺路线</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1000M--</td>
+            <td>男士短袖标准T恤</td>
+            <td>A00</td>
+          </tr>
+          <tr class="tr-detail">
+            <td colspan="3">
+              <div>【1】白色3XL--2, XXL-4, L--3, M--2, S--1</div>
+              <div>【2】黑色色3XL--2, XXL-4, L--3, M--2, S--1, S--7</div>
+            </td>
+          </tr>
+          <tr>
+            <td>1000M--</td>
+            <td>男士短袖标准T恤</td>
+            <td>A00</td>
+          </tr>
+          <tr class="tr-detail">
+            <td colspan="3">
+              <div>【1】白色3XL--2, XXL-4, L--3, M--2, S--1</div>
+              <div>【2】黑色色3XL--2, XXL-4, L--3, M--2, S--1, S--7</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
