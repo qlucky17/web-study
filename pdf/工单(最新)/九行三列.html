@@ -49,6 +49,12 @@
             width: 40%;
             text-align: left;
         }
+        .extra-1 img{
+            margin-left: 5px;
+            width: 117px;
+            height: 23px;
+            vertical-align: middle;
+        }
         
         .extra-2 {
             width: 20%;
@@ -124,12 +130,22 @@
       line-height: 17px;
       padding: 0;
       text-align: center;
-    }        .left .tag.gray {
-            top: 17px;
-            bottom: initial;
-            left: 0;
-            padding: 0 3px;
-        }
+    }        
+    .left .tag.gray {
+        top: 17px;
+        bottom: initial;
+        left: 0;
+        padding: 0 3px;
+    }
+    .left .tag.bu{
+      top: 40px;
+      left: -15px;
+      background-color: transparent;
+    }
+    .left .tag.bu img{
+      width: 41px;
+      height: 41px;
+    }  
         
         .right {
             float: left;
@@ -332,7 +348,10 @@
     <table class="extra-table">
       <tbody>
         <tr>
-          <td class="extra-1">批次号：505271645004</td>
+          <td class="extra-1">
+            批次号：505271645004
+            <img src="./images/code.png" />
+          </td>
           <td class="extra-2">第1页/共1页</td>
           <td class="extra-3">件数：1(共1)</td>
         </tr>
@@ -344,7 +363,8 @@
             <div class="content-item">
               <div class="left">
                 <img src="/data/docker/production-scheduler/2025/05/29/p_work_order/669314798231545088/work/664312385263133952_1.jpeg" />
-                <div class="tag"></div>
+                <!-- <div class="tag"></div> -->
+                <div class="tag bu"><img src="./images/bu.png" /></div>
 
 
               </div>
