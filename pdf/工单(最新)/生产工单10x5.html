@@ -73,13 +73,16 @@
       left: 0;
     }
 
-    .left .tag.tag2 {
-      top: 28px;
+    .left .tag.bg_blue {
+      background-color: rgb(0, 81, 248);
     }
 
-    .left .tag.urgent {
-      top: auto;
-      bottom: 10px;
+    .left .tag.bg_orange {
+      background-color: rgb(254, 152, 32);
+    }
+
+    .left .tag.gray {
+      top: 32px;
     }
 
     .left .tag.biao {
@@ -94,6 +97,40 @@
       padding: 0;
       text-align: center;
       font-weight: 500;
+    }
+
+    .left .tag.bu {
+      top: 77px;
+      left: -26px;
+      background-color: transparent;
+    }
+
+    .left .tag.bu img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .left .left_bottom {
+      position: absolute;
+      top: auto;
+      bottom: 10px;
+    }
+
+    .left .left_bottom_tag {
+      line-height: 16px;
+      font-size: 12px;
+      margin-top: 3px;
+      padding: 0 3px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .left .left_bottom_tag.urgent {
+      background-color: rgb(245, 63, 63);
+    }
+
+    .left .left_bottom_tag.y2 {
+      background-color: rgb(46, 116, 255);
     }
 
     .right {
@@ -292,9 +329,13 @@
           <div class="left">
             <img src="商品图.jpg" />
             <span class="tag">1/3P</span>
-            <span class="tag tag2">xxx</span>
-            <span class="tag urgent">急</span>
+            <div class="left_bottom">
+              <div class="left_bottom_tag y2">Y2</div>
+              <div class="left_bottom_tag urgent">急</div>
+            </div>
+            <div class="tag gray">灰</div>
             <span class="tag biao">标</span>
+            <div class="tag bu"><img src="" /></div>
           </div>
           <div class="right">
             <div class="part-1 nowrap">
@@ -354,7 +395,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </body>
 
