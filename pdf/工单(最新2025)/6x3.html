@@ -73,14 +73,24 @@
     }
 
     .left .tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left .left_bottom {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
+
+    .left .tag,
+    .left .left_bottom_tag {
       display: inline-block;
       line-height: 27px;
       padding: 0 6px;
       background-color: rgb(245, 63, 63);
       color: #fff;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
 
     .left .bg_blue {
@@ -119,20 +129,6 @@
       height: 87px;
     }
 
-
-    .left .left_bottom {
-      position: absolute;
-      top: auto;
-      bottom: 0;
-    }
-
-    .left .left_bottom_tag {
-      line-height: 27px;
-      padding: 0 6px;
-      color: #fff;
-      text-align: center;
-    }
-
     .left .left_bottom_tag.urgent {
       background-color: rgb(245, 63, 63);
     }
@@ -142,7 +138,7 @@
     }
 
     .right {
-      width: 250px;
+      width: 245px;
       padding-left: 250px;
     }
 
