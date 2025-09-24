@@ -5,20 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单6*3</title>
+  <title>生产工单15*3</title>
   <style>
     html,
     body {
       margin: 0;
       padding: 0;
-      font: 400 19px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+      font: 600 14px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
       overflow: hidden;
     }
 
     .page {
       page-break-after: always;
-      width: 500px;
-      height: 250px;
+      width: 750px;
+      height: 150px;
       margin: 0 auto;
     }
 
@@ -34,8 +34,8 @@
     }
 
     .content-item {
-      width: 500px;
-      height: 250px;
+      width: 750px;
+      height: 150px;
       position: relative;
     }
 
@@ -68,8 +68,8 @@
     }
 
     .left img {
-      width: 250px;
-      height: 250px;
+      width: 150px;
+      height: 150px;
     }
 
     .left .tag {
@@ -81,14 +81,15 @@
     .left .left_bottom {
       position: absolute;
       top: auto;
-      bottom: 0;
+      bottom: 2px;
     }
 
     .left .tag,
     .left .left_bottom_tag {
       display: inline-block;
-      line-height: 27px;
-      padding: 0 6px;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 3px;
       background-color: rgb(245, 63, 63);
       color: #fff;
     }
@@ -102,31 +103,34 @@
     }
 
     .left .tag.gray {
-      top: 36px;
+      top: 23px;
     }
 
     .left .tag.biao {
+      top: 0;
       left: auto;
       right: 0;
       background-color: #fff;
       border: 1px solid #0453F3;
       color: #0453F3;
       border-radius: 50%;
-      width: 28px;
-      height: 28px;
+      font-size: 12px;
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
       padding: 0;
       text-align: center;
     }
 
     .left .tag.bu {
-      top: 97px;
-      left: -33px;
+      top: 58px;
+      left: -20px;
       background-color: transparent;
     }
 
     .left .tag.bu img {
-      width: 87px;
-      height: 87px;
+      width: 52px;
+      height: 52px;
     }
 
     .left .left_bottom_tag.urgent {
@@ -137,152 +141,86 @@
       background-color: rgb(46, 116, 255);
     }
 
-    .right {
-      width: 245px;
-      padding-left: 250px;
-    }
-
-    .right-pd {
-      padding-left: 8px;
+    .middle {
+      width: 216px;
+      padding-left: 157px;
     }
 
     .line-1 {
       position: relative;
-      font-size: 24px;
+      font-size: 16px;
+      padding-bottom: 1px;
+      font-weight: 400;
     }
 
     .line-1 .type {
       display: inline-block;
-      min-width: 20px;
-      height: 20px;
+      min-width: 13px;
+      height: 13px;
       box-sizing: border-box;
       position: relative;
     }
 
-    .line-1 svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 20px;
-      height: 20px;
-    }
-
     .line-1 .platform {
+      font-weight: bold;
       position: absolute;
       right: 0;
       top: 0;
-      font-weight: bold;
-    }
-
-    .line-2 {
-      position: relative;
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 2px;
-    }
-
-    .line-2 .code {
-      position: absolute;
-      right: 0;
-      top: 4px;
-      font-weight: normal;
-      font-size: 18px;
-    }
-
-    .line-3 {
-      margin-top: 6px;
-      position: relative;
-    }
-
-    .qr-code {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .qr-code.color1 {
-      background: rgb(71, 45, 86);
-    }
-
-    .qr-code.color2 {
-      background: rgb(135, 72, 31);
-    }
-
-    .qr-code.color3 {
-      background: rgb(16, 43, 106);
-    }
-
-    .qr-code.color4 {
-      background: rgb(35, 24, 21);
-    }
-
-    .qr-code img {
-      width: 88px;
-      height: 88px;
-      mix-blend-mode: color-dodge;
     }
 
     .cz-info {
-      width: 100%;
-      padding-left: 92px;
+      border-top: 1px solid #1D2129;
+      border-bottom: 1px solid #1D2129;
+      position: relative;
+      padding-top: 1px;
     }
 
     .cz-info>div {
       width: 100%;
       white-space: nowrap;
-      overflow: hidden;
-      margin-top: 1px;
+      height: 15px;
+      font-weight: 600;
     }
 
-    .appname {
-      height: 19px;
-      margin-top: 3px;
+    .cz-info .code {
+      position: absolute;
+      right: 0;
+      top: 2px;
+      left: auto;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .cz-info .total {
+      position: absolute;
+      right: 0;
+      bottom: 2px;
+      font-size: 16px;
     }
 
     .line-time {
-      line-height: 22px;
+      line-height: 18px;
+      font-size: 15px;
     }
 
     .line-time .txt {
       overflow: hidden;
     }
 
-    .line-4 {
-      margin-top: 4px;
-    }
-
-    .line-4 .txt {
-      max-width: 140px;
-    }
-
-    .line-5,
-    .line-6 {
-      margin-top: 1px;
-    }
-
     .line-5 .txt {
-      max-width: 180px;
-    }
-
-    .line-6 .fr {
-      max-width: 180px;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .line-6 .txt {
       display: inline-block;
-      min-width: 40px;
+      min-width: 50px;
     }
 
-    .line-6 .blg {
+    .line-5 .blg {
       display: inline-block;
       padding: 0 2px;
     }
 
     .time {
       display: inline-block;
-      line-height: 22px;
+      line-height: 18px;
+      font-size: 16px;
       padding: 0 2px;
       background-color: rgb(102, 102, 102);
       color: #fff;
@@ -343,6 +281,78 @@
     .time.week7.even {
       background-color: rgb(62, 65, 69);
     }
+
+    .arrow {
+      position: absolute;
+      top: 0;
+      left: 376px;
+      min-width: 10px;
+    }
+
+    .arrow .line {
+      width: 5px;
+      height: 127px;
+      background-color: #F53F3F;
+    }
+
+    .arrow.gray .line {
+      background-color: #666666;
+    }
+
+    .arrow svg {
+      position: absolute;
+      left: -6px;
+    }
+
+    .arrow polygon {
+      fill: #F53F3F;
+    }
+
+    .arrow.gray polygon {
+      fill: #666666;
+    }
+
+    .production-item {
+      position: absolute;
+      top: 0;
+      left: 382px;
+      width: 118px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .qrcode {
+      width: 110px;
+      height: 110px;
+      margin-right: 8px;
+    }
+
+    .appname {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .code-text {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .view-info {
+      width: 253px;
+      font-weight: 600;
+      font-size: 27px;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      top: 25px;
+    }
+
+    .view-info .txt {
+      line-height: 37px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
@@ -364,56 +374,59 @@
             <span class="left_bottom_tag y2">Y2</span>
           </div>
         </div>
-        <div class="right">
-          <div class="right-pd">
-            <div class="line-1">
-              <span>12H</span>
-              <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                  <polygon points="50,0 100,100 0,100" style="fill:#0453F3" />
-                </svg>
-              </span>
-              <span>10001</span>
-              <span class="platform">OTHER</span>
-            </div>
-            <div class="line-2">
-              <span>B6Z3J9J-1</span>
-              <span class="code">A05</span>
-            </div>
-            <div class="line-3">
-              <div class="qr-code">
-                <img
-                  src="/data/docker/production-scheduler/2025/09/18/p_work_order/750646999166051584/work/750600016183256320_1_qrCode.jpg" />
-              </div>
-              <div class="cz-info">
-                <div>1000M--1000M</div>
-                <div>黑色</div>
-                <div>XS</div>
-                <div>第1项-<span class="red">项<b>2</b>件</span></div>
-              </div>
-              <div class="tr">
-                <div class="total">总:2件</div>
-                <div class="appname nowrap">商户名称</div>
-              </div>
-            </div>
+        <div class="middle">
+          <div class="line-1">
+            <span>12H</span>
+            <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                <circle cx="50" cy="50" r="50" fill="#000"></circle>
+              </svg>
+            </span>
+            <span></span>
+            <span class="platform">TEM</span>
           </div>
-          <div class="line-time line-4">
+          <div class="cz-info">
+            <div>1000M--</div>
+            <div>白色</div>
+            <div>XS</div>
+            <div>第1项-<span class="red">项1件</span></div>
+            <div>***71096</div>
+            <span class="total">总:1件</span>
+            <span class="code">A05</span>
+          </div>
+          <div class="line-time line-3">
             <div class="time week4">09-18-013</div>
             <div class="fr txt">7781736425778</div>
           </div>
-          <div class="line-time line-5">
+          <div class="line-time line-4">
             <div class="time week4">09-18</div>
             <div class="fr txt">ZxIshop_#NVZRA5Y</div>
           </div>
-          <div class="line-time line-6">
+          <div class="line-time line-5">
             <div class="time week4">09-18</div>
             <div class="fr">
-              <span class="txt">05543</span>
+              <span class="txt">*01056</span>
               <span class="txt">
                 <span class="blg" style="background: #e31e1e; color: #1c1a1a;">0USPS</span>
               </span>
-              <span class="txt">01056</span>
             </div>
           </div>
+        </div>
+        <div class="arrow">
+          <div class="line"></div>
+          <svg width="22" height="24">
+            <polygon points="0 0,11 0,11 24,0 0" />
+          </svg>
+        </div>
+        <div class="production-item">
+          <div class="appname">商户名称</div>
+          <img
+            src="/data/docker/production-scheduler/2025/09/19/p_picture/751221404862539008/work/750096906784433409_1_qrCode.jpg"
+            class="qrcode" />
+          <div class="code-text">BL3YMJQ-1</div>
+        </div>
+        <div class="view-info">
+          <div class="txt">MX-1</div>
+          <div class="txt">A面</div>
         </div>
       </div>
     </div>

@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单A4(9*3)</title>
+  <title>生产工单A4(7*2)</title>
   <style>
     html,
     body {
       margin: 0;
       padding: 0;
-      font: 400 8px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+      font: 400 11px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
     }
 
     .page {
@@ -38,7 +38,7 @@
     }
 
     .extra-table {
-      width: 100%;
+      width: 794px;
       height: 47px;
       line-height: 47px;
       margin: 0 auto;
@@ -78,16 +78,16 @@
     }
 
     .content-table td {
-      width: 33.33%;
-      height: 110.7px;
+      width: 50%;
+      height: 142.68px;
       border: 1px solid #979797;
       vertical-align: middle;
       overflow: hidden;
     }
 
     .content-item {
-      width: 212px;
-      height: 106px;
+      width: 276px;
+      height: 138px;
       margin: 0 auto;
       position: relative;
     }
@@ -121,8 +121,8 @@
     }
 
     .left img {
-      width: 106px;
-      height: 106px;
+      width: 138px;
+      height: 138px;
     }
 
     .left .tag {
@@ -134,14 +134,14 @@
     .left .left_bottom {
       position: absolute;
       top: auto;
-      bottom: 1px;
+      bottom: 2px;
     }
 
     .left .tag,
     .left .left_bottom_tag {
       display: inline-block;
-      line-height: 11px;
-      padding: 0 2.2px;
+      line-height: 15px;
+      padding: 0 3.3px;
       background-color: rgb(245, 63, 63);
       color: #fff;
     }
@@ -155,7 +155,7 @@
     }
 
     .left .tag.gray {
-      top: 15px;
+      top: 19.8px;
     }
 
     .left .tag.biao {
@@ -165,21 +165,21 @@
       border: 1px solid #0453F3;
       color: #0453F3;
       border-radius: 50%;
-      width: 12px;
-      height: 12px;
+      width: 16px;
+      height: 16px;
       padding: 0;
       text-align: center;
     }
 
     .left .tag.bu {
-      top: 41px;
-      left: -14px;
+      top: 53.4px;
+      left: -18px;
       background-color: transparent;
     }
 
     .left .tag.bu img {
-      width: 37px;
-      height: 37px;
+      width: 48px;
+      height: 48px;
     }
 
     .left .left_bottom_tag.urgent {
@@ -191,23 +191,23 @@
     }
 
     .right {
-      width: 106px;
-      padding-left: 106px;
+      width: 138px;
+      padding-left: 138px;
     }
 
     .right-pd {
-      padding-left: 3px;
+      padding-left: 4px;
     }
 
     .line-1 {
       position: relative;
-      font-size: 10px;
+      font-size: 13px;
     }
 
     .line-1 .type {
       display: inline-block;
-      min-width: 8px;
-      height: 8px;
+      min-width: 11px;
+      height: 11px;
       box-sizing: border-box;
       position: relative;
     }
@@ -216,8 +216,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 8px;
-      height: 8px;
+      width: 11px;
+      height: 11px;
     }
 
     .line-1 .platform {
@@ -229,7 +229,7 @@
 
     .line-2 {
       position: relative;
-      font-size: 10px;
+      font-size: 13px;
       font-weight: bold;
       margin-top: 1px;
     }
@@ -237,13 +237,13 @@
     .line-2 .code {
       position: absolute;
       right: 0;
-      top: 1px;
+      top: 2px;
       font-weight: normal;
-      font-size: 8px;
+      font-size: 10px;
     }
 
     .line-3 {
-      margin-top: 1px;
+      margin-top: 2px;
       position: relative;
     }
 
@@ -270,32 +270,30 @@
     }
 
     .qr-code img {
-      width: 37px;
-      height: 37px;
+      width: 48px;
+      height: 48px;
       mix-blend-mode: color-dodge;
     }
 
     .cz-info {
       width: 100%;
-      padding-left: 39px;
+      padding-left: 51px;
     }
 
     .cz-info>div {
       width: 100%;
       white-space: nowrap;
       overflow: hidden;
-      font-size: 8px;
       margin-top: 1px;
     }
 
     .appname {
-      height: 8px;
+      height: 11px;
       margin-top: 1px;
     }
 
     .line-time {
-      line-height: 9px;
-      font-size: 8px;
+      line-height: 12px;
     }
 
     .line-time .txt {
@@ -303,11 +301,11 @@
     }
 
     .line-4 {
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .line-4 .txt {
-      max-width: 59px;
+      max-width: 70px;
     }
 
     .line-5,
@@ -316,29 +314,33 @@
     }
 
     .line-5 .txt {
-      max-width: 76px;
+      max-width: 99px;
     }
 
     .line-6 .fr {
-      max-width: 76px;
+      max-width: 99px;
       overflow: hidden;
       white-space: nowrap;
     }
 
+    .line-6 .txt {
+      display: inline-block;
+      min-width: 22px;
+    }
+
     .line-6 .blg {
       display: inline-block;
-      padding: 0 0.8px;
+      padding: 0 1.1px;
     }
 
     .time {
       display: inline-block;
-      line-height: 9px;
-      padding: 0 0.8px;
+      line-height: 12px;
+      padding: 0 1.1px;
       background-color: rgb(102, 102, 102);
       color: #fff;
     }
 
-    /* 时间块背景色保持原设计，不做修改 */
     .time.week1 {
       background-color: rgb(170, 33, 22);
     }
@@ -404,7 +406,7 @@
         <tr>
           <td class="extra-1">
             批次号：509181509001
-            <img src="451772f3-0559-4455-96cf-98201a1b0c8f.PNG" />
+            <img src="35a0ce07-2f6c-4e1a-9b60-661a933dcede.PNG" />
           </td>
           <td class="extra-2">第1页/共1页</td>
           <td class="extra-3">件数：2(共2)</td>
@@ -483,80 +485,30 @@
               </div>
             </td>
             <td>
-
             </td>
+          </tr>
+          <tr>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
+            <td></td>
             <td></td>
           </tr>
           <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
             <td></td>
-          </tr>
-          <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
             <td></td>
           </tr>
         </tbody>
@@ -567,7 +519,7 @@
         <tr>
           <td class="extra-1">导出人:接单工厂1(XY工厂)</td>
           <td class="extra-2">第1页/共1页</td>
-          <td class="extra-3">2025-09-18 16:54:34</td>
+          <td class="extra-3">2025-09-18 16:46:05</td>
         </tr>
       </tbody>
     </table>
