@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>生产工单A4(7*2)无页边</title>
+        <style>
+                 html,
+                 body {
+                   margin: 0;
+                   padding: 0;
+                   font: 400 12px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+                 }
+
+                 .page {
+                   width: 794px;
+                   height: 1123px;
+                   margin: 0 auto;
+                 }
+
+                 .wrapper,
+                 table,
+                 tr,
+                 td,
+                 th,
+                 tbody,
+                 thead,
+                 tfoot {
+                   page-break-inside: avoid !important;
+                 }
+
+                 .content-table {
+                   width: 100%;
+                   border-collapse: collapse;
+                   border-spacing: 0;
+                   margin: 0 auto;
+                 }
+
+                 .content-table td {
+                   width: 50%;
+                   height: 157.4px;
+                   border: 1px solid #000;
+                   vertical-align: middle;
+                   overflow: hidden;
+                 }
+
+                 .content-item {
+                   width: 302px;
+                   height: 151px;
+                   margin: 0 auto;
+                   position: relative;
+                 }
+
+                 .relative {
+                   position: relative;
+                 }
+
+                 .nowrap {
+                   overflow: hidden;
+                   text-overflow: ellipsis;
+                   white-space: nowrap;
+                 }
+
+                 .red {
+                   color: rgb(245, 63, 63);
+                 }
+
+                 .tr {
+                   text-align: right;
+                 }
+
+                 .fr {
+                   float: right;
+                 }
+
+                 .left {
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                 }
+
+                 .left img {
+                   width: 151px;
+                   height: 151px;
+                 }
+
+                 .left .tag {
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                 }
+
+                 .left .left_bottom {
+                   position: absolute;
+                   top: auto;
+                   bottom: 2px;
+                 }
+
+                 .left .tag,
+                 .left .left_bottom_tag {
+                   display: inline-block;
+                   line-height: 16px;
+                   padding: 0 3.2px;
+                   background-color: rgb(245, 63, 63);
+                   color: #fff;
+                 }
+
+                 .left .bg_blue {
+                   background-color: rgb(0, 81, 248);
+                 }
+
+                 .left .bg_orange {
+                   background-color: rgb(254, 152, 32);
+                 }
+
+                 .left .tag.gray {
+                   top: 22px;
+                 }
+
+                 .left .tag.biao {
+                   left: auto;
+                   right: 0;
+                   background-color: #fff;
+                   border: 1px solid #0453F3;
+                   color: #0453F3;
+                   border-radius: 50%;
+                   width: 17px;
+                   height: 17px;
+                   padding: 0;
+                   text-align: center;
+                 }
+
+                 .left .tag.bu {
+                   top: 59px;
+                   left: -20px;
+                   background-color: transparent;
+                 }
+
+                 .left .tag.bu img {
+                   width: 53px;
+                   height: 53px;
+                 }
+
+                 .left .left_bottom_tag.urgent {
+                   background-color: rgb(245, 63, 63);
+                 }
+
+                 .left .left_bottom_tag.y2 {
+                   background-color: rgb(46, 116, 255);
+                 }
+
+                 .right {
+                   width: 151px;
+                   padding-left: 151px;
+                 }
+
+                 .right-pd {
+                   padding-left: 5px;
+                 }
+
+                 .line-1 {
+                   position: relative;
+                   font-size: 14px;
+                 }
+
+                 .line-1 .type {
+                   display: inline-block;
+                   min-width: 12px;
+                   height: 12px;
+                   box-sizing: border-box;
+                   position: relative;
+                 }
+
+                 .line-1 svg {
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                   width: 12px;
+                   height: 12px;
+                 }
+
+                 .line-1 .platform {
+                   position: absolute;
+                   right: 0;
+                   top: 0;
+                   font-weight: bold;
+                 }
+
+                 .line-2 {
+                   position: relative;
+                   font-size: 14px;
+                   font-weight: bold;
+                   margin-top: 1px;
+                 }
+
+                 .line-2 .code {
+                   position: absolute;
+                   right: 0;
+                   top: 2px;
+                   font-weight: normal;
+                   font-size: 11px;
+                 }
+
+                 .line-3 {
+                   margin-top: 4px;
+                   position: relative;
+                 }
+
+                 .qr-code {
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                 }
+
+                 .qr-code.color1 {
+                   background: rgb(71, 45, 86);
+                 }
+
+                 .qr-code.color2 {
+                   background: rgb(135, 72, 31);
+                 }
+
+                 .qr-code.color3 {
+                   background: rgb(16, 43, 106);
+                 }
+
+                 .qr-code.color4 {
+                   background: rgb(35, 24, 21);
+                 }
+
+                 .qr-code img {
+                   width: 53px;
+                   height: 53px;
+                   mix-blend-mode: color-dodge;
+                 }
+
+                 .cz-info {
+                   width: 100%;
+                   padding-left: 56px;
+                 }
+
+                 .cz-info>div {
+                   width: 100%;
+                   white-space: nowrap;
+                   overflow: hidden;
+                   font-size: 11px;
+                 }
+
+                 .appname {
+                   height: 12px;
+                   margin-top: 2px;
+                 }
+
+                 .line-time {
+                   line-height: 13px;
+                   font-size: 11px;
+                 }
+
+                 .line-time .txt {
+                   overflow: hidden;
+                 }
+
+                 .line-4 {
+                   margin-top: 2px;
+                 }
+
+                 .line-4 .txt {
+                   max-width: 85px;
+                 }
+
+                 .line-5,
+                 .line-6 {
+                   margin-top: 1px;
+                 }
+
+                 .line-5 .txt {
+                   max-width: 109px;
+                 }
+
+                 .line-6 .fr {
+                   max-width: 115px;
+                   overflow: hidden;
+                   white-space: nowrap;
+                 }
+
+                 .line-6 .blg {
+                   display: inline-block;
+                   width: 42px;
+                   text-align: center;
+                   font-size: 11px;
+                 }
+
+                 .line-6 .txt {
+                   display: inline-block;
+                   min-width: 33px;
+                 }
+
+
+                 .time {
+                   display: inline-block;
+                   line-height: 13px;
+                   padding: 0 1.2px;
+                   background-color: rgb(102, 102, 102);
+                   color: #fff;
+                 }
+
+                 /* 时间块背景色保持原设计，不做修改 */
+                 .time.week1 {
+                   background-color: rgb(170, 33, 22);
+                 }
+
+                 .time.week2 {
+                   background-color: rgb(245, 130, 32);
+                 }
+
+                 .time.week3 {
+                   background-color: rgb(119, 120, 123);
+                 }
+
+                 .time.week4 {
+                   background-color: rgb(0, 88, 49);
+                 }
+
+                 .time.week5 {
+                   background-color: rgb(34, 75, 143);
+                 }
+
+                 .time.week6 {
+                   background-color: rgb(139, 0, 139);
+                 }
+
+                 .time.week7 {
+                   background-color: rgb(35, 24, 21);
+                 }
+
+                 .time.week1.even {
+                   background-color: rgb(132, 57, 0);
+                 }
+
+                 .time.week2.even {
+                   background-color: rgb(252, 175, 23);
+                 }
+
+                 .time.week3.even {
+                   background-color: rgb(161, 163, 166);
+                 }
+
+                 .time.week4.even {
+                   background-color: rgb(29, 149, 63);
+                 }
+
+                 .time.week5.even {
+                   background-color: rgb(16, 43, 106);
+                 }
+
+                 .time.week6.even {
+                   background-color: rgb(65, 20, 69);
+                 }
+
+                 .time.week7.even {
+                   background-color: rgb(62, 65, 69);
+                 }
+        </style>
+    </head>
+      <body><div class="page">
+    <div class="wrapper">
+      <table class="content-table">
+        <tbody><tr><td>
+    <div class="content-item">
+        <div class="left">
+            <img src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+            <span class="tag ">AB/5P</span>
+            <div class="tag gray">GRAY CODE</div>
+            <span class="tag biao">标</span>
+            <div class="tag bu"><img src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" /></div>
+
+            <div class="left_bottom">
+              <div class="left_bottom_tag y2">Y2</div>
+              <div class="left_bottom_tag urgent">急</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-pd">
+                <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                </div>
+                <div class="line-2">
+                    <div>BUP4KMY-6</div>
+                    <span class="code">A00</span>
+                </div>
+                <div class="line-3">
+                    <div class="qr-code">
+                        <img src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg">
+                    </div>
+                    <div class="cz-info">
+                        <div>11531_436</div>
+                        <div>黑色</div>
+                        <div>L</div>
+                        <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    </div>
+                    <div class="tr">
+                        <div class="total">总:3件</div>
+                        <div class="appname nowrap">安(0001)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-time line-4">
+                <div class="time week4  time-code">28-08-123</div>
+                <div class="fr txt">itemskuuuuuuuuuuu</div>
+            </div>
+            <div class="line-time line-5">
+                <div class="time week6 ">14-10</div>
+                <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+            </div>
+            <div class="line-time line-6">
+                <div class="time week6 ">14-10</div>
+                <div class="fr">
+                    <span class="txt">23456</span>
+                    <span class="txt">
+                      <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                    </span>
+                    <span class="txt">99877</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
+<td></td></tr></tbody>
+      </table>
+    </div>
+  </div></body></html>
