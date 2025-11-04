@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单A4(7*2)</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font: 400 11px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+    }
+
+    .page {
+      width: 794px;
+      height: 1123px;
+      margin: 0 auto;
+    }
+
+    .wrapper,
+    table,
+    tr,
+    td,
+    th,
+    tbody,
+    thead,
+    tfoot {
+      page-break-inside: avoid !important;
+    }
+
+    .wrapper {
+      width: 738px;
+      height: 1023px;
+      margin: 0 auto;
+    }
+
+    .extra-table {
+      width: 738px;
+      height: 47px;
+      line-height: 47px;
+      margin: 0 auto;
+      border-spacing: 0;
+      font-size: 15px;
+    }
+
+    .extra-1 {
+      width: 45%;
+      text-align: left;
+    }
+
+    .extra-1 img {
+      margin-left: 5px;
+      width: 100px;
+      height: 23px;
+      vertical-align: middle;
+    }
+
+    .extra-2 {
+      width: 20%;
+      text-align: center;
+    }
+
+    .extra-3 {
+      width: 45%;
+      text-align: right;
+    }
+
+    .content-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 0 auto;
+    }
+
+    .content-table td {
+      width: 718px;
+      height: 143.9px;
+      border: 1px solid #979797;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+
+    .content-item {
+      width: 690px;
+      height: 138px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .nowrap {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .red {
+      color: rgb(245, 63, 63);
+    }
+
+    .blue {
+      color: #0F01FD
+    }
+
+    .tr {
+      text-align: right;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 205.16px;
+      /* 223*0.92=205.16 */
+    }
+
+    .left-right {
+      margin-left: 205.16px;
+      /* 223*0.92=205.16 */
+    }
+
+    .right-left {
+      position: absolute;
+      top: 0;
+      right: 207.92px;
+      /* 226*0.92=207.92 */
+      border-left: 0.92px solid #1D2129;
+      /* 1*0.92=0.92 */
+      width: 138px;
+      /* 150*0.92=138 */
+      height: 138px;
+      /* 150*0.92=138 */
+      overflow: hidden;
+    }
+
+    .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 201.48px;
+      /* 219*0.92=201.48 */
+    }
+
+    .left .detail-info {
+      max-width: 138px;
+      /* 150*0.92=138 */
+      overflow: hidden;
+    }
+
+    .left-right img {
+      width: 128.8px;
+      /* 140*0.92=128.8 */
+      height: 128.8px;
+      /* 140*0.92=128.8 */
+      margin-left: 4.6px;
+      /* 5*0.92=4.6 */
+      margin-top: 4.6px;
+      /* 5*0.92=4.6 */
+    }
+
+    .right-left img {
+      width: 138px;
+      /* 150*0.92=138 */
+      height: 138px;
+      /* 150*0.92=138 */
+    }
+
+    .right-left .tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .right-left .left_bottom {
+      position: absolute;
+      top: auto;
+      bottom: 1.84px;
+      /* 2*0.92=1.84 */
+    }
+
+    .right-left .tag,
+    .right-left .left_bottom_tag {
+      display: inline-block;
+      font-size: 11.04px;
+      /* 12*0.92=11.04 */
+      line-height: 14.72px;
+      /* 16*0.92=14.72 */
+      padding: 0 2.76px;
+      /* 3*0.92=2.76 */
+      background-color: rgb(245, 63, 63);
+      color: #fff;
+    }
+
+    .right-left .bg_blue {
+      background-color: rgb(0, 81, 248);
+    }
+
+    .right-left .bg_orange {
+      background-color: rgb(254, 152, 32);
+    }
+
+    .right-left .tag.gray {
+      top: 21.16px;
+      /* 23*0.92=21.16 */
+    }
+
+    .right-left .tag.biao {
+      top: 0;
+      left: auto;
+      right: 0;
+      background-color: #fff;
+      border: 0.92px solid #0453F3;
+      /* 1*0.92=0.92 */
+      color: #0453F3;
+      border-radius: 50%;
+      font-size: 11.04px;
+      /* 12*0.92=11.04 */
+      width: 15.64px;
+      /* 17*0.92=15.64 */
+      height: 15.64px;
+      /* 17*0.92=15.64 */
+      line-height: 15.64px;
+      /* 17*0.92=15.64 */
+      padding: 0;
+      text-align: center;
+    }
+
+    .right-left .tag.bu {
+      top: 53.36px;
+      /* 58*0.92=53.36 */
+      left: -18.4px;
+      /* -20*0.92=-18.4 */
+      background-color: transparent;
+    }
+
+    .right-left .tag.bu img {
+      width: 47.84px;
+      /* 52*0.92=47.84 */
+      height: 47.84px;
+      /* 52*0.92=47.84 */
+    }
+
+    .right-left .left_bottom_tag.urgent {
+      background-color: rgb(245, 63, 63);
+    }
+
+    .right-left .left_bottom_tag.y2 {
+      background-color: rgb(46, 116, 255);
+    }
+
+    .qrcode-info {
+      display: inline-block;
+      text-align: center;
+      font-size: 11.04px;
+      /* 12*0.92=11.04 */
+    }
+
+    .qrcode-img {
+      width: 55.2px;
+      /* 60*0.92=55.2 */
+      height: 55.2px;
+      /* 60*0.92=55.2 */
+    }
+
+    .left .qrcode-info {
+      position: absolute;
+      top: 5.52px;
+      /* 6*0.92=5.52 */
+      right: 6.44px;
+      /* 7*0.92=6.44 */
+    }
+
+    .left .qrcode-img {
+      margin: 1.84px 0;
+      /* 2*0.92=1.84 */
+    }
+
+    .right .qrcode-info {
+      position: absolute;
+      right: 0;
+      top: 17.48px;
+      /* 19*0.92=17.48 */
+      text-align: right;
+
+      .tag {
+        position: absolute;
+        right: 55.2px;
+        /* 60*0.92=55.2 */
+        top: 0;
+      }
+    }
+
+    .line-1 {
+      position: relative;
+      font-size: 14.72px;
+      /* 16*0.92=14.72 */
+      padding-bottom: 0.92px;
+      /* 1*0.92=0.92 */
+      padding-left: 1.84px;
+      /* 2*0.92=1.84 */
+      font-weight: 400;
+    }
+
+    .line-1 .type {
+      display: inline-block;
+      min-width: 11.96px;
+      /* 13*0.92=11.96 */
+      height: 11.96px;
+      /* 13*0.92=11.96 */
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .line-1 .platform {
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .cz-info {
+      border-top: 0.92px solid #1D2129;
+      /* 1*0.92=0.92 */
+      position: relative;
+      padding-top: 0.92px;
+      /* 1*0.92=0.92 */
+      padding-left: 1.84px;
+      /* 2*0.92=1.84 */
+    }
+
+    .cz-info>div {
+      width: 100%;
+      white-space: nowrap;
+      height: 13.8px;
+      /* 15*0.92=13.8 */
+      font-weight: 600;
+    }
+
+    .cz-info .code {
+      position: absolute;
+      right: 0;
+      top: 1.84px;
+      /* 2*0.92=1.84 */
+      left: auto;
+      font-size: 11.04px;
+      /* 12*0.92=11.04 */
+      font-weight: 400;
+    }
+
+    .cz-info .total {
+      position: absolute;
+      right: 0;
+      bottom: 1.84px;
+      /* 2*0.92=1.84 */
+      font-size: 14.72px;
+      /* 16*0.92=14.72 */
+    }
+
+    .left .cz-info>div {
+      font-size: 14.72px;
+      /* 16*0.92=14.72 */
+      height: 15.64px;
+      /* 17*0.92=15.64 */
+      line-height: 15.64px;
+      /* 17*0.92=15.64 */
+    }
+
+    .right .cz-info>div {
+      max-width: 119.6px;
+      /* 130*0.92=119.6 */
+      overflow: hidden;
+    }
+
+    .line-time {
+      line-height: 16.56px;
+      /* 18*0.92=16.56 */
+      font-size: 13.8px;
+      /* 15*0.92=13.8 */
+    }
+
+    .line-time .txt {
+      overflow: hidden;
+    }
+
+    .line-3 {
+      border-top: 0.92px solid #1D2129;
+      /* 1*0.92=0.92 */
+    }
+
+    .line-5 .txt {
+      display: inline-block;
+      min-width: 57.96px;
+      /* 63*0.92=57.96 */
+    }
+
+    .line-5 .blg {
+      display: inline-block;
+      width: 55.2px;
+      /* 60*0.92=55.2 */
+      text-align: center;
+    }
+
+    .time {
+      display: inline-block;
+      line-height: 16.56px;
+      /* 18*0.92=16.56 */
+      font-size: 14.72px;
+      /* 16*0.92=14.72 */
+      padding: 0 1.84px;
+      /* 2*0.92=1.84 */
+      background-color: rgb(102, 102, 102);
+      color: #fff;
+    }
+
+    .time.week1 {
+      background-color: rgb(170, 33, 22);
+    }
+
+    .time.week2 {
+      background-color: rgb(245, 130, 32);
+    }
+
+    .time.week3 {
+      background-color: rgb(119, 120, 123);
+    }
+
+    .time.week4 {
+      background-color: rgb(0, 88, 49);
+    }
+
+    .time.week5 {
+      background-color: rgb(34, 75, 143);
+    }
+
+    .time.week6 {
+      background-color: rgb(139, 0, 139);
+    }
+
+    .time.week7 {
+      background-color: rgb(35, 24, 21);
+    }
+
+    .time.week1.even {
+      background-color: rgb(132, 57, 0);
+    }
+
+    .time.week2.even {
+      background-color: rgb(252, 175, 23);
+    }
+
+    .time.week3.even {
+      background-color: rgb(161, 163, 166);
+    }
+
+    .time.week4.even {
+      background-color: rgb(29, 149, 63);
+    }
+
+    .time.week5.even {
+      background-color: rgb(16, 43, 106);
+    }
+
+    .time.week6.even {
+      background-color: rgb(65, 20, 69);
+    }
+
+    .time.week7.even {
+      background-color: rgb(62, 65, 69);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">
+            批次号：506170834001 补
+            <img
+              src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/a9992a24-8f7e-4939-bb08-842750e7ae50.PNG" />
+          </td>
+          <td class="extra-2">第1页/共3页</td>
+          <td class="extra-3">件数：1(共1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="wrapper">
+      <table class="content-table">
+        <tbody>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="content-item">
+                <div class="left">
+                  <div class="inline-block detail-info">
+                    <div class="line-1">
+                      <span>48</span>
+                      <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                          <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                        </svg>
+                      </span>
+                      <span>10101</span>
+                    </div>
+                    <div class="cz-info">
+                      <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="blue">共N项-总N件</div>
+                    </div>
+                    <div class="qrcode-info">
+                      <div>A01</div>
+                      <img class="qrcode-img"
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                      <div>AAAAAA-1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="left-right">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                </div>
+                <div class="right-left">
+                  <img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                  <span class="tag ">AB/5P</span>
+                  <div class="tag gray">GRAY CODE</div>
+                  <span class="tag biao">标</span>
+                  <div class="tag bu"><img
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                  </div>
+                  <div class="left_bottom">
+                    <div class="left_bottom_tag y2">Y2</div>
+                    <div class="left_bottom_tag urgent">急</div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <span class="platform">OTHER</span>
+                  </div>
+                  <div class="cz-info">
+                    <div>11531_43611531_43611531_43611531_436</div>
+                    <div>黑色</div>
+                    <div>L</div>
+                    <div>第2项-<span class="red">项<b>3</b>件</span></div>
+                    <div class="blue">共N项-总N件</div>
+                  </div>
+                  <div class="qrcode-info">
+                    <div class="tag">A01</div>
+                    <img class="qrcode-img"
+                      src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+                    <div>AAAAAA-1</div>
+                  </div>
+                  <div class="line-time line-3">
+                    <div class="time week4  time-code">28-08-123</div>
+                    <div class="fr txt">itemsku</div>
+                  </div>
+                  <div class="line-time line-4">
+                    <div class="time week6 ">14-10</div>
+                    <div class="fr txt">ZxIshop_#NVZRA5Y</div>
+                  </div>
+                  <div class="line-time line-5">
+                    <div class="fr">
+                      <span class="txt">99877</span>
+                      <span class="txt">
+                        <span class="blg" style="background: #000; color: #FFF;">USPSH</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <table class="extra-table">
+      <tbody>
+        <tr>
+          <td class="extra-1">导出人:工厂工厂(工厂11)</td>
+          <td class="extra-2">第1页/共3页</td>
+          <td class="extra-3">2025-11-03 18:15:27</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
