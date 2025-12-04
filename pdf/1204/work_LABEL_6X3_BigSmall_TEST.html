@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产工单6*3_大图小码_TEST</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font: 400 19px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      page-break-after: always;
+      width: 500px;
+      height: 250px;
+      margin: 0 auto;
+    }
+
+    .wrapper,
+    table,
+    tr,
+    td,
+    th,
+    tbody,
+    thead,
+    tfoot {
+      page-break-inside: avoid !important;
+    }
+
+    .content-item {
+      width: 500px;
+      height: 250px;
+      position: relative;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .overflow-hidden {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
+    }
+
+    .red {
+      color: rgb(245, 63, 63);
+    }
+
+    .blue {
+      color: #0F01FD
+    }
+
+    .tr {
+      text-align: right;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left img {
+      width: 250px;
+      height: 250px;
+    }
+
+    .left .tag {
+      display: inline-block;
+      line-height: 27px;
+      padding: 0 6px;
+      background-color: rgb(245, 63, 63);
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left .bg_blue {
+      background-color: rgb(0, 81, 248);
+    }
+
+    .left .bg_orange {
+      background-color: rgb(254, 152, 32);
+    }
+
+    .left .tag.gray {
+      top: 36px;
+    }
+
+    .left .tag.biao {
+      left: auto;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #0453F3;
+      color: #0453F3;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      text-align: center;
+    }
+
+    .left .tag.bu {
+      top: 97px;
+      left: -33px;
+      background-color: transparent;
+    }
+
+    .left .tag.bu img {
+      width: 87px;
+      height: 87px;
+    }
+
+    .left .left_bottom {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
+
+    .left .left_bottom_tag {
+      line-height: 27px;
+      padding: 0 6px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .left .left_bottom_tag.urgent {
+      background-color: rgb(245, 63, 63);
+      margin-top: 4px;
+    }
+
+    .left .left_bottom_tag.y2 {
+      background-color: rgb(46, 116, 255);
+    }
+
+    .right {
+      width: 245px;
+      padding-left: 250px;
+      overflow: hidden;
+    }
+
+    .right-pd {
+      padding-left: 8px;
+    }
+
+    .line-1 {
+      position: relative;
+      font-size: 24px;
+    }
+
+    .line-1 .type {
+      display: inline-block;
+      min-width: 19px;
+      height: 19px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .line-1 svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 19px;
+      height: 19px;
+    }
+
+    .line-1 .platform {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: bold;
+      width: 90px;
+      height: 24px;
+    }
+
+    .line-2 {
+      position: relative;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .line-2 .code {
+      position: absolute;
+      right: 0;
+      top: 4px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    .line-3 {
+      margin-top: 6px;
+      position: relative;
+    }
+
+    .qr-code {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .qr-code.color1 {
+      background: rgb(71, 45, 86);
+    }
+
+    .qr-code.color2 {
+      background: rgb(135, 72, 31);
+    }
+
+    .qr-code.color3 {
+      background: rgb(16, 43, 106);
+    }
+
+    .qr-code.color4 {
+      background: rgb(35, 24, 21);
+    }
+
+    .qr-code img {
+      width: 88px;
+      height: 88px;
+      mix-blend-mode: color-dodge;
+    }
+
+    .cz-info {
+      width: 100%;
+      padding-left: 92px;
+      font-size: 19px;
+    }
+
+    .cz-info>div {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 1px;
+    }
+
+    .var-info .vartxt-outer {
+      width: 75px;
+      height: 22px;
+    }
+
+    .line-time {
+      line-height: 22px;
+    }
+
+    .line-4 {
+      margin-top: 2px;
+    }
+
+    .line-5,
+    .line-6 {
+      margin-top: 1px;
+    }
+
+    .line-4 .vartxt-outer {
+      width: 140px;
+      height: 23px;
+    }
+
+    .line-5 .vartxt-outer,
+    .line-6 .vartxt-outer {
+      width: 180px;
+      height: 23px;
+    }
+
+    .time {
+      display: inline-block;
+      line-height: 22px;
+      padding: 0 2px;
+      background-color: rgb(102, 102, 102);
+      color: #fff;
+    }
+
+    .time.week1 {
+      background-color: rgb(170, 33, 22);
+    }
+
+    .time.week2 {
+      background-color: rgb(245, 130, 32);
+    }
+
+    .time.week3 {
+      background-color: rgb(119, 120, 123);
+    }
+
+    .time.week4 {
+      background-color: rgb(0, 88, 49);
+    }
+
+    .time.week5 {
+      background-color: rgb(34, 75, 143);
+    }
+
+    .time.week6 {
+      background-color: rgb(139, 0, 139);
+    }
+
+    .time.week7 {
+      background-color: rgb(35, 24, 21);
+    }
+
+    .time.week1.even {
+      background-color: rgb(132, 57, 0);
+    }
+
+    .time.week2.even {
+      background-color: rgb(252, 175, 23);
+    }
+
+    .time.week3.even {
+      background-color: rgb(161, 163, 166);
+    }
+
+    .time.week4.even {
+      background-color: rgb(29, 149, 63);
+    }
+
+    .time.week5.even {
+      background-color: rgb(16, 43, 106);
+    }
+
+    .time.week6.even {
+      background-color: rgb(65, 20, 69);
+    }
+
+    .time.week7.even {
+      background-color: rgb(62, 65, 69);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="wrapper">
+      <tbody>
+        <tr>
+          <td>
+            <div class="content-item">
+              <div class="left">
+                <img
+                  src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+                <span class="tag ">AB/5P</span>
+                <div class="tag gray">GRAY CODE</div>
+                <span class="tag biao">标</span>
+                <div class="tag bu"><img
+                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
+                </div>
+                <div class="left_bottom">
+                  <div class="left_bottom_tag y2">Y2</div>
+                  <div class="left_bottom_tag urgent">急</div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="right-pd">
+                  <div class="line-1">
+                    <span>48</span>
+                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                      </svg>
+                    </span>
+                    <span>10101</span>
+                    <div class="platform vartxt-outer">
+                      <div class="txt">OTHER</div>
+                    </div>
+                  </div>
+                  <div class="line-2">
+                    <div>BUP4KMY-6</div>
+                    <span class="code">A00</span>
+                  </div>
+                  <div class="line-3">
+                    <div class="qr-code">
+                      <img
+                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg">
+                    </div>
+                    <div class="cz-info overflow-hidden">
+                      <div>11531_436</div>
+                      <div>黑色</div>
+                      <div>L</div>
+                      <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
+                      <div class="total blue">共N项-总N件</div>
+                    </div>
+                  </div>
+                  <div class="var-info">
+                    <div class="vartxt-outer">
+                      <div class="txt">123</div>
+                    </div>
+                    <div class="vartxt-outer">
+                      <div class="txt blg" style="background: #000; color: #FFF;">456</div>
+                    </div>
+                    <div class="vartxt-outer">
+                      <div class="txt">789</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line-time line-4">
+                  <div class="time week4 time-code">28-08-123</div>
+                  <div class="vartxt-outer fr">
+                    <div class="txt">**222uksuk(su)ksuks111$$</div>
+                  </div>
+                </div>
+                <div class="line-time line-5">
+                  <div class="time week6 ">14-10</div>
+                  <div class="vartxt-outer fr">
+                    <div class="txt">**ZxI(shop)_#$$</div>
+                  </div>
+                </div>
+                <div class="line-time line-6">
+                  <div class="time week6 ">14-10</div>
+                  <div class="vartxt-outer fr">
+                    <div class="txt">**ZxI商户名称(shop)_#$$</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</body>
+
+</html>
