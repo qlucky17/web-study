@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单15*3_OLD</title>
+  <title>生产工单15*3(2)_OLD</title>
   <style>
     html,
     body {
@@ -49,9 +49,16 @@
       text-overflow: clip;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -62,7 +69,6 @@
       color: #0F01FD
     }
 
-
     .tr {
       text-align: right;
     }
@@ -71,31 +77,69 @@
       float: right;
     }
 
+    .inline-block {
+      display: inline-block;
+    }
+
     .left {
       position: absolute;
       top: 0;
       left: 0;
+      width: 223px;
     }
 
-    .left img {
+    .left-right {
+      margin-left: 223px;
+    }
+
+    .right-left {
+      position: absolute;
+      top: 0;
+      right: 226px;
+      border-left: 1px solid #1D2129;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+    }
+
+    .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 219px;
+    }
+
+    .left .detail-info {
+      max-width: 150px;
+      overflow: hidden;
+    }
+
+    .left-right img {
+      width: 140px;
+      height: 140px;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+
+    .right-left img {
       width: 150px;
       height: 150px;
     }
 
-    .left .tag {
+    .right-left .tag {
       position: absolute;
       top: 0;
       left: 0;
     }
 
-    .left .left_bottom {
+    .right-left .left_bottom {
       position: absolute;
       top: auto;
       bottom: 2px;
     }
 
-    .left .tag,
-    .left .left_bottom_tag {
+    .right-left .tag,
+    .right-left .left_bottom_tag {
       display: inline-block;
       font-size: 12px;
       line-height: 16px;
@@ -104,19 +148,19 @@
       color: #fff;
     }
 
-    .left .bg_blue {
+    .right-left .bg_blue {
       background-color: rgb(0, 81, 248);
     }
 
-    .left .bg_orange {
+    .right-left .bg_orange {
       background-color: rgb(254, 152, 32);
     }
 
-    .left .tag.gray {
+    .right-left .tag.gray {
       top: 23px;
     }
 
-    .left .tag.biao {
+    .right-left .tag.biao {
       top: 0;
       left: auto;
       right: 0;
@@ -132,34 +176,77 @@
       text-align: center;
     }
 
-    .left .tag.bu {
+    .right-left .tag.bu {
       top: 58px;
       left: -20px;
       background-color: transparent;
     }
 
-    .left .tag.bu img {
+    .right-left .tag.bu img {
       width: 52px;
       height: 52px;
     }
 
-    .left .left_bottom_tag.urgent {
+    .right-left .left_bottom_tag.urgent {
       background-color: rgb(245, 63, 63);
     }
 
-    .left .left_bottom_tag.y2 {
+    .right-left .left_bottom_tag.y2 {
       background-color: rgb(46, 116, 255);
     }
 
-    .middle {
-      width: 216px;
-      padding-left: 157px;
+    .qrcode-info {
+      display: inline-block;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .qrcode-img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .left .qrcode-info {
+      position: absolute;
+      top: 17px;
+      right: 7px;
+    }
+
+    .qrcode-info .code {
+      width: 60px;
+      height: 14px;
+      white-space: nowrap;
+      background: #fff;
+    }
+
+    .qrcode-info.if-l .code {
+      position: absolute;
+      right: 4px;
+      top: -15px;
+    }
+
+    .left .qrcode-img {
+      margin: 2px 0;
+    }
+
+    .right .qrcode-info {
+      position: absolute;
+      right: 0;
+      top: 19px;
+      text-align: right;
+    }
+
+    .right .qrcode-info .code {
+      position: absolute;
+      right: 60px;
+      top: 0;
     }
 
     .line-1 {
       position: relative;
       font-size: 16px;
       padding-bottom: 1px;
+      padding-left: 2px;
       font-weight: 400;
     }
 
@@ -181,16 +268,16 @@
 
     .cz-info {
       border-top: 1px solid #1D2129;
-      border-bottom: 1px solid #1D2129;
       position: relative;
       padding-top: 1px;
+      padding-left: 2px;
     }
 
     .cz-info>div {
       width: 100%;
       white-space: nowrap;
-      height: 15px;
       font-weight: 600;
+      margin-bottom: 1px;
     }
 
     .cz-info .code {
@@ -202,11 +289,6 @@
       font-weight: 400;
     }
 
-    .cz-info .process {
-      display: inline-block;
-      max-width: 150px;
-    }
-
     .cz-info .total {
       position: absolute;
       right: 0;
@@ -214,28 +296,47 @@
       font-size: 16px;
     }
 
+    .left .cz-info>div {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .right .cz-info>div {
+      max-width: 150px;
+      overflow: hidden;
+    }
+
     .line-time {
       line-height: 18px;
       font-size: 15px;
     }
 
-    .line-3 .txt {
-      max-width: 126px;
+    .line-3 .vartxt-outer {
+      width: 128px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-4 .txt {
-      max-width: 160px;
+    .line-4 .vartxt-outer {
+      width: 165px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-5 .txt {
-      display: inline-block;
-      max-width: 102px;
+    .line-5 .lf-1 {
+      width: 122px;
+      height: 22px;
+      position: absolute;
+      right: 100px;
     }
 
-    .line-5 .bgl {
-      display: inline-block;
-      min-width: 50px;
-      text-align: right;
+    .line-5 .lf-2 {
+      width: 100px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
     .time {
@@ -302,79 +403,6 @@
     .time.week7.even {
       background-color: rgb(62, 65, 69);
     }
-
-    .arrow {
-      position: absolute;
-      top: 0;
-      left: 376px;
-      min-width: 10px;
-    }
-
-    .arrow .line {
-      width: 5px;
-      height: 127px;
-      background-color: #F53F3F;
-    }
-
-    .arrow.gray .line {
-      background-color: #666666;
-    }
-
-    .arrow svg {
-      position: absolute;
-      left: -6px;
-    }
-
-    .arrow polygon {
-      fill: #F53F3F;
-    }
-
-    .arrow.gray polygon {
-      fill: #666666;
-    }
-
-    .production-item {
-      position: absolute;
-      top: 0;
-      left: 382px;
-      width: 118px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .qrcode {
-      width: 110px;
-      height: 110px;
-      margin-right: 8px;
-    }
-
-    .appname {
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 600;
-      height: 16px;
-    }
-
-    .code-text {
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    .view-info {
-      width: 253px;
-      font-weight: 600;
-      font-size: 27px;
-      text-align: center;
-      position: absolute;
-      right: 0;
-      top: 25px;
-    }
-
-    .view-info .txt {
-      line-height: 37px;
-      margin-top: 10px;
-    }
   </style>
 </head>
 
@@ -383,6 +411,37 @@
     <div class="wrapper">
       <div class="content-item">
         <div class="left">
+          <div class="inline-block detail-info">
+            <div class="line-1">
+              <span>48</span>
+              <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+                  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+                </svg>
+              </span>
+              <span>10101</span>
+            </div>
+            <div class="cz-info">
+              <div>11531_43611531_43611531_43611531_43611531_43611531_436</div>
+              <div>黑色</div>
+              <div>L</div>
+              <div>第2项-<span class="red">项<b>3</b>件</span></div>
+              <div class="blue">共N项-总N件</div>
+            </div>
+            <div class="qrcode-info if-l">
+              <div class="code vartxt-outer">
+                <div class="txt">AB -1-1-1 2- -- - -- -0-测试1</div>
+              </div>
+              <img class="qrcode-img"
+                src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+              <div>AAAAAA-1</div>
+            </div>
+          </div>
+        </div>
+        <div class="left-right">
+          <img
+            src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
+        </div>
+        <div class="right-left">
           <img
             src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
           <span class="tag ">AB/5P</span>
@@ -391,13 +450,12 @@
           <div class="tag bu"><img
               src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
           </div>
-
           <div class="left_bottom">
             <div class="left_bottom_tag y2">Y2</div>
             <div class="left_bottom_tag urgent">急</div>
           </div>
         </div>
-        <div class="middle">
+        <div class="right">
           <div class="line-1">
             <span>48</span>
             <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
@@ -405,50 +463,43 @@
               </svg>
             </span>
             <span>10101</span>
-            <span class="platform">OTHER</span>
+            <span class="platform overflow-hidden">OTHER</span>
           </div>
           <div class="cz-info overflow-hidden">
-            <div>11531_436</div>
+            <div>11531_43611531_43611531_43611531_436</div>
             <div>黑色</div>
             <div>L</div>
             <div>第2项-<span class="red">项<b>3</b>件</span></div>
-            <span class="process overflow-hidden dir-rtl">3788805543</span>
-            <span class="total">总:3件</span>
-            <span class="code">A00</span>
+            <div class="blue">共N项-总N件</div>
           </div>
-          <div class="line-time line-3">
-            <div class="time week4  time-code">28-08-123</div>
-            <div class="fr txt overflow-hidden dir-rtl">itemsku</div>
+          <div class="qrcode-info if-r">
+            <div class="code vartxt-outer">
+              <div class="txt">A -1-1-1 2- -- - -- -0-测试3</div>
+            </div>
+            <img class="qrcode-img"
+              src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
+            <div>AAAAAA-1</div>
           </div>
-          <div class="line-time line-4">
-            <div class="time week6 ">14-10</div>
-            <div class="fr txt overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</div>
-          </div>
-          <div class="line-time line-5">
-            <div class="fr">
-              <span class="txt overflow-hidden dir-rtl">99877</span>
-              <span class="bgl">
-                <span class="txt overflow-hidden dir-rtl" style="background: #000; color: #FFF;">USPSH</span>
-              </span>
+          <div class="line-time line-3 relative">
+            <div class="time week4 time-code">28-08-123</div>
+            <div class="vartxt-outer">
+              <div class="txt">itemsku</div>
             </div>
           </div>
-        </div>
-        <div class="arrow">
-          <div class="line"></div>
-          <svg width="22" height="24">
-            <polygon points="0 0,11 0,11 24,0 0" />
-          </svg>
-        </div>
-        <div class="production-item">
-          <div class="appname">安(0001)</div>
-          <img
-            src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg"
-            class="qrcode">
-          <div class="code-text">BUP4KMY-6</div>
-        </div>
-        <div class="view-info">
-          <div class="txt">MY-6</div>
-          <div class="txt">BCE面</div>
+          <div class="line-time line-4 relative">
+            <div class="time week6 ">14-10</div>
+            <div class="vartxt-outer">
+              <div class="txt">ZxIshop_#NVZRA5Y</div>
+            </div>
+          </div>
+          <div class="line-time line-5 relative">
+            <div class="vartxt-outer lf-1">
+              <div class="txt">99877</div>
+            </div>
+            <div class="vartxt-outer lf-2">
+              <div class="txt" style="background: #000; color: #FFF;">0USPS</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

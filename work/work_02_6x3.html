@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%WORK_ORDER_TITLE%6*3</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font: 400 22.8px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      page-break-after: always;
+      width: 600px;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .wrapper,
+    table,
+    tr,
+    td,
+    th,
+    tbody,
+    thead,
+    tfoot {
+      page-break-inside: avoid !important;
+    }
+
+    .content-item {
+      width: 600px;
+      height: 300px;
+      position: relative;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+   .overflow-hidden {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
+    }
+
+    .red {
+      color: rgb(245, 63, 63);
+    }
+
+    .blue {
+      color: #0F01FD
+    }
+
+    .tr {
+      text-align: right;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left img {
+      width: 300px;
+      height: 300px;
+    }
+
+    .left .tag {
+      display: inline-block;
+      line-height: 32.4px;
+      padding: 0 7.2px;
+      background-color: rgb(245, 63, 63);
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left .bg_blue {
+      background-color: rgb(0, 81, 248);
+    }
+
+    .left .bg_orange {
+      background-color: rgb(254, 152, 32);
+    }
+
+    .left .tag.gray {
+      top: 43.2px;
+    }
+
+    .left .tag.biao {
+      left: auto;
+      right: 0;
+      background-color: #fff;
+      border: 1.2px solid #0453F3;
+      color: #0453F3;
+      border-radius: 50%;
+      width: 33.6px;
+      height: 33.6px;
+      padding: 0;
+      text-align: center;
+    }
+
+    .left .tag.bu {
+      top: 116.4px;
+      left: -39.6px;
+      background-color: transparent;
+    }
+
+    .left .tag.bu img {
+      width: 104.4px;
+      height: 104.4px;
+    }
+
+    .left .left_bottom {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
+
+    .left .left_bottom_tag {
+      line-height: 32.4px;
+      padding: 0 7.2px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .left .left_bottom_tag.urgent {
+      background-color: rgb(245, 63, 63);
+      margin-top: 4.8px;
+    }
+
+    .left .left_bottom_tag.y2 {
+      background-color: rgb(46, 116, 255);
+    }
+
+    .right {
+      width: 294px;
+      padding-left: 300px;
+      overflow: hidden;
+    }
+
+    .right-pd {
+      padding-left: 9.6px;
+    }
+
+    .line-1 {
+      position: relative;
+      font-size: 28.8px;
+    }
+
+    .line-1 .type {
+      display: inline-block;
+      min-width: 22.8px;
+      height: 22.8px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .line-1 svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22.8px;
+      height: 22.8px;
+    }
+
+    .line-1 .platform {
+      width: 114px;
+      height: 28.8px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .line-2 {
+      position: relative;
+      font-size: 28.8px;
+      font-weight: bold;
+      margin-top: 2.4px;
+    }
+
+    .line-2 .code {
+      position: absolute;
+      right: 0;
+      top: 4.8px;
+      font-weight: normal;
+      font-size: 21.6px;
+    }
+
+    .line-3 {
+      margin-top: 7.2px;
+      position: relative;
+    }
+
+    .qr-code {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .qr-code.color1 {
+      background: rgb(71, 45, 86);
+    }
+
+    .qr-code.color2 {
+      background: rgb(135, 72, 31);
+    }
+
+    .qr-code.color3 {
+      background: rgb(16, 43, 106);
+    }
+
+    .qr-code.color4 {
+      background: rgb(35, 24, 21);
+    }
+
+    .qr-code img {
+      width: 105.6px;
+      height: 105.6px;
+      mix-blend-mode: color-dodge;
+    }
+
+    .cz-info {
+      width: 100%;
+      padding-left: 110.4px;
+      font-size: 22.8px;
+    }
+
+    .cz-info>div {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 1.2px;
+    }
+
+    .total {
+      margin-top: 3.6px;
+    }
+
+    .appname {
+      width: 282px;
+      height: 26.4px;
+      top: 3.6px;
+      font-size: 24.8px;
+    }
+
+    .line-4 {
+      margin-top: 2.4px;
+    }
+
+    .line-5,
+    .line-6 {
+      margin-top: 1.2px;
+    }
+
+    .line-4 .vartxt-outer {
+      width: 168px;
+      height: 27.6px;
+    }
+
+    .line-5 .vartxt-outer {
+      width: 222px;
+      height: 27.6px;
+    }
+
+    .line-6 .if-1 {
+      position: absolute;
+      top: 0;
+      right: 156px;
+      width: 66px;
+      height: 27.6px;
+    }
+
+    .line-6 .if-2 {
+      position: absolute;
+      top: 0;
+      right: 66px;
+      width: 84px;
+      height: 27.6px;
+    }
+
+    .line-6 .if-3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 27.6px;
+    }
+
+    .time {
+      display: inline-block;
+      line-height: 26.4px;
+      padding: 0 2.4px;
+      background-color: rgb(102, 102, 102);
+      color: #fff;
+    }
+
+    .time.week1 {
+      background-color: rgb(170, 33, 22);
+    }
+
+    .time.week2 {
+      background-color: rgb(245, 130, 32);
+    }
+
+    .time.week3 {
+      background-color: rgb(119, 120, 123);
+    }
+
+    .time.week4 {
+      background-color: rgb(0, 88, 49);
+    }
+
+    .time.week5 {
+      background-color: rgb(34, 75, 143);
+    }
+
+    .time.week6 {
+      background-color: rgb(139, 0, 139);
+    }
+
+    .time.week7 {
+      background-color: rgb(35, 24, 21);
+    }
+
+    .time.week1.even {
+      background-color: rgb(132, 57, 0);
+    }
+
+    .time.week2.even {
+      background-color: rgb(252, 175, 23);
+    }
+
+    .time.week3.even {
+      background-color: rgb(161, 163, 166);
+    }
+
+    .time.week4.even {
+      background-color: rgb(29, 149, 63);
+    }
+
+    .time.week5.even {
+      background-color: rgb(16, 43, 106);
+    }
+
+    .time.week6.even {
+      background-color: rgb(65, 20, 69);
+    }
+
+    .time.week7.even {
+      background-color: rgb(62, 65, 69);
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+  <div class="wrapper">
+    <tbody>
+    <tr>
+      <td>
+        <div class="content-item">
+          <div class="left">
+            <img src="./707952285203870977_1.jpeg">
+            <span class="tag ">AB/5P</span>
+            
+            <div class="tag gray">GRAYCODE</div>
+            <span class="tag biao">标</span>
+            <div class="tag bu"><img src="./补单.png" /></div>
+
+            <div class="left_bottom">
+              <div class="left_bottom_tag y2">Y2</div>
+              <div class="left_bottom_tag urgent">急</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right-pd">
+              <div class="line-1">
+                <span>48</span>
+                <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>
+                <span>10101</span>
+                <div class="platform vartxt-outer">
+                  <div class="txt" style="background: #000; color: #FFF;">变量5</div>
+                </div>
+              </div>
+              <div class="line-2">
+                <div>BUP4KMY-6</div>
+                <span class="code" style="background: #000; color: #FFF;">变量7</span>
+              </div>
+              <div class="line-3">
+                <div class="qr-code">
+                  <img src="./B4WYAAX-1_qrCode.jpg">
+                </div>
+                <div class="cz-info overflow-hidden">
+                  <div>11531_436</div>
+                  <div>黑色</div>
+                  <div>L</div>
+                  <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
+                  <div class="total">共10项-总20件</div>
+                </div>
+                <div class="tr">
+                  <div class="appname vartxt-outer">
+                    <div class="txt" style="background: #000; color: #FFF;">变量6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="line-time line-4">
+              <div class="time week4  time-code">28-08-123
+              </div>
+              <div class="vartxt-outer fr">
+                <div class="txt" style="background: #000; color: #FFF;">变量2</div>
+              </div>
+            </div>
+            <div class="line-time line-5">
+              <div class="time week6 ">
+                14-10
+              </div>
+              <div class="vartxt-outer fr">
+                <div class="txt" style="background: #000; color: #FFF;">变量4</div>
+              </div>
+            </div>
+            <div class="line-time line-6 relative">
+              <div class="time week6 ">
+                14-10
+              </div>
+              <div>
+                <div class="vartxt-outer if-1">
+                  <div class="txt" style="background: #000; color: #FFF;">变量1</div>
+                </div>
+                <div class="vartxt-outer if-2">
+                  <div class="txt"
+                       style="background: #000; color: #FFF;">
+                    WWWWW
+                  </div>
+                </div>
+                <div class="vartxt-outer if-3">
+                  <div class="txt" style="background: #000; color: #FFF;">变量3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </div>
+</div>
+</body>
+
+</html>
+<!-- {"pos2": "ITEM_SKU", "pos4": "THIRD_SKU", "pos1": "THIRD_ORDER_ID", "pos3": "TRACK_NUMBER", "pos5": "CHANNEL_CODE", "pos6": "SUB_APP_NAME_WITH_ID", "pos7": "PROCESS_ROUTE_CODE"} -->
+<!--{"version": "v2", "multiply": 10, "need_qr_code": true, "only_qr_code": false, "need_bar_code": false, "need_production_img": false}-->

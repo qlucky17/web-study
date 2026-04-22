@@ -49,9 +49,16 @@
       text-overflow: clip;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -182,11 +189,12 @@
     }
 
     .line-1 .platform {
+      width: 95px;
+      height: 24px;
       position: absolute;
       right: 0;
       top: 0;
       font-weight: bold;
-      max-width: 100px;
     }
 
     .line-2 {
@@ -255,7 +263,9 @@
     }
 
     .appname {
-      margin-top: 3px;
+      width: 235px;
+      height: 22px;
+      top: 3px;
     }
 
     .line-4 {
@@ -267,34 +277,38 @@
       margin-top: 1px;
     }
 
-    .line-4 .txt {
-      max-width: 140px;
+    .line-4 .vartxt-outer {
+      width: 140px;
+      height: 23px;
     }
 
-    .line-5 .txt {
-      max-width: 180px;
+    .line-5 .vartxt-outer {
+      width: 185px;
+      height: 23px;
     }
 
-    .line-6 .dt-1 {
-      display: inline-block;
-      max-width: 60px;
+    .line-6 .if-1 {
+      position: absolute;
+      top: 0;
+      right: 130px;
+      width: 55px;
+      height: 23px;
     }
 
-    .line-6 .bgl {
-      display: inline-block;
-      min-width: 40px;
-      max-width: 60px;
+    .line-6 .if-2 {
+      position: absolute;
+      top: 0;
+      right: 55px;
+      width: 70px;
+      height: 23px;
     }
 
-    .line-6 .dt-2 {
-      display: inline-block;
-      max-width: 100%;
-    }
-
-    .line-6 .dt-3 {
-      display: inline-block;
-      min-width: 40px;
-      max-width: 60px;
+    .line-6 .if-3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 23px;
     }
 
     .time {
@@ -393,7 +407,9 @@
                       </svg>
                     </span>
                     <span>10101</span>
-                    <span class="platform overflow-hidden dir-rtl">OTHER</span>
+                    <div class="platform vartxt-outer">
+                      <div class="txt">OTHER</div>
+                    </div>
                   </div>
                   <div class="line-2">
                     <div>BUP4KMY-6</div>
@@ -413,25 +429,35 @@
                   </div>
                   <div class="tr">
                     <div class="total">总:3件</div>
-                    <div class="appname overflow-hidden">商户名称</div>
+                    <div class="appname vartxt-outer">
+                      <div class="txt">商户名称</div>
+                    </div>
                   </div>
                 </div>
                 <div class="line-time line-4">
                   <div class="time week4  time-code">28-08-123</div>
-                  <div class="fr txt overflow-hidden">itemsku</div>
+                  <div class="vartxt-outer fr">
+                    <div class="txt">**222uksuk(su)ksuks111$$</div>
+                  </div>
                 </div>
                 <div class="line-time line-5">
                   <div class="time week6 ">14-10</div>
-                  <div class="fr txt overflow-hidden">ZxIshop_#NVZRA5Y</div>
+                  <div class="vartxt-outer fr">
+                    <div class="txt">**ZxI(shop)_#$$</div>
+                  </div>
                 </div>
-                <div class="line-time line-6">
+                <div class="line-time line-6 relative">
                   <div class="time week6 ">14-10</div>
-                  <div class="fr">
-                    <span class="dt-1 overflow-hidden dir-rtl">23456</span>
-                    <span class="bgl">
-                      <span class="dt-2 overflow-hidden dir-rtl" style="background: #000; color: #FFF;">0USPS</span>
-                    </span>
-                    <span class="dt-3 overflow-hidden dir-rtl">99877</span>
+                  <div>
+                    <div class="vartxt-outer if-1">
+                      <div class="txt">23456</div>
+                    </div>
+                    <div class="vartxt-outer if-2">
+                      <div class="txt" style="background: #000; color: #FFF;">WWWWW</div>
+                    </div>
+                    <div class="vartxt-outer if-3">
+                      <div class="txt">99877</div>
+                    </div>
                   </div>
                 </div>
               </div>

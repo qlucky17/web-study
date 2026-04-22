@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单6*3_大图小码_TEST</title>
+  <title>%WORK_ORDER_TITLE%（6*3测试版,大图小码）</title>
   <style>
     html,
     body {
       margin: 0;
       padding: 0;
-      font: 400 19px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
+      font: 400 22.8px/1 'PingFang SC', 'Microsoft Yahei', sans-serif;
       overflow: hidden;
     }
 
     .page {
       page-break-after: always;
-      width: 500px;
-      height: 250px;
+      width: 600px;
+      height: 300px;
       margin: 0 auto;
     }
 
@@ -34,8 +33,8 @@
     }
 
     .content-item {
-      width: 500px;
-      height: 250px;
+      width: 600px;
+      height: 300px;
       position: relative;
     }
 
@@ -84,14 +83,14 @@
     }
 
     .left img {
-      width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 300px;
     }
 
     .left .tag {
       display: inline-block;
-      line-height: 27px;
-      padding: 0 6px;
+      line-height: 32.4px;
+      padding: 0 7.2px;
       background-color: rgb(245, 63, 63);
       color: #fff;
       position: absolute;
@@ -108,31 +107,31 @@
     }
 
     .left .tag.gray {
-      top: 36px;
+      top: 43.2px;
     }
 
     .left .tag.biao {
       left: auto;
       right: 0;
       background-color: #fff;
-      border: 1px solid #0453F3;
+      border: 1.2px solid #0453F3;
       color: #0453F3;
       border-radius: 50%;
-      width: 28px;
-      height: 28px;
+      width: 33.6px;
+      height: 33.6px;
       padding: 0;
       text-align: center;
     }
 
     .left .tag.bu {
-      top: 97px;
-      left: -33px;
+      top: 116.4px;
+      left: -39.6px;
       background-color: transparent;
     }
 
     .left .tag.bu img {
-      width: 87px;
-      height: 87px;
+      width: 104.4px;
+      height: 104.4px;
     }
 
     .left .left_bottom {
@@ -142,15 +141,15 @@
     }
 
     .left .left_bottom_tag {
-      line-height: 27px;
-      padding: 0 6px;
+      line-height: 32.4px;
+      padding: 0 7.2px;
       color: #fff;
       text-align: center;
     }
 
     .left .left_bottom_tag.urgent {
       background-color: rgb(245, 63, 63);
-      margin-top: 4px;
+      margin-top: 4.8px;
     }
 
     .left .left_bottom_tag.y2 {
@@ -158,24 +157,24 @@
     }
 
     .right {
-      width: 245px;
-      padding-left: 250px;
+      width: 294px;
+      padding-left: 300px;
       overflow: hidden;
     }
 
     .right-pd {
-      padding-left: 8px;
+      padding-left: 9.6px;
     }
 
     .line-1 {
       position: relative;
-      font-size: 24px;
+      font-size: 28.8px;
     }
 
     .line-1 .type {
       display: inline-block;
-      min-width: 19px;
-      height: 19px;
+      min-width: 22.8px;
+      height: 22.8px;
       box-sizing: border-box;
       position: relative;
     }
@@ -184,8 +183,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 19px;
-      height: 19px;
+      width: 22.8px;
+      height: 22.8px;
     }
 
     .line-1 .platform {
@@ -193,27 +192,27 @@
       right: 0;
       top: 0;
       font-weight: bold;
-      width: 90px;
-      height: 24px;
+      width: 108px;
+      height: 28.8px;
     }
 
     .line-2 {
       position: relative;
-      font-size: 24px;
+      font-size: 28.8px;
       font-weight: bold;
-      margin-top: 2px;
+      margin-top: 2.4px;
     }
 
     .line-2 .code {
       position: absolute;
       right: 0;
-      top: 4px;
+      top: 4.8px;
       font-weight: normal;
-      font-size: 18px;
+      font-size: 21.6px;
     }
 
     .line-3 {
-      margin-top: 6px;
+      margin-top: 7.2px;
       position: relative;
     }
 
@@ -240,57 +239,57 @@
     }
 
     .qr-code img {
-      width: 88px;
-      height: 88px;
+      width: 105.6px;
+      height: 105.6px;
       mix-blend-mode: color-dodge;
     }
 
     .cz-info {
       width: 100%;
-      padding-left: 92px;
-      font-size: 19px;
+      padding-left: 110.4px;
+      font-size: 22.8px;
     }
 
     .cz-info>div {
       width: 100%;
       white-space: nowrap;
       overflow: hidden;
-      margin-bottom: 1px;
+      margin-bottom: 1.2px;
     }
 
     .var-info .vartxt-outer {
-      width: 75px;
-      height: 22px;
+      width: 90px;
+      height: 26.4px;
     }
 
     .line-time {
-      line-height: 22px;
+      line-height: 26.4px;
     }
 
     .line-4 {
-      margin-top: 2px;
+      margin-top: 2.4px;
     }
 
     .line-5,
     .line-6 {
-      margin-top: 1px;
+      margin-top: 1.2px;
     }
 
     .line-4 .vartxt-outer {
-      width: 140px;
-      height: 23px;
+      width: 168px;
+      height: 27.6px;
     }
 
     .line-5 .vartxt-outer,
     .line-6 .vartxt-outer {
-      width: 180px;
-      height: 23px;
+      width: 216px;
+      height: 27.6px;
     }
 
     .time {
       display: inline-block;
-      line-height: 22px;
-      padding: 0 2px;
+      line-height: 26.4px;
+      padding: 0 2.4px;
       background-color: rgb(102, 102, 102);
       color: #fff;
     }
@@ -354,93 +353,102 @@
 </head>
 
 <body>
-  <div class="page">
-    <div class="wrapper">
-      <tbody>
-        <tr>
-          <td>
-            <div class="content-item">
-              <div class="left">
-                <img
-                  src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
-                <span class="tag ">AB/5P</span>
-                <div class="tag gray">GRAY CODE</div>
-                <span class="tag biao">标</span>
-                <div class="tag bu"><img
-                    src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
-                </div>
-                <div class="left_bottom">
-                  <div class="left_bottom_tag y2">Y2</div>
-                  <div class="left_bottom_tag urgent">急</div>
+<div class="page">
+  <div class="wrapper">
+    <tbody>
+    <tr>
+      <td>
+        <div class="content-item">
+          <div class="left">
+            <img
+                src="./707952285203870977_1.jpeg">
+            <span class="tag ">AB/5P</span>
+            
+            <div class="tag gray">GRAYCODE</div>
+            <span class="tag biao">标</span>
+            <div class="tag bu"><img src="./补单.png" /></div>
+
+            <div class="left_bottom">
+              <div class="left_bottom_tag y2">Y2</div>
+              <div class="left_bottom_tag urgent">急</div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right-pd">
+              <div class="line-1">
+                <span>48</span>
+                <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>
+                <span>10101</span>
+                <div class="platform vartxt-outer">
+                  <div class="txt">WWWWOTHERWWWWWW</div>
                 </div>
               </div>
-              <div class="right">
-                <div class="right-pd">
-                  <div class="line-1">
-                    <span>48</span>
-                    <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                        <circle cx="50" cy="50" r="50" fill="#000"></circle>
-                      </svg>
-                    </span>
-                    <span>10101</span>
-                    <div class="platform vartxt-outer">
-                      <div class="txt">OTHER</div>
-                    </div>
-                  </div>
-                  <div class="line-2">
-                    <div>BUP4KMY-6</div>
-                    <span class="code">A00</span>
-                  </div>
-                  <div class="line-3">
-                    <div class="qr-code">
-                      <img
-                        src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg">
-                    </div>
-                    <div class="cz-info overflow-hidden">
-                      <div>11531_436</div>
-                      <div>黑色</div>
-                      <div>L</div>
-                      <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
-                      <div class="total blue">共N项-总N件</div>
-                    </div>
-                  </div>
-                  <div class="var-info">
-                    <div class="vartxt-outer">
-                      <div class="txt">123123123123123</div>
-                    </div>
-                    <div class="vartxt-outer">
-                      <div class="txt" style="background: #000; color: #FFF;">456456456456456456456</div>
-                    </div>
-                    <div class="vartxt-outer">
-                      <div class="txt">789789789789789789789</div>
-                    </div>
+              <div class="line-2">
+                <div>BUP4KMY-6</div>
+                <span class="code">AWW7WWWBCCCCWWA00AA</span>
+              </div>
+              <div class="line-3">
+                <div class="qr-code">
+                  <img
+                      src="./B4WYAAX-1_qrCode.jpg">
+                </div>
+                <div class="cz-info overflow-hidden">
+                  <div>11531_436</div>
+                  <div>黑色</div>
+                  <div>L</div>
+                  <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
+                  <div class="total blue">共3项-总49件</div>
+                </div>
+              </div>
+              <div class="var-info">
+                <div class="vartxt-outer">
+                  <div class="txt">WWWWW</div>
+                </div>
+                <div class="vartxt-outer">
+                  <div class="txt"
+                       style="background: #000; color: #FFF;">
+                    WWWWW
                   </div>
                 </div>
-                <div class="line-time line-4">
-                  <div class="time week4 time-code">28-08-123</div>
-                  <div class="vartxt-outer fr">
-                    <div class="txt">**222uksuk(su)ksuks111$$</div>
-                  </div>
-                </div>
-                <div class="line-time line-5">
-                  <div class="time week6 ">14-10</div>
-                  <div class="vartxt-outer fr">
-                    <div class="txt">**ZxI(shop)_#$$</div>
-                  </div>
-                </div>
-                <div class="line-time line-6">
-                  <div class="time week6 ">14-10</div>
-                  <div class="vartxt-outer fr">
-                    <div class="txt">**ZxI商户名称(shop)_#$$</div>
-                  </div>
+                <div class="vartxt-outer">
+                  <div class="txt">WWWWW</div>
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </div>
+            <div class="line-time line-4">
+              <div class="time week4  time-code">28-08-123
+              </div>
+              <div class="vartxt-outer fr">
+                <div class="txt">itemskuuuuuuu</div>
+              </div>
+            </div>
+            <div class="line-time line-5">
+              <div class="time week6  ">
+                14-10
+              </div>
+              <div class="vartxt-outer fr">
+                <div class="txt"></div>
+              </div>
+            </div>
+            <div class="line-time line-6">
+              <div class="time week6  ">
+                14-10
+              </div>
+              <div class="vartxt-outer fr">
+                <div class="txt">CWW6WW安(0001)WWW6WBWW6WA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
   </div>
+</div>
 </body>
-
 </html>
+<!-- {"pos2": "ITEM_SKU", "pos4": "THIRD_SKU", "pos1": "THIRD_ORDER_ID", "pos3": "TRACK_NUMBER", "pos5": "CHANNEL_CODE", "pos6": "SUB_APP_NAME_WITH_ID", "pos7": "PROCESS_ROUTE_CODE"} -->
+<!--{"version": "v2", "multiply": 10, "need_qr_code": true, "only_qr_code": false, "need_bar_code": false, "need_production_img": false}-->

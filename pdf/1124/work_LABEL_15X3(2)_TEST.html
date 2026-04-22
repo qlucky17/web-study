@@ -49,9 +49,16 @@
       text-overflow: ellipsis;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -201,15 +208,21 @@
 
     .left .qrcode-info {
       position: absolute;
-      top: 6px;
+      top: 17px;
       right: 7px;
     }
 
     .qrcode-info .code {
-      background: #fff;
-      max-width: 60px;
+      width: 60px;
+      height: 14px;
       white-space: nowrap;
-      overflow: hidden;
+      background: #fff;
+    }
+
+    .qrcode-info.if-l .code {
+      position: absolute;
+      right: 4px;
+      top: -15px;
     }
 
     .left .qrcode-img {
@@ -298,27 +311,39 @@
       font-size: 15px;
     }
 
-    .line-3 {
-      border-top: 1px solid #1D2129;
+    .line-3 .vartxt-outer {
+      width: 128px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-3 .txt {
-      max-width: 126px;
+    .line-4 .vartxt-outer {
+      width: 165px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-4 .txt {
-      max-width: 160px;
+    .line-5 .lf-1 {
+      width: 70px;
+      height: 22px;
+      position: absolute;
+      right: 150px;
     }
 
-    .line-5 .txt {
-      display: inline-block;
-      max-width: 102px;
+    .line-5 .lf-2 {
+      width: 70px;
+      height: 22px;
+      position: absolute;
+      right: 75px;
     }
 
-    .line-5 .bgl {
-      display: inline-block;
-      min-width: 50px;
-      text-align: right;
+    .line-5 .lf-3 {
+      width: 70px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
     .time {
@@ -409,8 +434,10 @@
               <div>第2项-<span class="red">项<b>3</b>件</span></div>
               <div class="blue">共N项-总N件</div>
             </div>
-            <div class="qrcode-info">
-              <div class="code">A -1-1-1 2- -- - -- -0-测试3</div>
+            <div class="qrcode-info if-l">
+              <div class="code vartxt-outer">
+                <div class="txt">AB -1-1-1 2- -- - -- -0-测试1</div>
+              </div>
               <img class="qrcode-img"
                 src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
               <div>AAAAAA-1</div>
@@ -452,26 +479,35 @@
             <div>第2项-<span class="red">项<b>3</b>件</span></div>
             <div class="blue">共N项-总N件</div>
           </div>
-          <div class="qrcode-info">
-            <div class="code">A -1-1-1 2- -- - -- -0-测试3</div>
+          <div class="qrcode-info if-r">
+            <div class="code vartxt-outer">
+              <div class="txt">A -1-1-1 2- -- - -- -0-测试3</div>
+            </div>
             <img class="qrcode-img"
               src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
             <div>AAAAAA-1</div>
           </div>
-          <div class="line-time line-3">
+          <div class="line-time line-3 relative">
             <div class="time week4 time-code">28-08-123</div>
-            <div class="fr txt overflow-hidden dir-rtl">itemsku</div>
+            <div class="vartxt-outer">
+              <div class="txt">itemsku</div>
+            </div>
           </div>
-          <div class="line-time line-4">
+          <div class="line-time line-4 relative">
             <div class="time week6 ">14-10</div>
-            <div class="fr txt overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</div>
+            <div class="vartxt-outer">
+              <div class="txt">ZxIshop_#NVZRA5Y</div>
+            </div>
           </div>
-          <div class="line-time line-5">
-            <div class="fr">
-              <span class="txt overflow-hidden dir-rtl">99877</span>
-              <span class="bgl">
-                <span class="txt overflow-hidden dir-rtl" style="background: #000; color: #FFF;">USPSH</span>
-              </span>
+          <div class="line-time line-5 relative">
+            <div class="vartxt-outer lf-1">
+              <div class="txt">99877</div>
+            </div>
+            <div class="vartxt-outer lf-2">
+              <div class="txt" style="background: #000; color: #FFF;">0USPS</div>
+            </div>
+            <div class="vartxt-outer lf-3">
+              <div class="txt">*123234234</div>
             </div>
           </div>
         </div>

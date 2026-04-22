@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>商户分拣单</title>
+  <style type="text/css">
+    /* CSS Reset */
+    body, div, table, tr, td, th, img, span, p {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    body {
+        font-family: 400px 15px/21px SimHei, "Microsoft YaHei", sans-serif;
+        background-color: #ffffff;
+        color: #1d2129;
+    }
+
+    /* Container 600x600 Fixed Size */
+    /* CSS2 Box Model: Width + Padding + Border = Total Width */
+    /* Target: 600px. Border: 1px. Padding: 15px. */
+    /* Width = 600 - 2(border) - 30(padding) = 568px */
+    .page-container {
+        width: 554px;
+        height: 554px;
+        padding: 23px;
+        background-color: #fff;
+    }
+
+    .page-container>div{
+        width: 554px;
+        height:554px;
+        border: 2px solid #C9CDD4; /* Inner border for content area */
+        overflow: hidden;
+        position: relative; /* Context for absolute positioning */
+    }
+
+    /* Top Barcode Section */
+    .top-section {
+        text-align: center;
+        padding: 9px 0;
+        overflow: hidden;
+        border-bottom: 2px solid #C9CDD4;
+    }
+    .barcode-img {
+        display: block;
+        margin: 0 auto;
+        width: 435px;
+        height: 90px;
+    }
+    .order-number {
+        font-size: 21px;
+        line-height: 24px;
+        font-weight: bold;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .mid-section{
+        height: 302px;
+        padding: 0 15px;
+        overflow: hidden; /* Hide overflow */
+    }
+
+    /* Header Title Section */
+    .header-section {
+        width: 100%;
+        margin-top: 9px;
+        margin-bottom: 12px;
+        font-size: 24px;
+        font-weight: bold;
+        display: table;
+    }
+    .header-title {
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+    }
+    .header-count {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+    }
+
+    /* Table Container - Fixed Height */
+    .table-container {
+        width: 100%;
+    }
+
+    /* Product Table */
+    .product-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .product-table th {
+        padding: 7px 0;
+        font-weight: bold;
+        border: 2px solid #C9CDD4;
+        text-align: center;
+    }
+
+    .product-table td {
+        padding: 7px 0;
+        border: 2px solid #C9CDD4;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .product-table tr {
+        height: 25px; /* Fixed row height guideline */
+    }
+
+    .product-table td div {
+        line-height: 21px;
+        max-height: 42px;
+        overflow: hidden;
+        word-wrap: break-word; /* CSS2 / IE5.5+ */
+        word-break: break-all; /* CSS3, but useful if supported */
+    }
+
+    /* Footer Section - Fixed at Bottom */
+    .footer-section {
+        width: 524px; /* Match content width */
+        height: 93px; /* Fixed height */
+        position: absolute;
+        bottom: 0; /* Align with bottom padding */
+        left: 0;   /* Align with left padding */
+        border-top: 2px solid #C9CDD4;
+        padding: 9px 15px;
+    }
+
+    .footer-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .footer-left {
+        text-align: left;
+        vertical-align: bottom;
+    }
+    .footer-right {
+        text-align: right;
+        vertical-align: bottom;
+    }
+
+    .block-c2a {
+        font-size: 26px;
+        font-weight: bold;
+        color: #1a2c3f;
+        display: block;
+    }
+    .info-text {
+        font-size: 18px;
+        color: #555;
+        line-height:21px;
+        margin-top: 6px;
+        display: block;
+    }
+
+    .rect-barcode-img {
+        width: 219px;
+        height: 45px;
+        display: inline-block;
+    }
+    .footer-code-text {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        display: block;
+        margin-top: 2px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="page-container">
+  <div>
+    <!-- Top Section -->
+    <div class="top-section">
+      <img src="${orderIdBarCode}" class="barcode-img" alt="Barcode" />
+      <div class="order-number">订单号：${orderId}</div>
+    </div>
+
+    <div class="mid-section">
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">${logisticsMethodName}</div>
+        <div class="header-count">${qty}</div>
+      </div>
+
+      <!-- Product Table Container -->
+      <div class="table-container">
+        <table class="product-table">
+          <thead>
+          <tr>
+            <th style="width: 10%;">序号</th>
+            <th style="width: 28%;">商品名称</th>
+            <th style="width: 25%;">商品ID</th>
+            <th style="width: 25%;">颜色尺码</th>
+            <th style="width: 12%;">数量</th>
+          </tr>
+          </thead>
+          <tbody>
+          ${tableRowsHtml}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+      <table class="footer-table">
+        <tr>
+          <td class="footer-left">
+
+          </td>
+          <td class="footer-right">
+            <img src="${trackNumberBarCode}" class="rect-barcode-img" alt="Footer Barcode" />
+            <span class="footer-code-text">${orderCode}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

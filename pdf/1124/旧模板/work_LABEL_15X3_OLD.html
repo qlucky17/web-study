@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单15*3_TEST</title>
+  <title>生产工单15*3_OLD</title>
   <style>
     html,
     body {
@@ -179,12 +179,11 @@
     }
 
     .line-1 .platform {
-      width: 80px;
-      height: 17px;
       font-weight: bold;
       position: absolute;
       right: 0;
       top: 0;
+      max-width: 80px;
     }
 
     .cz-info {
@@ -208,17 +207,18 @@
       left: auto;
       font-size: 12px;
       font-weight: 400;
-      background: #fff;
       width: 80px;
     }
 
     .cz-info .process {
+      width: 150px;
+    }
+
+    .cz-info .total {
       position: absolute;
       right: 0;
       bottom: 2px;
       font-size: 16px;
-      display: inline-block;
-      width: 100px;
     }
 
     .line-time {
@@ -252,6 +252,12 @@
       height: 22px;
       position: absolute;
       right: 0;
+    }
+
+    .line-5 .bgl {
+      display: inline-block;
+      min-width: 50px;
+      text-align: right;
     }
 
     .time {
@@ -421,19 +427,17 @@
               </svg>
             </span>
             <span>10101</span>
-            <div class="platform vartxt-outer">
-              <div class="txt">OTHER</div>
-            </div>
+            <span class="platform">OTHER</span>
           </div>
           <div class="cz-info overflow-hidden">
-            <div>11531_43611531_43611531_43611531_43611531_436</div>
+            <div>11531_436</div>
             <div>黑色</div>
             <div>L</div>
             <div>第2项-<span class="red">项<b>3</b>件</span></div>
-            <div class="total blue">共N项-总N件</div>
             <div class="process vartxt-outer">
               <div class="txt">XY(0554305543055430554311)KK</div>
             </div>
+            <span class="total">总:3件</span>
             <div class="code vartxt-outer">
               <div class="txt">A00A00A00A00A00A00</div>
             </div>

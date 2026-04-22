@@ -47,9 +47,16 @@
       text-overflow: ellipsis;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -151,8 +158,8 @@
     .part-1 {
       position: relative;
       font-size: 17px;
-      padding-top: 6px;
-      padding-bottom: 3px;
+      height: 27px;
+      line-height: 27px;
       border-bottom: 1px solid #1D2129;
     }
 
@@ -171,16 +178,21 @@
     }
 
     .part-1 .name {
-      display: inline-block;
-      max-width: 140px;
+      width: 110px;
+      height: 27px;
+      top: 0;
+      position: absolute;
+      top: 0;
+      right: 80px;
     }
 
     .part-1 .platform {
+      width: 80px;
+      height: 27px;
       position: absolute;
-      top: 6px;
+      top: 0;
       right: 0;
       font-weight: 600;
-      max-width: 100px;
     }
 
     .part-2 {
@@ -314,47 +326,11 @@
     .detail-b {
       padding-left: 110px;
       line-height: 22px;
-      text-align: left;
     }
 
-    .detail-b .dt-1 {
-      display: inline-block;
-      min-width: 115px;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-2 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-3 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-4 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-5 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-6 {
-      display: inline-block;
-      line-height: 22px;
-      text-align: center;
-      min-width: 72px;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-rt {
-      position: absolute;
-      top: 0;
-      right: 10px;
+    .detail-b .vartxt-outer {
+      width: 125px;
+      height: 22px;
     }
   </style>
 </head>
@@ -387,8 +363,12 @@
                 </svg>
               </span>
               <span>10101</span>
-              <span class="name overflow-hidden dir-rtl">安(0001)</span>
-              <span class="platform overflow-hidden dir-rtl">OTHER</span>
+              <div class="name vartxt-outer">
+                <div class="txt">安(0001)</div>
+              </div>
+              <div class="platform vartxt-outer">
+                <div class="txt">OTHER</div>
+              </div>
             </div>
             <div class="part-2">
               <div class="text-info">
@@ -416,16 +396,26 @@
           </div>
           <div class="detail-b">
             <div class="relative">
-              <span class="dt-1 overflow-hidden dir-rtl">23456</span>
-              <span class="dt-2 overflow-hidden dir-rtl">itemsku</span>
-              <span class="dt-3 dt-rt overflow-hidden dir-rtl">99877</span>
+              <div class="vartxt-outer">
+                <div class="txt">23456</div>
+              </div>
+              <div class="vartxt-outer">
+                <div class="txt">11item</div>
+              </div>
+              <div class="vartxt-outer">
+                <div class="txt">99877</div>
+              </div>
             </div>
             <div class="relative">
-              <span class="dt-4 overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</span>
-              <span class="dt-rt">
-                <span class="dt-5 overflow-hidden dir-rtl">A00</span>
-                <span class="dt-6 overflow-hidden dir-rtl" style="background: #000; color: #FFF;">USPSH</span>
-              </span>
+              <div class="vartxt-outer">
+                <div class="txt">#NVZRA5Y</div>
+              </div>
+              <div class="vartxt-outer">
+                <div class="txt">A00</div>
+              </div>
+              <div class="vartxt-outer">
+                <div class="txt" style="background: #000; color: #FFF;">USPSH</div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${fileTitle}</title>
+        <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 600px;
+            height: 600px;
+        }
+
+        .column {
+            width: 296px;
+            height: 200px;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        .first {
+            width: 600px;
+            height: 200px;
+        }
+
+        .boder-bottom {
+            border-bottom: #000 solid 1px;
+            box-sizing: border-box;
+        }
+
+        .boder-top {
+            border-top: #000 solid 1px;
+            box-sizing: border-box;
+        }
+
+        .boder-left {
+            border-left: #000 solid 1px;
+            box-sizing: border-box;
+        }
+
+        .boder-right {
+            border-right: #000 solid 1px;
+            box-sizing: border-box;
+        }
+
+        .text {
+            padding: 0 30px 0 30px;
+            font-size: 25px;
+            font-weight: bold;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .row {
+            width: 600px;
+            height: 200px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .bar-code {
+            width: 560px;
+            height: 130px;
+            margin: 15px 20px 0px 20px;
+        }
+
+        .bar-code img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logistics {
+            width: 600px;
+            height: 50px;
+        }
+
+        .text-small {
+            font-size: 18px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="row boder-bottom boder-top boder-right boder-left">
+                <div class="column text boder-right">
+                    ${parcelCode}
+                    <div>【箱装】</div>
+                </div>
+                <div class="column text">
+                    ${childCount}
+                </div>
+            </div>
+            <div class="row boder-right boder-left boder-bottom">
+                <div class="bar-code">
+                    <img src="${parcelBarCodeImg}"></img>
+                </div>
+                <div class="logistics text">${trackNumber}</div>
+            </div>
+            <div class="row boder  boder-right boder-left boder-right boder-bottom">
+                <div class="row text text-small">
+                    <div>
+                        ${logisticsNames}
+                    </div>
+                    <div>
+                        ${sortingRules}
+                    </div>
+                    <div>
+                        ${hicLogisticsNames}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

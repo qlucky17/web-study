@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单10*3_OLD</title>
+  <title>%WORK_ORDER_TITLE%（15*3测试版）</title>
   <style>
     html,
     body {
@@ -17,7 +17,7 @@
 
     .page {
       page-break-after: always;
-      width: 500px;
+      width: 750px;
       height: 150px;
       margin: 0 auto;
     }
@@ -34,7 +34,7 @@
     }
 
     .content-item {
-      width: 500px;
+      width: 750px;
       height: 150px;
       position: relative;
     }
@@ -49,9 +49,16 @@
       text-overflow: clip;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -171,11 +178,12 @@
     }
 
     .line-1 .platform {
+      width: 80px;
+      height: 17px;
       font-weight: bold;
       position: absolute;
       right: 0;
       top: 0;
-      max-width: 80px;
     }
 
     .cz-info {
@@ -199,13 +207,17 @@
       left: auto;
       font-size: 12px;
       font-weight: 400;
+      background: #fff;
+      width: 80px;
     }
 
-    .cz-info .total {
+    .cz-info .process {
       position: absolute;
       right: 0;
       bottom: 2px;
       font-size: 16px;
+      display: inline-block;
+      width: 100px;
     }
 
     .line-time {
@@ -213,23 +225,32 @@
       font-size: 15px;
     }
 
-    .line-3 .txt {
-      max-width: 126px;
+    .line-3 .vartxt-outer {
+      width: 128px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-4 .txt {
-      max-width: 160px;
+    .line-4 .vartxt-outer {
+      width: 165px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-5 .txt {
-      display: inline-block;
-      max-width: 102px;
+    .line-5 .lf-1 {
+      width: 122px;
+      height: 22px;
+      position: absolute;
+      right: 100px;
     }
 
-    .line-5 .bgl {
-      display: inline-block;
-      min-width: 50px;
-      text-align: right;
+    .line-5 .lf-2 {
+      width: 100px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
     .time {
@@ -354,80 +375,114 @@
       font-weight: 600;
       margin-top: 2px;
     }
+
+    .view-info {
+      width: 253px;
+      font-weight: 600;
+      font-size: 27px;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      top: 25px;
+    }
+
+    .view-info .txt {
+      line-height: 37px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <div class="wrapper">
-      <div class="content-item">
-        <div class="left">
-          <img
-            src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg">
-          <span class="tag ">AB/5P</span>
-          <div class="tag gray">GRAY CODE</div>
-          <span class="tag biao">标</span>
-          <div class="tag bu"><img
-              src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
-          </div>
+<div class="page">
+  <div class="wrapper">
+    <div class="content-item">
+      <div class="left">
+        <img src="./707952285203870977_1.jpeg">
+        <span class="tag ">AB/5P</span>
+        
+        <div class="tag gray">GRAYCODE</div>
+        <span class="tag biao">标</span>
+        <div class="tag bu"><img src="./补单.png" /></div>
 
-          <div class="left_bottom">
-            <div class="left_bottom_tag y2">Y2</div>
-            <div class="left_bottom_tag urgent">急</div>
+        <div class="left_bottom">
+          <div class="left_bottom_tag y2">Y2</div>
+          <div class="left_bottom_tag urgent">急</div>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="line-1">
+          <span>48</span>
+          <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>
+          <span>10101</span>
+          <div class="platform vartxt-outer">
+            <div class="txt">WWWWOTHERWWWWWW</div>
           </div>
         </div>
-        <div class="middle">
-          <div class="line-1">
-            <span>48</span>
-            <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                <circle cx="50" cy="50" r="50" fill="#000"></circle>
-              </svg>
-            </span>
-            <span>10101</span>
-            <span class="platform">OTHER</span>
+        <div class="cz-info overflow-hidden">
+          <div>11531_436</div>
+          <div>黑色</div>
+          <div>L</div>
+          <div>第2项-<span class="red">项<b>3</b>件</span></div>
+          <div class="total blue">共3项-总49件</div>
+          <div class="process vartxt-outer">
+            <div class="txt">WWWWW</div>
           </div>
-          <div class="cz-info overflow-hidden">
-            <div>11531_436</div>
-            <div>黑色</div>
-            <div>L</div>
-            <div>第2项-<span class="red">项<b>3</b>件</span></div>
-            <div class="process">23456</div>
-            <span class="total">总:3件</span>
-            <span class="code">A00</span>
+          <div class="code vartxt-outer">
+            <div class="txt">AWW7WWWBCCCCWWA00AA</div>
           </div>
-          <div class="line-time line-3">
-            <div class="time week4  time-code">28-08-123</div>
-            <div class="fr txt overflow-hidden dir-rtl">itemsku</div>
+        </div>
+        <div class="line-time line-3 relative">
+          <div class="time week4  time-code">
+            28-08-123
           </div>
-          <div class="line-time line-4">
-            <div class="time week6 ">14-10</div>
-            <div class="fr txt overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</div>
+          <div class="vartxt-outer">
+            <div class="txt">%POS2</div>
           </div>
-          <div class="line-time line-5">
-            <div class="fr">
-              <span class="txt overflow-hidden dir-rtl">99877</span>
-              <span class="bgl">
-                <span class="txt overflow-hidden dir-rtl" style="background: #000; color: #FFF;">0USPS</span>
-              </span>
+        </div>
+        <div class="line-time line-4 relative">
+          <div class="time week6 ">
+            14-10
+          </div>
+          <div class="vartxt-outer">
+            <div class="txt"></div>
+          </div>
+        </div>
+        <div class="line-time line-5 relative">
+          <div class="vartxt-outer lf-1">
+            <div class="txt">WWWWW</div>
+          </div>
+          <div class="vartxt-outer lf-2">
+            <div class="txt"
+                 style="background: #000; color: #FFF;">
+              WWWWW
             </div>
           </div>
         </div>
-        <div class="arrow">
-          <div class="line"></div>
-          <svg width="22" height="24">
-            <polygon points="0 0,11 0,11 24,0 0" />
-          </svg>
-        </div>
-        <div class="production-item">
-          <div class="appname">安(0001)</div>
-          <img
-            src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg"
-            class="qrcode">
-          <div class="code-text">BUP4KMY-6</div>
-        </div>
+      </div>
+      <div class="arrow">
+        <div class="line"></div>
+        <svg width="22" height="24">
+          <polygon points="0 0,11 0,11 24,0 0"/>
+        </svg>
+      </div>
+      <div class="production-item">
+        <div class="appname">CWW6WW安(0001)WWW6WBWW6WA</div>
+        <img src="./B4WYAAX-1_qrCode.jpg" class="qrcode">
+        <div class="code-text">BUP4KMY-6</div>
+      </div>
+      <div class="view-info">
+        <div class="txt"></div>
+        <div class="txt">BCE面</div>
       </div>
     </div>
   </div>
+</div>
 </body>
 
 </html>
+<!-- {"pos2": "ITEM_SKU", "pos4": "THIRD_SKU", "pos1": "THIRD_ORDER_ID", "pos3": "TRACK_NUMBER", "pos5": "CHANNEL_CODE", "pos6": "SUB_APP_NAME_WITH_ID", "pos7": "PROCESS_ROUTE_CODE"} -->
+<!--{"version": "v11", "multiply": 5, "need_qr_code": true, "only_qr_code": false, "need_bar_code": false, "need_production_img": false}-->

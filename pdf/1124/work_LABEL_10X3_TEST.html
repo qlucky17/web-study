@@ -49,9 +49,16 @@
       text-overflow: ellipsis;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -199,6 +206,7 @@
       left: auto;
       font-size: 12px;
       font-weight: 400;
+      width: 70px;
     }
 
     .cz-info .process {
@@ -206,6 +214,7 @@
       right: 0;
       bottom: 2px;
       font-size: 16px;
+      width: 100px;
     }
 
     .line-time {
@@ -213,23 +222,32 @@
       font-size: 15px;
     }
 
-    .line-3 .txt {
-      max-width: 126px;
+    .line-3 .vartxt-outer {
+      width: 128px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-4 .txt {
-      max-width: 160px;
+    .line-4 .vartxt-outer {
+      width: 165px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
-    .line-5 .txt {
-      display: inline-block;
-      max-width: 102px;
+    .line-5 .lf-1 {
+      width: 122px;
+      height: 22px;
+      position: absolute;
+      right: 100px;
     }
 
-    .line-5 .bgl {
-      display: inline-block;
-      min-width: 50px;
-      text-align: right;
+    .line-5 .lf-2 {
+      width: 100px;
+      height: 22px;
+      position: absolute;
+      right: 0;
     }
 
     .time {
@@ -392,23 +410,31 @@
             <div>L</div>
             <div>第2项-<span class="red">项<b>3</b>件</span></div>
             <div class="total blue">共N项-总N件</div>
-            <span class="process">*05543</span>
-            <span class="code">A00</span>
+            <div class="vartxt-outer process">
+              <div class="txt">*05543</div>
+            </div>
+            <div class="vartxt-outer code">
+              <div class="txt">A00</div>
+            </div>
           </div>
-          <div class="line-time line-3">
+          <div class="line-time line-3 relative">
             <div class="time week4  time-code">28-08-123</div>
-            <div class="fr txt overflow-hidden dir-rtl">itemsku</div>
+            <div class="vartxt-outer">
+              <div class="txt">itemsku</div>
+            </div>
           </div>
-          <div class="line-time line-4">
+          <div class="line-time line-4 relative">
             <div class="time week6 ">14-10</div>
-            <div class="fr txt overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</div>
+            <div class="vartxt-outer">
+              <div class="txt">ZxIshop_#NVZRA5Y</div>
+            </div>
           </div>
-          <div class="line-time line-5">
-            <div class="fr">
-              <span class="txt overflow-hidden dir-rtl">99877</span>
-              <span class="bgl">
-                <span class="txt overflow-hidden dir-rtl" style="background: #000; color: #FFF;">0USPS</span>
-              </span>
+          <div class="line-time line-5 relative">
+            <div class="vartxt-outer lf-1">
+              <div class="txt">99877</div>
+            </div>
+            <div class="vartxt-outer lf-2">
+              <div class="txt" style="background: #000; color: #FFF;">0USPS</div>
             </div>
           </div>
         </div>

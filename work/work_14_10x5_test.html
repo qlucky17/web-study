@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生产工单10*5_OLD</title>
+  <title>%WORK_ORDER_TITLE%（10*5测试版）</title>
   <style>
     html,
     body {
@@ -47,9 +47,16 @@
       text-overflow: clip;
     }
 
-    .dir-rtl {
-      text-align: left;
-      direction: rtl;
+    .vartxt-outer {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vartxt-outer .txt {
+      position: absolute;
+      right: 0;
     }
 
     .red {
@@ -151,8 +158,8 @@
     .part-1 {
       position: relative;
       font-size: 17px;
-      padding-top: 6px;
-      padding-bottom: 3px;
+      height: 27px;
+      line-height: 27px;
       border-bottom: 1px solid #1D2129;
     }
 
@@ -171,16 +178,21 @@
     }
 
     .part-1 .name {
-      display: inline-block;
-      max-width: 140px;
+      width: 110px;
+      height: 27px;
+      top: 0;
+      position: absolute;
+      top: 0;
+      right: 80px;
     }
 
     .part-1 .platform {
+      width: 80px;
+      height: 27px;
       position: absolute;
-      top: 6px;
+      top: 0;
       right: 0;
       font-weight: 600;
-      max-width: 100px;
     }
 
     .part-2 {
@@ -212,13 +224,9 @@
       margin-top: 6px;
     }
 
-    .part-2 .item-total {
-      margin-top: 5px;
-    }
-
+    .part-2 .item-total,
     .part-2 .total {
-      font-size: 27px;
-      margin-top: 5px;
+      margin-top: 7px;
     }
 
     .qr-code {
@@ -227,7 +235,7 @@
       position: absolute;
       top: 1px;
       right: 0;
-      font-size: 23px;
+      font-size: 20px;
     }
 
     .qr-code img {
@@ -318,124 +326,109 @@
     .detail-b {
       padding-left: 110px;
       line-height: 22px;
-      text-align: left;
     }
 
-    .detail-b .dt-1 {
-      display: inline-block;
-      min-width: 115px;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-2 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-3 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-4 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-5 {
-      display: inline-block;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-6 {
-      display: inline-block;
-      line-height: 22px;
-      text-align: center;
-      min-width: 72px;
-      max-width: 125px;
-    }
-
-    .detail-b .dt-rt {
-      position: absolute;
-      top: 0;
-      right: 10px;
+    .detail-b .vartxt-outer {
+      width: 125px;
+      height: 22px;
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <div class="wrapper">
-      <div class="content-item">
-        <div class="relative">
-          <div class="left">
-            <img
-              src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/707952285203870977_1.jpeg" />
-            <span class="tag ">AB/5P</span>
-            <div class="left_bottom">
-              <div class="left_bottom_tag y2">Y2</div>
-              <div class="left_bottom_tag urgent">急</div>
-            </div>
-            <div class="tag gray">GRAY CODE</div>
-            <span class="tag biao">标</span>
-            <div class="tag bu"><img
-                src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/补单.png" />
-            </div>
-
+<div class="page">
+  <div class="wrapper">
+    <div class="content-item">
+      <div class="relative">
+        <div class="left">
+          <img src="./707952285203870977_1.jpeg"/>
+          <span class="tag ">AB/5P</span>
+          
+          <div class="left_bottom">
+            <div class="left_bottom_tag y2">Y2</div>
+            <div class="left_bottom_tag urgent">急</div>
           </div>
-          <div class="right">
-            <div class="part-1 overflow-hidden">
-              <span>48</span>
-              <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
-                  <circle cx="50" cy="50" r="50" fill="#000"></circle>
-                </svg>
-              </span>
-              <span>10101</span>
-              <span class="name overflow-hidden dir-rtl">安(0001)</span>
-              <span class="platform overflow-hidden dir-rtl">OTHER</span>
+          <div class="tag gray">GRAYCODE</div>
+          <span class="tag biao">标</span>
+          <div class="tag bu"><img src="./补单.png" /></div>
+
+        </div>
+        <div class="right">
+          <div class="part-1 overflow-hidden">
+            <span>48</span>
+            <span class="type"><svg viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet">
+  <circle cx="50" cy="50" r="50" fill="#000"></circle>
+</svg>
+</span>
+            <span>10101</span>
+            <div class="name vartxt-outer">
+              <div class="txt">CWW6WW安(0001)WWW6WBWW6WA</div>
             </div>
-            <div class="part-2">
-              <div class="text-info">
-                <div class="time week4  time-code">28-08-123</div>
-                <div class="cz-info overflow-hidden">
-                  <div>11531_436</div>
-                  <div>黑色</div>
-                  <div>L</div>
-                </div>
-                <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
-                <div class="total">总:3件</div>
+            <div class="platform vartxt-outer">
+              <div class="txt">WWWWOTHERWWWWWW</div>
+            </div>
+          </div>
+          <div class="part-2">
+            <div class="text-info">
+              <div class="time week4  time-code">28-08-123
               </div>
-              <div class="qr-code">
-                <img
-                  src="/Users/pangtongmeng/projects/fingerPrint/bird-production-app/production-scheduler/target/test-classes/work/B4WYAAX-1_qrCode.jpg" />
-                <div>BUP4KMY-6</div>
+              <div class="cz-info overflow-hidden">
+                <div>11531_436</div>
+                <div>黑色</div>
+                <div>L</div>
               </div>
+              <div class="item-total">第2项-<span class="red">项<b>3</b>件</span></div>
+              <div class="total blue">共3项-总49件</div>
+            </div>
+            <div class="qr-code">
+              <img src="./B4WYAAX-1_qrCode.jpg"/>
+              <div>BUP4KMY-6</div>
             </div>
           </div>
         </div>
-        <div class="relative">
-          <div class="time-info">
-            <div class="time week6 ">14-10</div>
-            <div class="time week6 ">14-10</div>
+      </div>
+      <div class="relative">
+        <div class="time-info">
+          <div class="time week6 ">
+            14-10
           </div>
-          <div class="detail-b">
-            <div class="relative">
-              <span class="dt-1 overflow-hidden dir-rtl">23456</span>
-              <span class="dt-2 overflow-hidden dir-rtl">itemsku</span>
-              <span class="dt-3 dt-rt overflow-hidden dir-rtl">99877</span>
+          <div class="time week6 ">
+            14-10
+          </div>
+        </div>
+        <div class="detail-b">
+          <div class="relative">
+            <div class="vartxt-outer">
+              <div class="txt">WWWWW</div>
             </div>
-            <div class="relative">
-              <span class="dt-4 overflow-hidden dir-rtl">ZxIshop_#NVZRA5Y</span>
-              <span class="dt-rt">
-                <span class="dt-5 overflow-hidden dir-rtl">A00</span>
-                <span class="dt-6 overflow-hidden dir-rtl" style="background: #000; color: #FFF;">USPSH</span>
-              </span>
+            <div class="vartxt-outer">
+              <div class="txt">itemskuuuuuuu</div>
+            </div>
+            <div class="vartxt-outer">
+              <div class="txt">WWWWW</div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="vartxt-outer">
+              <div class="txt"></div>
+            </div>
+            <div class="vartxt-outer">
+              <div class="txt">AWW7WWWBCCCCWWA00AA</div>
+            </div>
+            <div class="vartxt-outer">
+              <div class="txt"
+                   style="background: #000; color: #FFF;">
+                WWWWW
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 
 </html>
+<!-- {"pos2": "ITEM_SKU", "pos4": "THIRD_SKU", "pos1": "THIRD_ORDER_ID", "pos3": "TRACK_NUMBER", "pos5": "CHANNEL_CODE", "pos6": "SUB_APP_NAME_WITH_ID", "pos7": "PROCESS_ROUTE_CODE"} -->
+<!--{"version": "v2", "multiply": 5, "need_qr_code": true, "only_qr_code": false, "need_bar_code": false, "need_production_img": false}-->
