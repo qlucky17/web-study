@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>面单</title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #1d2129;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .page {
+      width: 500px;
+      height: 750px;
+      margin: 0 auto;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .label {
+      width: 470px;
+      margin: 15px;
+    }
+
+    .section {
+      border: 1px solid #1d2129;
+      width: 468px;
+      overflow: hidden;
+    }
+
+    .section-top {
+      height: 145px;
+      text-align: center;
+    }
+
+    .section-middle {
+      height: 180px;
+    }
+
+    .section-bottom {
+      height: 145px;
+      text-align: center;
+    }
+
+    .top-barcode-wrap {
+      width: 400px;
+      margin: 16px auto 8px auto;
+    }
+
+    .bottom-barcode-wrap {
+      width: 400px;
+      margin: 8px auto 6px auto;
+    }
+
+    .barcode-top-img {
+      display: block;
+      width: 400px;
+      height: 80px;
+      margin: 0 auto;
+    }
+
+    .barcode-bottom-img {
+      display: block;
+      width: 400px;
+      height: 50px;
+      margin: 0 auto;
+    }
+
+    .code-text {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .middle-head {
+      width: 436px;
+      margin: 16px auto 10px auto;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: bold;
+    }
+
+    .middle-head .left {
+      float: left;
+    }
+
+    .middle-head .right {
+      float: right;
+    }
+
+    .clear {
+      clear: both;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .receiver-row {
+      width: 436px;
+      margin: 0 auto;
+    }
+
+    .receiver-icon {
+      float: left;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #1d2129;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 38px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 16px;
+    }
+
+    .receiver-info {
+      float: left;
+      width: 380px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .receiver-line1 {
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+
+    .receiver-line2 {
+      white-space: nowrap;
+    }
+
+    .receiver-line1 .country {
+      margin-right: 16px;
+    }
+
+    .receiver-line2 .name {
+      margin-right: 16px;
+    }
+
+    .receiver-line2 .phone {
+      margin-right: 16px;
+    }
+
+    .receiver-line2 .count {
+      float: right;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+
+    .waybill-no {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .print-time {
+      width: 400px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="label">
+      <div class="section section-top">
+        <div class="top-barcode-wrap">
+          <img class="barcode-top-img" src="images/code.png" alt="对货码条形码" />
+        </div>
+        <div class="code-text">对货码：2837</div>
+      </div>
+
+      <div class="section section-middle">
+        <div class="middle-head">
+          <span class="left">菜鸟即时送达</span>
+          <span class="right">莆田发货中心</span>
+          <div class="clear"></div>
+        </div>
+
+        <div class="receiver-row">
+          <div class="receiver-icon">收</div>
+          <div class="receiver-info">
+            <div class="receiver-line1">
+              <span class="country">中国</span>
+              <span>广东省清远市************************</span>
+            </div>
+            <div class="receiver-line2">
+              <span class="name">黄**</span>
+              <span class="phone">135*****1212</span>
+              <span class="count">(共6件)</span>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <div class="section section-bottom">
+        <div class="waybill-no">运单号：772378238928392334923</div>
+        <div class="bottom-barcode-wrap">
+          <img class="barcode-bottom-img" src="images/code2.jpg" alt="运单号条形码" />
+        </div>
+        <div class="print-time">打印时间：2026-05-11 13:52:56</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
