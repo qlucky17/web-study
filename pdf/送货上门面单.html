@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>送货上门面单</title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #1d2129;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .page {
+      width: 500px;
+      height: 750px;
+      margin: 0 auto;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .label {
+      width: 470px;
+      margin: 15px;
+    }
+
+    .panel {
+      width: 468px;
+      border: 1px solid #1d2129;
+      overflow: hidden;
+    }
+
+    .section-top {
+      height: 144px;
+      border-bottom: 1px solid #1d2129;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .section-middle {
+      height: 179px;
+      border-bottom: 1px solid #1d2129;
+      overflow: hidden;
+    }
+
+    .section-bottom {
+      height: 144px;
+      overflow: hidden;
+    }
+
+    .barcode-wrap {
+      width: 400px;
+      margin: 16px auto 8px auto;
+    }
+
+    .barcode-img {
+      display: block;
+      width: 400px;
+      height: 80px;
+      margin: 0 auto;
+      border: 0;
+    }
+
+    .waybill-no-top {
+      font-size: 32px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .middle-inner {
+      width: 438px;
+      margin: 16px auto 0 auto;
+    }
+
+    .head-row {
+      height: 32px;
+      line-height: 32px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .head-left {
+      float: left;
+    }
+
+    .head-right {
+      float: right;
+      max-width: 300px;
+      text-align: right;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .recv-row {
+      overflow: hidden;
+    }
+
+    .recv-icon {
+      float: left;
+      width: 38px;
+      height: 38px;
+      border: 1px solid #1d2129;
+      border-radius: 50%;
+      line-height: 38px;
+      text-align: center;
+      font-size: 24px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 16px;
+    }
+
+    .recv-info {
+      float: left;
+      width: 382px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+    }
+
+    .recv-line1 {
+      height: 24px;
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+
+    .recv-line2 {
+      height: 24px;
+      white-space: nowrap;
+    }
+
+    .country {
+      margin-right: 16px;
+    }
+
+    .name {
+      margin-right: 16px;
+    }
+
+    .phone {
+      margin-right: 16px;
+    }
+
+    .count {
+      float: right;
+    }
+
+    .bottom-inner {
+      width: 438px;
+      margin: 9px auto 0 auto;
+    }
+
+    .order-row {
+      height: 24px;
+      line-height: 24px;
+      overflow: hidden;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .order-left {
+      float: left;
+    }
+
+    .order-right {
+      float: right;
+    }
+
+    .tip-box {
+      width: 440px;
+      height: 64px;
+      margin: 8px auto 8px auto;
+      background: #f2f3f5;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .tip-text {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .print-row {
+      height: 22px;
+      line-height: 22px;
+      overflow: hidden;
+      font-size: 14px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .print-user {
+      float: left;
+      margin-right: 8px;
+    }
+
+    .print-time {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="label">
+      <div class="panel">
+        <div class="section-top">
+          <div class="barcode-wrap">
+            <img class="barcode-img" src="images/code.png" alt="运单号条形码" />
+          </div>
+          <div class="waybill-no-top">运单号：2837823823</div>
+        </div>
+
+        <div class="section-middle">
+          <div class="middle-inner">
+            <div class="head-row">
+              <span class="head-left">送货上门</span>
+              <span class="head-right">清远维龙8号子仓</span>
+            </div>
+
+            <div class="recv-row">
+              <div class="recv-icon">收</div>
+              <div class="recv-info">
+                <div class="recv-line1">
+                  <span class="country">中国</span>
+                  <span>广东省清远市************************</span>
+                </div>
+                <div class="recv-line2">
+                  <span class="name">黄**</span>
+                  <span class="phone">135*****1212</span>
+                  <span class="count">(共6件)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-bottom">
+          <div class="bottom-inner">
+            <div class="order-row">
+              <span class="order-left">FHD-vKcOIotyC0</span>
+              <span class="order-right">第1箱，共1箱</span>
+            </div>
+
+            <div class="tip-box">
+              <div class="tip-text">温馨提示：请当面拆包核查核实，避免货品少件错件</div>
+            </div>
+
+            <div class="print-row">
+              <span class="print-user">打单人员：吴*玉</span>
+              <span class="print-time">打印时间：2026-05-11 13:52:56</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
