@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>送货上门清单</title>
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: #ffffff;
+			font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+			color: #1d2129;
+		}
+
+		.page {
+			width: 794px;
+			height: 1123px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.wrapper{
+			width: 768px;
+			margin: 0 auto;
+		}
+
+		.header {
+			width: 100%;
+			height: 43px;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+
+		.header td {
+			vertical-align: middle;
+			padding: 0;
+		}
+
+		.logo-wrap {
+			width: 206px;
+			height: 43px;
+			text-align: left;
+		}
+
+		.logo-wrap img {
+			width: 180px;
+			height: 40px;
+			border: 0;
+			display: block;
+		}
+
+		.title-wrap {
+			width: 356px;
+			text-align: center;
+		}
+
+		.title {
+			font-size: 11px;
+			line-height: 16px;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		.title-sub {
+			margin-top: 3px;
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+			font-size: 8px;
+			line-height: 13px;
+		}
+
+		.title-sub td {
+			text-align: left;
+			white-space: nowrap;
+		}
+
+		.meta-wrap {
+			width: 206px;
+			text-align: right;
+			font-size: 8px;
+			line-height: 13px;
+		}
+
+		.table-wrap {
+			width: 100%;
+			height: 1040px;
+			margin-top: 14px;
+		}
+
+		.list {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+			border: 1px solid #1d2129;
+			font-size: 8px;
+			line-height: 13px;
+			color: #1d2129;
+		}
+
+		.list th,
+		.list td {
+			border: 1px solid #1d2129;
+			padding: 0 7px;
+			vertical-align: middle;
+			font-weight: normal;
+		}
+
+		.list th {
+			font-size: 9px;
+			line-height: 15px;
+			text-align: center;
+			height: 36px;
+		}
+
+		.list td {
+			font-size: 8px;
+			height: 47.8px;
+		}
+
+		.col-no {
+			width: 5.5%;
+			text-align: center;
+		}
+
+		.col-address {
+			width: 36.7%;
+		}
+
+		.col-logistics {
+			width: 17.4%;
+			text-align: center;
+			word-break: break-all;
+		}
+
+		.col-delivery {
+			width: 17.4%;
+			text-align: center;
+			word-break: break-all;
+		}
+
+		.col-signer {
+			width: 23%;
+			text-align: right;
+			word-break: break-all;
+		}
+
+		.col-signer .receiver {
+			min-height: 13px;
+			text-align: center;
+		}
+
+		.address-line {
+			margin: 0;
+			white-space: nowrap;
+		}
+
+		.barcode-wrap {
+			text-align: center;
+			line-height: 16px;
+		}
+
+		.barcode-wrap img {
+			width: 106px;
+			height: 21px;
+			border: 0;
+			display: block;
+			margin: 0 auto 2px;
+		}
+
+		.empty {
+			color: transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<div class="wrapper">
+			<table class="header">
+				<tr>
+					<td class="logo-wrap">
+						<img src="./images/hihumbird_logo.png" alt="" />
+					</td>
+					<td class="title-wrap">
+						<p class="title">送货上门清单</p>
+						<table class="title-sub">
+							<tr>
+								<td>打印人员：吴*玉(2009823928)</td>
+								<td>打印时间：2026年05月13日10:47:12</td>
+							</tr>
+						</table>
+					</td>
+					<td class="meta-wrap">
+						<div>第1/1页</div>
+						<div>包裹总计：2</div>
+					</td>
+				</tr>
+			</table>
+	
+			<div class="table-wrap">
+				<table class="list">
+					<tr>
+						<th class="col-no">序号</th>
+						<th class="col-address">送货地址</th>
+						<th class="col-logistics">物流单号</th>
+						<th class="col-delivery">发货单号</th>
+						<th class="col-signer">签收人姓名</th>
+					</tr>
+	
+					<tr>
+						<td class="col-no">1</td>
+						<td class="col-address">
+							<p class="address-line">中国 广东省清远市清城区湖西路89号</p>
+							<p class="address-line">签收人：夏游杰 13523801212　　邮编：511500</p>
+						</td>
+						<td class="col-logistics">
+							<div class="barcode-wrap">
+								<img src="" alt="" />
+								<div>182828392839</div>
+							</div>
+						</td>
+						<td class="col-delivery">BG-12SMKGVotqi</td>
+						<td class="col-signer">
+							<div class="receiver">签名xxxx</div>
+							<div class="package">共3个包裹</div>
+						</td>
+					</tr>
+	
+					<tr>
+						<td class="col-no">2</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">3</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">4</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">5</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">6</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">7</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">8</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">9</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">10</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">11</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">12</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">13</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">14</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">15</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">16</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">17</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">18</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">19</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">20</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+					<tr>
+						<td class="col-no">21</td>
+						<td class="col-address"></td>
+						<td class="col-logistics"></td>
+						<td class="col-delivery"></td>
+						<td class="col-signer"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
