@@ -155,7 +155,9 @@
 
 		.address-line {
 			margin: 0;
-			white-space: nowrap;
+			line-height: 13px;
+			max-height: 26px; /* 2 lines × 13px line-height */
+			overflow: hidden; /* CSS2-compatible multiline truncation (no ellipsis) */
 		}
 
 		.barcode-wrap {
