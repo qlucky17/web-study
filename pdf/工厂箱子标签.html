@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工厂箱子标签</title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #000000;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .page {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      background: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .label {
+      width: 470px;
+      height: 470px;
+      margin: 15px;
+      border: 1px solid #000000;
+      overflow: hidden;
+    }
+
+    .clear {
+      clear: both;
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* 上部分：二维码和箱号 */
+    .section-top {
+      height: 220px;
+      border-bottom: 1px solid #000000;
+    }
+
+    .qr-side {
+      float: left;
+      width: 234px;
+      height: 220px;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .qr-code-img {
+      width: 120px;
+      height: 120px;
+      display: block;
+      margin: 0 auto;
+      background: #eee; /* 占位色 */
+      border: 1px solid #ccc;
+    }
+
+    .qr-text {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+      word-break: break-all;
+      margin-top: 10px;
+    }
+
+    .box-num-side {
+      float: left;
+      width: 233px;
+      height: 220px;
+      border-left: 1px solid #000000;
+      display: table;
+    }
+
+    .box-num-content {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    /* 下部分：详细信息 */
+    .section-bottom {
+      padding: 39px 15px;
+    }
+
+    .info-item {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+
+    .info-label {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="label">
+      <!-- 上部 -->
+      <div class="section-top">
+        <div class="qr-side">
+          <img class="qr-code-img" src="images/qr_placeholder.png" alt="二维码" />
+          <div class="qr-text">BG-16SkvhsNAki BG—16 斯克维斯纳基</div>
+        </div>
+        <div class="box-num-side">
+          <div class="box-num-content">
+            箱号：1/10
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <!-- 下部 -->
+      <div class="section-bottom">
+        <div class="info-item">订单编码：9649YP</div>
+        <div class="info-item">货件编码：FBA199NWCDKT</div>
+        <div class="info-item">存放库位：FBA仓-A001</div>
+        <div class="info-item">装箱数量：100件</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,43 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>打印发货单号</title>
-  <style>
-    html, body{
-      margin:0; padding:0;
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #000000;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
     }
-    .page{
-      page-break-after:always;
+
+    .page {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      background: #ffffff;
+      overflow: hidden;
+      position: relative;
     }
-    .avoid-break {
-      page-break-inside: avoid !important;
+
+    .content {
+      width: 470px;
+      height: 470px;
+      margin: 15px;
+      border: 1px solid #000000;
+      overflow: hidden;
+    }
+
+    .content>div{
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    /* 头部区域：包含标题和条形码 */
+    .header {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .header-left {
+      float: left;
+      width: 240px;
+    }
+
+    .header-title {
+      font-size: 22px;
+      line-height: 1.4;
+      margin-bottom: 2px;
+    }
+
+    .header-id {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .header-right {
+      float: right;
+      text-align: right;
+      width: 200px;
+    }
+
+    .barcode-placeholder {
+      width: 120px;
+      height: 40px;
+      border: 0;
+      display: inline-block;
+      background-color: #f0f0f0;
+      /* 占位背景 */
+    }
+
+    .barcode-no {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    /* 数据表格区域 */
+    .table-wrapper {
+      width: 100%;
+      max-height: 340px;
+      overflow: hidden;
+    }
+    .main-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      clear: both;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .main-table th {
+      border: 1px solid #000;
+      text-align: center;
+      padding: 4px 0;
+    }
+
+    .main-table td {
+      border: 1px solid #000;
+      padding: 4px 0;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+
+    .red-label {
+      color: #ff0000;
+    }
+
+    /* 页脚时间信息 */
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 25px;
+      right: 25px;
+      font-size: 14px;
+    }
+
+    /* 清除浮动辅助类 */
+    .clearfix:after {
+      content: "";
+      display: block;
+      clear: both;
     }
   </style>
 </head>
-<body style="font:400 14px/1 思源黑体;color:#000;">
+
+<body>
+
   <div class="page">
-    <div style="width:400px;height:200px;" class="avoid-break">
-      <table style="width:100%;border-collapse:collapse;border-spacing:0;">
-        <tbody>
-          <tr>
-            <td>
-              <div class="width:100%;display:table;">
-                <div style="display:table-cell;vertical-align: middle;padding:15px 0;">
-                  <img src="./images/code.png" style="width:170px;height:170px;" />
-                </div>
-                <div style="display:table-cell;vertical-align: middle;line-height:1.3;padding-left:10px;">
-                  <div style="font-weight:bold;font-size:18px;">FHD-2308249EY3HS</div>
-                  <div>打印时间：2023-10-24 14:57:22</div>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="content">
+      <div>
+        <!-- 顶部布局 -->
+        <div class="header clearfix">
+          <div class="header-left">
+            <div class="header-title">极兔物流</div>
+            <div class="header-id">710066192747</div>
+          </div>
+          <div class="header-right">
+            <!-- 条形码占位符 -->
+            <img src="https://via.placeholder.com/160x50/000000/FFFFFF?text=BARCODE" class="barcode-placeholder"
+              alt="barcode">
+            <div class="barcode-no">FHD-14fvff9sMPQ</div>
+          </div>
+        </div>
+    
+        <!-- 中间表格 -->
+         <div class="table-wrapper">
+           <table class="main-table">
+             <thead>
+               <tr>
+                 <th style="width: 28%;">箱子编码</th>
+                 <th style="width: 47%;">商户订单号</th>
+                 <th style="width: 25%;">存放仓位</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>BG-xZojeuAlmq</td>
+                 <td>
+                   FBA17WF3586D
+                   <div class="red-label">箱标以“FBA1956458M”为准</div>
+                 </td>
+                 <td>FBA仓<br />A001</td>
+               </tr>
+               <tr>
+                 <td>BG-xSojeuBlmm</td>
+                 <td>FBA14WF258F3</td>
+                 <td>FBA仓<br />A002</td>
+               </tr>
+             </tbody>
+           </table>
+       
+         </div>
+        <!-- 底部日期 -->
+        <div class="footer">
+          <span>创建时间：2026-04-16 09:27:00</span>
+          <span style="margin-left:4px;">打印时间：2026-04-16 09:27:00</span>
+        </div>
+      </div>
     </div>
   </div>
+
 </body>
+
 </html>
