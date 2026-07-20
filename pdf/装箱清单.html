@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>装箱清单</title>
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: #ffffff;
+			font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+			color: #1d2129;
+		}
+
+		.page {
+			width: 794px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.wrapper {
+			width: 768px;
+			margin: 20px auto;
+		}
+
+		.list {
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+			border: 1px solid #1d2129;
+			font-size: 12px;
+			line-height: 1.4;
+			color: #1d2129;
+		}
+
+		.list th,
+		.list td {
+			border: 1px solid #1d2129;
+			padding: 6px 0;
+			vertical-align: middle;
+			text-align: center;
+			word-wrap: break-word;
+		}
+
+		/* 顶部信息行样式 */
+		.box-code-row th {
+			font-size: 14px;
+			font-weight: normal;
+			padding: 8px 0;
+		}
+
+		.info-row td {
+			padding: 10px;
+			text-align: left;
+			font-size: 11px;
+		}
+
+		.info-row .left-part {
+			float: left;
+		}
+
+		.info-row .right-part {
+			float: right;
+		}
+
+		/* 表头样式 */
+		.header-row th {
+			padding: 8px 0;
+			font-size: 12px;
+		}
+
+		/* 条形码区域 */
+		.barcode-img {
+			width: 150px;
+			height: auto;
+			max-width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<div class="wrapper">
+			<table class="list">
+				<!-- 用一个隐藏行来固定列宽，visibility: collapse 是 CSS2 属性，能隐藏行但保留其对宽度的影响 -->
+				<tr style="visibility: collapse; height: 0; line-height: 0; font-size: 0;">
+					<th style="width: 80px; height: 0; padding: 0; border: none;"></th>
+					<th style="width: 160px; height: 0; padding: 0; border: none;"></th>
+					<th style="height: 0; padding: 0; border: none;"></th>
+					<th style="height: 0; padding: 0; border: none;"></th>
+					<th style="height: 0; padding: 0; border: none;"></th>
+					<th style="height: 0; padding: 0; border: none;"></th>
+					<th style="height: 0; padding: 0; border: none;"></th>
+				</tr>
+
+				<!-- 第1行：箱子编码 -->
+				<tr class="box-code-row">
+					<th colspan="7">箱子编码：BG-16Bl7yLJqyO</th>
+				</tr>
+
+				<!-- 第2行：商户与分拣信息 -->
+				<tr class="info-row">
+					<td colspan="7">
+						<div class="left-part">
+							商户：15000000004(2566327) &nbsp;&nbsp;&nbsp;&nbsp; 分拣规则：G22V(1005)
+						</div>
+						<div class="right-part">
+							订单总数：2 &nbsp;&nbsp;&nbsp; 订单总件数：6
+						</div>
+					</td>
+				</tr>
+
+				<!-- 第3行：表头 -->
+				<tr class="header-row">
+					<th>序号</th>
+					<th>商户订单号</th>
+					<th>订单编码</th>
+					<th>商品名称</th>
+					<th>颜色尺码</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+
+				<!-- 序号1的订单 -->
+				<tr>
+					<td rowspan="2">1</td>
+					<td rowspan="2">
+						<img src="./images/1920-1200.jpg" class="barcode-img" />
+						<div>F923072275446651776</div>
+					</td>
+					<td rowspan="2">BD4PRAK</td>
+					<td>hgg</td>
+					<td>黑色，1-3M</td>
+					<td>1</td>
+					<td rowspan="2">2</td>
+				</tr>
+				<tr>
+					<td>hgg</td>
+					<td>黑色，6T</td>
+					<td>1</td>
+				</tr>
+
+				<!-- 序号2的订单 -->
+				<tr>
+					<td rowspan="3">2</td>
+					<td rowspan="3">
+						<img src="./images/1920-1200.jpg" class="barcode-img" />
+						<div class="barcode-number">F923080282716789632</div>
+					</td>
+					<td rowspan="3">BGQP3H7</td>
+					<td>hgg</td>
+					<td>黑色，6T</td>
+					<td>1</td>
+					<td rowspan="3">4</td>
+				</tr>
+				<tr>
+					<td>hgg</td>
+					<td>黑色，4XL</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>hgg</td>
+					<td>黑色，XXS</td>
+					<td>2</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
