@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发票 Invoice</title>
+  <style>
+    /* ==========================================================================
+       发票（INVOICE）—— 用于生成 PDF
+       画布：A4 @96dpi（794px × 1123px），Figma 设计稿 1190px 宽，按 1 : 1.5 换算
+       约束：仅使用 CSS2 / CSS2.1，不使用 flex、grid、transform、border-radius、
+             box-shadow、opacity、CSS 变量等 CSS3 特性
+       ========================================================================== */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      font: 400 13.3px/18.7px 'PingFang SC', 'Microsoft Yahei', 'Heiti SC', Arial, sans-serif;
+    }
+
+    .page {
+      width: 794px;
+      margin: 0 auto;
+      page-break-after: always;
+    }
+
+    .page.last {
+      page-break-after: auto;
+    }
+
+    .content {
+      width: 593px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    /* 抬头 ------------------------------------------------------------------ */
+    .title {
+      font-size: 26.7px;
+      line-height: 32px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .address {
+      margin-top: 6.7px;
+      line-height: 18.7px;
+    }
+
+    .subtitle {
+      margin-top: 26.7px;
+      font-size: 21.3px;
+      line-height: 26.7px;
+      text-align: center;
+    }
+
+    /* 发票信息 -------------------------------------------------------------- */
+    .info {
+      margin-top: 33.3px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: fixed;
+    }
+
+    .info-table td {
+      padding: 0;
+      line-height: 18.7px;
+      vertical-align: top;
+    }
+
+    .info-table td.gap {
+      padding-top: 2.7px;
+    }
+
+    .split {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: fixed;
+    }
+
+    .split td {
+      padding: 0;
+      line-height: 18.7px;
+      vertical-align: top;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    /* 商品明细 -------------------------------------------------------------- */
+    .goods-table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: fixed;
+      page-break-inside: avoid;
+    }
+
+    .goods-table th,
+    .goods-table td {
+      /* 设计稿行高 64px ÷ 1.5 ≈ 42.7px，折叠边框模式下需减去 1px 边框 */
+      height: 41.7px;
+      border: 1px solid #000;
+      padding: 0 6.7px;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      page-break-inside: avoid;
+    }
+
+    .goods-table th {
+      background: #d7d7d7;
+    }
+
+    .goods-table td.left {
+      text-align: left;
+    }
+
+    /* 汇款说明 -------------------------------------------------------------- */
+    .remit {
+      margin-top: 60px;
+      line-height: 18.7px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page last">
+    <div class="content">
+
+      <div class="title">HICUSTOM CO., LIMITED</div>
+      <div class="address">3/F. WORKINGTON TOWER, 78 BONHAM STRAND, SHEUNG WAN, Hong Kong</div>
+      <div class="subtitle">INVOICE</div>
+
+      <!-- 发票信息 -->
+      <div class="info">
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <td>
+                <table class="split">
+                  <colgroup>
+                    <col style="width:353.3px" />
+                    <col style="width:239.7px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="nowrap">发票号（Invoice No.）：zw20251115001</td>
+                      <td class="nowrap">日期（Date）：Nov.15th,2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="gap">采购订单编号（Purchase Order No）：zw20251115001</td>
+            </tr>
+            <tr>
+              <td class="gap">买方（Buyer）： 温岭市领跃电子商务有限公司</td>
+            </tr>
+            <tr>
+              <td class="gap">地址（Address）：</td>
+            </tr>
+            <tr>
+              <td class="gap">
+                <table class="split">
+                  <colgroup>
+                    <col style="width:296.5px" />
+                    <col style="width:296.5px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>电话（Tel）：</td>
+                      <td>邮箱（Email）：</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 商品明细：数据行可按需复制 <tr> ... </tr> -->
+      <table class="goods-table">
+        <colgroup>
+          <col style="width:15.7303%" />
+          <col style="width:16.8539%" />
+          <col style="width:15.5056%" />
+          <col style="width:15.0562%" />
+          <col style="width:21.7978%" />
+          <col style="width:15.0562%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>序号</th>
+            <th>商品名称</th>
+            <th>计量单位</th>
+            <th>数量</th>
+            <th>总价（usd）</th>
+            <th>交期</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="left">国际货物运输代理</td>
+            <td></td>
+            <td></td>
+            <td>66.27</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>合计</td>
+            <td colspan="3"></td>
+            <td>金额：66.27</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 汇款说明 -->
+      <div class="remit">Please remit the funds to the receiving account through the account bank, and indicate the name
+        and account number of the payee.</div>
+
+    </div>
+  </div>
+</body>
+
+</html>
